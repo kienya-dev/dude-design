@@ -1,150 +1,975 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Верстка «NEW_PROJECT_NAME»</title>
-	</head>
-	<body>
-		<div class="rootpage">
-			<h1>Верстка «NEW_PROJECT_NAME»</h1>
-			<div class="rootpage__info">
-				Особенности проекта
-			</div>
-			<h2>Готовые страницы:</h2>
-			<ol class="rootpage__list">
-				<li><a target="_blank" href="home.html">Главная</a></li>
-			</ol>
-			<h2>Попапы:</h2>
-			<ol class="rootpage__list">
-				<li><a target="_blank" href="home.html#"></a></li>
-			</ol>
-			<div class="rootpage__tnx">
-				<h2>Спасибо за заказ!</h2>
-				<p>Буду рад (а) хорошему отзыву.</p>
-				<p>Обращайтесь еще!</p>
-			</div>
-			<div class="rootpage__contacts">
-				<h2>Мои контакты:</h2>
-				<p>Почта: <a href="mailto:email@gmail.com">email@gmail.com</a></p>
-				<p>Телефон: <a href="tel:8800800800">8 800 800 800</a></p>
-				<p>Соц. сеть: <a href="">ссылка на соц. сеть</a></p>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body data-theme="light">
+	<div class="app">
+		@@include('html/_header.htm',{})
+		<div class="app__page">
+			<div class="app__container">
+				<aside class="aside app__aside app__aside_left" data-nav-menu>
+					<div class="menu">
+						<h2 class="title title_size_24 title_wight_bold title_color_252525 aside__title menu__title">
+							<svg class="icon">
+								<use xlink:href="img/icons/sprite.svg#i-rubric"></use>
+							</svg>
+							<span>Рубрики</span>
+						</h2>
+						<nav>
+							<ul class="menu__list menu__list_main">
+								<li>
+									<a href="#" class="menu__link menu__link_main menu__link_popular">Популярное</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Подруги</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Отношения</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Образ жизни</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Лайфхак</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Инвентарь</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Герои</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Еда</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Фитнес</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Наука</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Культура</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Карьера</a>
+								</li>
+							</ul>
+							<ul class="menu__list menu__list_small">
+								<li>
+									<a href="#" class="menu__link menu__link_small">
+										Соглашения и правила
+									</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_small">
+										Правообладателям
+									</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_small">
+										Рекламодателям
+									</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_small">
+										Контакты
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<ul class="social">
+							<li>
+								<a href="#" class="button social__link social__link_facebook">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="button social__link social__link_vk">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="button social__link social__link_twitter">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="button social__link social__link_telegram">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</aside>
+
+
+				<main class="main app__main">
+					<section class="main__stories stories post post_theme_default">
+						<div class="stories__head">
+							<h2 class="title title_wight_bold title_color_252525">Истории</h2>
+							<div class="stories__control">
+								<button class="button stories__button" data-stories-slider-left>
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-slider-arrow-left"></use>
+									</svg>
+								</button>
+								<button class="button stories__button" data-stories-slider-right>
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-slider-arrow-right"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div class="stories__body">
+							<div class="swiper stories__slider" data-stories-slider>
+								<div class="swiper-wrapper">
+									<div class="swiper-slide stories-card">
+										<figure class="stories-card__img">
+											<img src="img/stories/stories_img_1.jpg" alt="">
+										</figure>
+										<div class="stories-card__num">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
+											</svg>
+											<span>1</span>
+										</div>
+									</div>
+
+									<div class="swiper-slide stories-card">
+										<figure class="stories-card__img">
+											<img src="img/stories/stories_img_2.jpg" alt="">
+										</figure>
+										<div class="stories-card__num">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
+											</svg>
+											<span>1</span>
+										</div>
+									</div>
+
+									<div class="swiper-slide stories-card">
+										<figure class="stories-card__img">
+											<img src="img/stories/stories_img_3.jpg" alt="">
+										</figure>
+										<div class="stories-card__num">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
+											</svg>
+											<span>1</span>
+										</div>
+									</div>
+
+									<div class="swiper-slide stories-card">
+										<figure class="stories-card__img">
+											<img src="img/stories/stories_img_4.jpg" alt="">
+										</figure>
+										<div class="stories-card__num">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
+											</svg>
+											<span>1</span>
+										</div>
+									</div>
+
+									<div class="swiper-slide stories-card">
+										<figure class="stories-card__img">
+											<img src="img/stories/stories_img_3.jpg" alt="">
+										</figure>
+										<div class="stories-card__num">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
+											</svg>
+											<span>1</span>
+										</div>
+									</div>
+									<div class="swiper-slide stories-card">
+										<figure class="stories-card__img">
+											<img src="img/stories/stories_img_2.jpg" alt="">
+										</figure>
+										<div class="stories-card__num">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
+											</svg>
+											<span>1</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</section>
+
+					<section class="main__wall">
+						<div class="post post_theme_default">
+							<a href="#" class="post__link">
+								<figure class="post__img">
+									<img src="img/article_img.jpg" alt="">
+								</figure>
+								<div class="post__body">
+									<h2 class="title title_size_22 title_wight_bold title_color_131313 post__title">
+										Кем ты хотел стать в детстве и почему тебе повезло, что это осталось мечтой
+									</h2>
+									<div class="post__text app__text">
+										<p>
+											Многие профессии или занятия, которые в детстве казались тебе идеальными, на
+											самом деле являются не только неинтересными, но и даже опасными.
+										</p>
+									</div>
+								</div>
+								<div class="post-info post__footer">
+									<div class="post-info__row post-info__row_panel">
+										<span class="button button_size_small button_theme_light-brown">Образ
+											жизни</span>
+										<div class="button button_partner button_size_small button_theme_default">
+											<svg class="icon button__partner-icon">
+												<use xlink:href="img/icons/sprite.svg#i-money"></use>
+											</svg>
+											<span>Партнерский материал</span>
+										</div>
+									</div>
+									<div class="post-info__row post-info__row_nums">
+										<div class="post-info__num post-info__num_theme_black post-info__num_views">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-views"></use>
+											</svg>
+											<span>2012</span>
+										</div>
+										<div class="post-info__num post-info__num_theme_black post-info__num_comments">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-comments"></use>
+											</svg>
+											<span>102</span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="post post_theme_default">
+							<a href="#" class="post__link">
+								<div class="post__body">
+									<h2 class="title title_size_22 title_wight_bold title_color_131313 post__title">
+										Кем ты хотел стать в детстве и почему тебе повезло, что это осталось мечтой
+									</h2>
+									<div class="post__text app__text">
+										<p>
+											Многие профессии или занятия, которые в детстве казались тебе идеальными, на
+											самом деле являются не только неинтересными, но и даже опасными.
+										</p>
+									</div>
+								</div>
+								<div class="post-info post__footer">
+									<div class="post-info__row post-info__row_panel">
+										<span class="button button_size_small button_theme_light-blue">Новости</span>
+										<span class="post-info__date">вчера в 22:15</span>
+									</div>
+									<div class="post-info__row post-info__row_nums">
+										<div class="post-info__num post-info__num_theme_black post-info__num_views">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-views"></use>
+											</svg>
+											<span>202</span>
+										</div>
+										<div class="post-info__num post-info__num_theme_black post-info__num_comments">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-comments"></use>
+											</svg>
+											<span>102</span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+
+						<div class="post ask-us">
+							<div class="ask-us__body">
+								<h2 class="title title_size_18 title_wight_bold title_color_131313">
+									Задайте вопрос редакции
+								</h2>
+								<p class="app__text ask-us__text">
+									возможно мы ответим на него в наших следующих статьях
+								</p>
+								<button class="button button_size_big button_theme_brown">Задать вопрос</button>
+							</div>
+							<svg class="icon ask-us__icon ask-us__icon_size_small">
+								<use xlink:href="img/icons/sprite.svg#i-sign"></use>
+							</svg>
+						</div>
+
+
+
+						<div class="post post_theme_light-blue">
+							<a href="#" class="post__link">
+								<figure class="post__img post__img_gradient post__img_gradient_light-blue">
+									<img src="img/article_img_1.jpg" alt="">
+								</figure>
+								<div class="post__body">
+									<h2 class="title title_size_22 title_wight_bold title_color_131313 post__title">
+										Кем ты хотел стать в детстве и почему тебе повезло, что это осталось мечтой
+									</h2>
+									<div class="post__text app__text">
+										<p>
+											Многие профессии или занятия, которые в детстве казались тебе идеальными, на
+											самом деле являются не только неинтересными, но и даже опасными.
+										</p>
+									</div>
+								</div>
+							</a>
+							<div class="post-info">
+								<div class="post-info__row post-info__row_panel">
+									<span class="button button_size_small button_theme_black">Спецпроект</span>
+									<button class="button button_size_small button_share button_share_black">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-share"></use>
+										</svg>
+										<span>поделиться</span>
+									</button>
+								</div>
+								<div class="post-info__row post-info__row_nums">
+									<div class="post-info__num post-info__num_theme_black post-info__num_views">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-views"></use>
+										</svg>
+										<span>2012</span>
+									</div>
+								</div>
+								<ul class="share-post share-post_active">
+									<li class="share-post__item">
+										<a href="#" class="share-post__link share-post__link_twitter">
+											<div class="share-post__icon">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+												</svg>
+											</div>
+											<span>Твиттер</span>
+										</a>
+									</li>
+									<li class="share-post__item">
+										<a href="#" class="share-post__link share-post__link_telegram">
+											<div class="share-post__icon">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+												</svg>
+											</div>
+											<span>Телеграмм</span>
+										</a>
+									</li>
+									<li class="share-post__item">
+										<a href="#" class="share-post__link share-post__link_facebook">
+											<div class="share-post__icon">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+												</svg>
+											</div>
+											<span>Фейсбук</span>
+										</a>
+									</li>
+									<li class="share-post__item">
+										<a href="#" class="share-post__link share-post__link_vk">
+											<div class="share-post__icon">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+												</svg>
+											</div>
+											<span>Вконтакте</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+
+						<div class="post post_theme_default">
+							<a href="#" class="post__link">
+								<figure class="post__img">
+									<img src="img/article_img_2.jpg" alt="">
+								</figure>
+								<div class="post__body">
+									<h2 class="title title_size_22 title_wight_bold title_color_131313 post__title">
+										Кем ты хотел стать в детстве и почему тебе повезло, что это осталось мечтой
+									</h2>
+									<div class="post__text app__text">
+										<p>
+											Многие профессии или занятия, которые в детстве казались тебе идеальными, на
+											самом деле являются не только неинтересными, но и даже опасными.
+										</p>
+									</div>
+								</div>
+								<div class="post-info post__footer">
+									<div class="post-info__row post-info__row_panel">
+										<span class="button button_size_small button_theme_light-brown">Образ
+											жизни</span>
+										<div class="button button_partner button_size_small button_theme_default">
+											<svg class="icon button__partner-icon">
+												<use xlink:href="img/icons/sprite.svg#i-money"></use>
+											</svg>
+											<span>Партнерский материал</span>
+										</div>
+									</div>
+									<div class="post-info__row post-info__row_nums">
+										<div class="post-info__num post-info__num_theme_black post-info__num_views">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-views"></use>
+											</svg>
+											<span>2012</span>
+										</div>
+										<div class="post-info__num post-info__num_theme_black post-info__num_comments">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-comments"></use>
+											</svg>
+											<span>102</span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+
+						<div class="post post_theme_dark-blue">
+							<div class="post__body">
+								<h2 class="title title_size_22 title_wight_bold title_color_131313 post__title">
+									Кем ты хотел стать в детстве?
+								</h2>
+								<form class="post-survey post__survey" data-post-survey data-total-votes="39">
+									<div class="post-survey__row">
+										<label class="post-survey__possible">
+											<input type="radio" name="profession" value="Космонавтом"
+												data-number-votes="9">
+											<span>Космонавтом</span>
+										</label>
+										<span class="post-survey__result"></span>
+										<span class="post-survey__progress"></span>
+									</div>
+									<div class="post-survey__row">
+										<label class="post-survey__possible">
+											<input type="radio" name="profession" value="Динозавром"
+												data-number-votes="10">
+											<span>Динозавром</span>
+										</label>
+										<span class="post-survey__result"></span>
+										<span class="post-survey__progress"></span>
+									</div>
+									<div class="post-survey__row">
+										<label class="post-survey__possible">
+											<input type="radio" name="profession" value="Врачом" data-number-votes="10">
+											<span>Врачом</span>
+										</label>
+										<span class="post-survey__result"></span>
+										<span class="post-survey__progress"></span>
+									</div>
+									<div class="post-survey__row">
+										<label class="post-survey__possible">
+											<input type="radio" name="profession" value="Стриптизером"
+												data-number-votes="10">
+											<span>Стриптизером</span>
+										</label>
+										<span class="post-survey__result"></span>
+										<span class="post-survey__progress"></span>
+									</div>
+								</form>
+
+							</div>
+						</div>
+
+						<div class="post post_theme_default">
+							<a href="#" class="post__body post__link">
+								<h2 class="title title_size_22 title_wight_bold title_color_131313 post__title">
+									Моника Моран
+								</h2>
+								<div class="post__text app__text">
+									<p>
+										Чувственные фотографии испанской красавицы, отличающейся роскошной фигурой и
+										внешностью.
+									</p>
+								</div>
+							</a>
+							<div class="post-slider swiper post__slider" data-post-slider>
+								<div class="swiper-wrapper">
+									<figure class="swiper-slide post__img">
+										<img src="img/article_img_4.jpg" alt="">
+									</figure>
+									<figure class="swiper-slide post__img">
+										<img src="img/article_img_4.jpg" alt="">
+									</figure>
+									<figure class="swiper-slide post__img">
+										<img src="img/article_img_4.jpg" alt="">
+									</figure>
+									<figure class="swiper-slide post__img">
+										<img src="img/article_img_4.jpg" alt="">
+									</figure>
+									<figure class="swiper-slide post__img">
+										<img src="img/article_img_4.jpg" alt="">
+									</figure>
+
+								</div>
+								<div class="post-slider__control">
+									<button class="button post-slider__button" data-post-slider-left>
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-slider-arrow-left"></use>
+										</svg>
+									</button>
+									<div class="swiper-pagination post-slider__pagination" data-post-slider-pagination>
+									</div>
+									<button class="button post-slider__button" data-post-slider-right>
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-slider-arrow-right"></use>
+										</svg>
+									</button>
+								</div>
+
+								<div class="post-slider__num">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-photo"></use>
+									</svg>
+									<span>5</span>
+								</div>
+							</div>
+						</div>
+
+
+
+
+						<div class="post post_theme_default">
+							<a href="#" class="post__body post__link">
+								<h2 class="title title_size_22 title_wight_bold title_color_131313 post__title">
+									Кем ты хотел стать в детстве и почему тебе повезло, что это осталось мечтой
+								</h2>
+								<div class="post__text app__text">
+									<p>
+										Многие профессии или занятия, которые в детстве казались тебе идеальными, на
+										самом деле являются не только неинтересными, но и даже опасными.
+									</p>
+								</div>
+							</a>
+							<div class="post__video video-player">
+								<video src="img/summer.mp4" class="video-player__player post__player"
+									data-video-player></video>
+								<button class="button video-player__button" data-video-play>
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-play"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="post-info">
+								<div class="post-info__row post-info__row_panel">
+									<span class="button button_size_small button_theme_light-red">
+										Видео
+									</span>
+									<button class="button button_size_small button_share button_share_black">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-share"></use>
+										</svg>
+										<span>поделиться</span>
+									</button>
+								</div>
+								<div class="post-info__row post-info__row_nums">
+									<div class="post-info__num post-info__num_theme_black post-info__num_views">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-views"></use>
+										</svg>
+										<span>2012</span>
+									</div>
+									<div class="post-info__num post-info__num_theme_black post-info__num_comments">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-comments"></use>
+										</svg>
+										<span>102</span>
+									</div>
+								</div>
+								<ul class="share-post share-post_active">
+									<li class="share-post__item">
+										<a href="#" class="share-post__link share-post__link_twitter">
+											<div class="share-post__icon">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+												</svg>
+											</div>
+											<span>Твиттер</span>
+										</a>
+									</li>
+									<li class="share-post__item">
+										<a href="#" class="share-post__link share-post__link_telegram">
+											<div class="share-post__icon">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+												</svg>
+											</div>
+											<span>Телеграмм</span>
+										</a>
+									</li>
+									<li class="share-post__item">
+										<a href="#" class="share-post__link share-post__link_facebook">
+											<div class="share-post__icon">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+												</svg>
+											</div>
+											<span>Фейсбук</span>
+										</a>
+									</li>
+									<li class="share-post__item">
+										<a href="#" class="share-post__link share-post__link_vk">
+											<div class="share-post__icon">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+												</svg>
+											</div>
+											<span>Вконтакте</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+
+
+
+
+
+						<div class="post post_theme_default">
+							<a href="#" class="post__link">
+								<div class="post__body">
+									<h2 class="title title_size_22 title_wight_bold title_color_131313 post__title">
+										Кем ты хотел стать в детстве и почему тебе повезло, что это осталось мечтой
+									</h2>
+									<div class="post__text app__text">
+										<p>
+											Многие профессии или занятия, которые в детстве казались тебе идеальными, на
+											самом деле являются не только неинтересными, но и даже опасными.
+										</p>
+									</div>
+								</div>
+								<div class="post-info post__footer">
+									<div class="post-info__row post-info__row_panel">
+										<span class="button button_size_small button_theme_light-blue">Новости</span>
+										<span class="post-info__date">вчера в 22:15</span>
+									</div>
+									<div class="post-info__row post-info__row_nums">
+										<div class="post-info__num post-info__num_theme_black post-info__num_views">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-views"></use>
+											</svg>
+											<span>202</span>
+										</div>
+										<div class="post-info__num post-info__num_theme_black post-info__num_comments">
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-comments"></use>
+											</svg>
+											<span>102</span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="post post_theme_black">
+							<a href="#" class="post__link">
+								<figure class="post__img post__img_gradient post__img_gradient_black">
+									<img src="img/article_img_3.jpg" alt="">
+								</figure>
+								<div class="post__body">
+									<h2 class="title title_size_22 title_wight_bold title_color_white post__title">
+										Год, который мы не забудем: 9 главных событий 2020-го
+									</h2>
+									<div class="post__text post__text_color_white app__text">
+										<p>
+											Жаль, из морской пучины не вышел Годзилла, а метеорит так и не долетел до
+											Земли.
+											Только этих событий не хватило для полного набора.
+										</p>
+									</div>
+								</div>
+							</a>
+							<div class="post-info">
+								<div class="post-info__row post-info__row_panel">
+									<a href="#" class="button button_size_small button_theme_black">Спецпроект</a>
+									<button class="button button_size_small button_share button_share_white">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-share"></use>
+										</svg>
+										<span>поделиться</span>
+									</button>
+								</div>
+								<div class="post-info__row post-info__row_nums">
+									<div class="post-info__num post-info__num_theme_white post-info__num_views">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-views"></use>
+										</svg>
+										<span>2012</span>
+									</div>
+								</div>
+
+								<ul class="share-post share-post_active">
+									<li class="share-post__item">
+										<a href="#" class="share-post__link share-post__link_twitter">
+											<div class="share-post__icon">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+												</svg>
+											</div>
+											<span>Твиттер</span>
+										</a>
+									</li>
+									<li class="share-post__item">
+										<a href="#" class="share-post__link share-post__link_telegram">
+											<div class="share-post__icon">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+												</svg>
+											</div>
+											<span>Телеграмм</span>
+										</a>
+									</li>
+									<li class="share-post__item">
+										<a href="#" class="share-post__link share-post__link_facebook">
+											<div class="share-post__icon">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+												</svg>
+											</div>
+											<span>Фейсбук</span>
+										</a>
+									</li>
+									<li class="share-post__item">
+										<a href="#" class="share-post__link share-post__link_vk">
+											<div class="share-post__icon">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+												</svg>
+											</div>
+											<span>Вконтакте</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="top-podcasts post post_theme_default">
+							<div class="top-podcasts__head">
+								<h2 class="title title_size_18 title_wight_bold title_color_131313">Топ наших подкастов
+								</h2>
+								<button class="button go-podcast go-podcast_color_gray">
+									<span>все подкасты</span>
+									<svg class="icon go-podcast__icon">
+										<use xlink:href="img/icons/sprite.svg#i-arrow"></use>
+									</svg>
+								</button>
+							</div>
+							<ul class="top-podcasts__list">
+								<li>
+									<a href="#" class="podcast-card">
+										<figure class="podcast-card__img">
+											<img src="img/podcasts/podcast_img_1.jpg" alt="">
+										</figure>
+										<h3 class="title title_size_14 podcast-card__title">
+											Подкаст ревью
+										</h3>
+										<div class="podcast-card__likes">
+											<svg class="icon podcast-card__icon">
+												<use xlink:href="img/icons/sprite.svg#i-like"></use>
+											</svg>
+											<span>12 612</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="podcast-card">
+										<figure class="podcast-card__img">
+											<img src="img/podcasts/podcast_img_2.jpg" alt="">
+										</figure>
+										<h3 class="title title_size_14 podcast-card__title">
+											Подкаст ревью
+										</h3>
+										<div class="podcast-card__likes">
+											<svg class="icon podcast-card__icon">
+												<use xlink:href="img/icons/sprite.svg#i-like"></use>
+											</svg>
+											<span>12 612</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="podcast-card">
+										<figure class="podcast-card__img">
+											<img src="img/podcasts/podcast_img_3.jpg" alt="">
+										</figure>
+										<h3 class="title title_size_14 podcast-card__title">
+											Подкаст ревью
+										</h3>
+										<div class="podcast-card__likes">
+											<svg class="icon podcast-card__icon">
+												<use xlink:href="img/icons/sprite.svg#i-like"></use>
+											</svg>
+											<span>12 612</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="podcast-card">
+										<figure class="podcast-card__img">
+											<img src="img/podcasts/podcast_img_4.jpg" alt="">
+										</figure>
+										<h3 class="title title_size_14 podcast-card__title">
+											Подкаст ревью
+										</h3>
+										<div class="podcast-card__likes">
+											<svg class="icon podcast-card__icon">
+												<use xlink:href="img/icons/sprite.svg#i-like"></use>
+											</svg>
+											<span>12 612</span>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+
+
+						<div class="aside__adv">
+							<div style="
+							width: 100%;
+							height: 248px;
+							background: #67C2AC;
+							display: flex;
+							align-items: center;
+							text-align: center;
+							justify-content: center;
+							border-radius: 10px;
+						">Временный баннер (удалить)</div>
+						</div>
+
+					</section>
+				</main>
+
+
+				<aside class="aside app__aside app__aside_right">
+					<div class="aside__adv">
+						<div style="
+						width: 100%;
+						height: 248px;
+						background: #fff;
+						display: flex;
+						align-items: center;
+						text-align: center;
+						justify-content: center;
+						border-radius: 10px;
+					">Временный баннер (удалить)</div>
+					</div>
+
+					<div class="aside__articles top-articles">
+						<h2
+							class="title title_size_24 title_wight_bold title_color_252525 aside__title top-articles__title">
+							<svg class="icon top-articles__icon">
+								<use xlink:href="img/icons/sprite.svg#i-top"></use>
+							</svg>
+							<span>Самое интересное</span>
+						</h2>
+						<ul class="articles-list">
+							<li>
+								<a href="#" class="articles-list__link">
+									<figure class="articles-list__img">
+										<img src="img/article_img.jpg" alt="">
+									</figure>
+									<h3 class="title title_size_14 title_wight_bold title_color_252525">Сюжет фильма,
+										ставший сценарием жизни: истории трёх пар, нашедших друг друга на сайте
+										знакомств</h3>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="articles-list__link">
+									<figure class="articles-list__img">
+										<img src="img/article_img.jpg" alt="">
+									</figure>
+									<h3 class="title title_size_14 title_wight_bold title_color_252525">Опасные
+										соперники и сложные миссии: 5 причин
+										скачать Gladiator Glory</h3>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="articles-list__link">
+									<figure class="articles-list__img">
+										<img src="img/article_img.jpg" alt="">
+									</figure>
+									<h3 class="title title_size_14 title_wight_bold title_color_252525">Почему девушкам
+										дарят цветы и как выбрать
+										подходящий букет</h3>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="articles-list__link">
+									<figure class="articles-list__img">
+										<img src="img/article_img.jpg" alt="">
+									</figure>
+									<h3 class="title title_size_14 title_wight_bold title_color_252525">9 атмосферных
+										фильмов ужасов, действие которых
+										происходит в Новый год и Рождество</h3>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="articles-list__link">
+									<figure class="articles-list__img">
+										<img src="img/article_img.jpg" alt="">
+									</figure>
+									<h3 class="title title_size_14 title_wight_bold title_color_252525">Что делать, если
+										встречаешься с девушкой, у которой уже есть парень</h3>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="popular-tags">
+						<h2 class="title title_wight_bold title_color_252525 popular-tags__title">
+							#популярные теги
+						</h2>
+						<nav>
+							<ul class="popular-tags__list">
+								<li>
+									<a href="#" class="button button_size_small popular-tags__link">игры</a>
+								</li>
+								<li>
+									<a href="#" class="button button_size_small popular-tags__link">психология</a>
+								</li>
+								<li>
+									<a href="#" class="button button_size_small popular-tags__link">история</a>
+								</li>
+								<li>
+									<a href="#" class="button button_size_small popular-tags__link">здоровье</a>
+								</li>
+								<li>
+									<a href="#" class="button button_size_small popular-tags__link">фильмы</a>
+								</li>
+								<li>
+									<a href="#" class="button button_size_small popular-tags__link">соц.сети</a>
+								</li>
+								<li>
+									<a href="#" class="button button_size_small popular-tags__link">IT</a>
+								</li>
+								<li>
+									<a href="#" class="button button_size_small popular-tags__link">образование</a>
+								</li>
+								<li>
+									<a href="#" class="button button_size_small popular-tags__link">рецепты</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</aside>
 			</div>
 		</div>
-	</body>
-	<style>
-		@charset "UTF-8";
-		@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
-		* ,*::before, *::after {
-			padding: 0px;
-			margin: 0px;
-			border: 0px;
-			box-sizing: border-box; 
-		}
-		html, body {
-			height: 100%;
-			margin: 0;
-			padding: 0;
-			min-width: 320px;
-			width: 100%;
-			color: #fff;
-			background-color: #5e5373;
-		}
-		body {
-			font-family: Montserrat;
-			font-size: 100%;
-			line-height: 1;
-			font-size: 1rem;
-		}
-		a {
-			text-decoration: underline;
-			color: #ebe691
-		}
-		a:visited {
-			text-decoration: underline;
-			color: #aaa768;
-		}
-			a:hover {
-			text-decoration: none;
-		}
-		ul li {
-			list-style: none;
-		}
-		img {
-			vertical-align: top;
-		}
-		.wrapper {
-			width: 100%;
-			min-height: 100%;
-			overflow: hidden;
-		}
-		.rootpage{
-			padding: 30px;
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-		}
-		@media (max-width: 767px) {
-			.rootpage{
-				padding:30px 15px;
-			}
-		}
-		h1 {
-			color: #ebe691;
-			font-size: 2.5rem;
-			margin: 0px 0px 1.25rem 0px;
-		}
-		@media (max-width: 767px) {
-			h1 {
-				font-size: 1.85rem;
-				margin: 0px 0px 1.25rem 0px;
-			}
-		}
-		h2 {
-			color: #ebe691;
-			font-size: 1.25rem;
-			margin: 0px 0px 1rem 0px;
-		}
-		@media (max-width: 767px) {
-			 h2 {
-				font-size: 1.125rem;
-				margin: 0px 0px 1rem 0px;
-			}
-		}
-		.rootpage__info{
-			line-height: 140%;
-			margin: 0px 0px 1.5rem 0px;
-		}
+	</div>
+	<div class="overlay"></div>
+	@@include('html/_js.htm',{})
+</body>
 
-		.rootpage__list{
-			margin: 0px 0px 2.25rem 1.25rem;
-		}
-		.rootpage__list li:not(:last-child){
-			margin: 0px 0px 15px 0px;
-		}
-		.rootpage__contacts,
-		.rootpage__tnx{
-			border-radius: 200px;
-			padding: 20px 65px;
-			line-height: 140%;
-		}
-		@media (max-width: 767px){
-		.rootpage__contacts,
-		.rootpage__tnx{
-			border-radius:40px;
-			padding: 20px;
-		}
-		}
-		.rootpage__contacts{
-			background: #32b5a4;
-			
-		}
-		.rootpage__contacts a{
-			color: #ebe691;
-		}
-		.rootpage__tnx{
-			background: #c22d63;
-			margin: 0px 0px 1rem 0px;
-		}
-	</style>
 </html>

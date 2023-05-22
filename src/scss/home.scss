@@ -1,3 +1,453 @@
 //====================================================================================================
+.main {
+    &__wall {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(16);
+
+        @media (min-width: $mobile) {
+            row-gap: rem(24);
+        }
+    }
+
+    &__stories {
+        margin-bottom: rem(16);
+        @media (min-width: $tablet) {
+            margin-bottom: rem(32);
+        }
+        @media (min-width: $mobile) and (max-width: $tablet) {
+            margin-bottom: rem(24);
+        }
+    }
+}
+.app {
+    &__main {
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.45em;
+        line-height: 1.25;
+    }
+}
+
+.stories {
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: rem(14);
+        padding: rem(13) rem(23) rem(8) rem(16);
+    }
+
+    &__control {
+        display: flex;
+        align-items: center;
+        column-gap: rem(30);
+    }
+
+    &__button {
+        svg {
+            width: rem(9);
+            height: rem(16);
+        }
+    }
+
+    &__body {
+        padding-bottom: rem(24);
+    }
+
+    &__slider {
+        max-width: rem(640);
+
+        & .swiper-slide-active {
+            margin-left: rem(16);
+        }
+    }
+}
+
+.stories-card {
+    position: relative;
+    margin-left: rem(12);
+    padding: rem(2);
+    border: 2px solid #d1aa7c;
+    border-radius: 11px;
+    width: rem(163) !important;
+    cursor: pointer;
+
+    &:last-child {
+        margin-right: rem(16);
+    }
+
+    &__img {
+        position: relative;
+        width: 100%;
+        height: rem(248);
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            background: linear-gradient(180deg, rgba(17, 17, 17, 0) 0%, rgba(11, 11, 11, 0.5) 100%);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+    }
+
+    &__num {
+        position: absolute;
+        bottom: rem(14);
+        right: rem(14);
+        display: flex;
+        column-gap: rem(5);
+        color: #ffffff;
+        svg {
+            width: rem(14);
+            height: rem(15);
+            fill: currentColor;
+        }
+    }
+}
+
+.post {
+    border-radius: 8px;
+    overflow: hidden;
+
+    &_theme_light-blue {
+        background-color: #bce4f9;
+    }
+
+    &_theme_black {
+        background-color: #211c26;
+    }
+
+    &__link {
+        display: block;
+    }
+
+    &__video {           
+    }
+
+    &__player{
+        height: rem(360);        
+    }
+
+    &__img {
+        width: 100%;
+        height: rem(320);
+
+        &_gradient {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+
+            &_light-blue {
+                &::after {
+                    background: linear-gradient(180deg, rgba(188, 228, 249, 0) 50%, #bce4f9 100%);
+                }
+            }
+
+            &_black {
+                &::after {
+                    background: linear-gradient(180deg, rgba(33, 28, 38, 0) 50%, #211c26 100%);
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__body {
+        padding: rem(24) rem(16) rem(16);
+    }
+
+    &__title {
+        margin-bottom: em(8, 22);
+    }
+
+    &__text {
+        &_color_white {
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+
+    &__slider {
+        max-width: rem(640);
+    }
+
+    &__survey {
+        padding: rem(5);
+    }
+}
 
 //====================================================================================================
+.ask-us {
+    position: relative;
+
+    &__body {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: rem(8);
+        padding: rem(24);
+        z-index: 1;
+    }
+
+    &__text {
+        margin-bottom: em(8, 16);
+    }
+
+    &__icon {
+        position: absolute;
+        width: rem(195);
+        height: rem(281);
+
+        &_size_small {
+            top: calc(-50% + rem(20));
+            left: rem(-12);
+        }
+    }
+}
+
+.top-podcasts {
+    padding: rem(16) rem(24) rem(24);
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: rem(16);
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        column-gap: rem(24);
+    }
+}
+
+.podcast-card {
+    &__img {
+        width: rem(130);
+        height: rem(130);
+        margin-bottom: rem(10);
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        margin-bottom: em(4, 14);
+    }
+
+    &__likes {
+        display: flex;
+        align-items: center;
+        column-gap: rem(5);
+    }
+
+    &__icon {
+        width: rem(12);
+        height: rem(10);
+        fill: currentColor;
+    }
+}
+
+.post-slider {
+    position: relative;
+    &__control {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: rem(12) rem(23);
+    }
+
+    &__pagination {
+        position: relative !important;
+        bottom: 0 !important;
+
+        & > .swiper-pagination-bullet {
+            opacity: 1 !important;
+            transition: background-color 0.3s, opacity 0.3s !important;
+        }
+
+        & > .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+        }
+    }
+
+    &__button {
+        svg {
+            width: rem(9);
+            height: rem(17);
+        }
+    }
+
+    &__num {
+        position: absolute;
+        top: rem(24);
+        right: rem(24);
+        display: inline-flex;
+        align-items: center;
+        column-gap: rem(8);
+        padding: rem(8) rem(12);
+        z-index: 1;
+        border-radius: 30px;
+        color: #ffffff;
+        background-color: #252525;
+        svg {
+            width: rem(18);
+            height: rem(15);
+            fill: currentColor;
+        }
+    }
+}
+
+//---------------------------------------------
+.post-survey {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(8);
+
+    &__row {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: rem(8) rem(16) rem(8) rem(20);
+        border-radius: 4px;
+        overflow: hidden;
+
+        .post-survey__progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            border-radius: 4px;
+            visibility: hidden;
+            transition: width 0.3s, visibility 0.1s;
+        }
+
+        &_active {
+            .post-survey__progress {
+                visibility: visible !important;
+            }
+        }
+
+        &_select {
+            .post-survey__result {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__possible {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex: 1 1 auto;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    &__result {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* для элемента input c type="radio" */
+.post-survey__possible > input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* для элемента label связанного с .post-survey__possible */
+.post-survey__possible > span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+/* создание в label псевдоэлемента  before со следующими стилями */
+.post-survey__possible > span::before {
+    content: "";
+    display: inline-block;
+    width: rem(24);
+    height: rem(24);
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin-right: rem(20);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на радио */
+.post-survey__possible > input:not(:disabled):not(:checked) + span:hover::before {
+    border-color: #b3d7ff;
+}
+
+// /* стили для активной радиокнопки (при нажатии на неё) */
+// .post-survey__possible > input:not(:disabled):active + span::before {
+//     background-color: #b3d7ff;
+//     border-color: #b3d7ff;
+// }
+
+// /* стили для радиокнопки, находящейся в фокусе */
+// .post-survey__possible > input:focus + span::before {
+//     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+// }
+
+// /* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+// .post-survey__possible > input:focus:not(:checked) + span::before {
+//     border-color: #80bdff;
+// }
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.post-survey__possible > input:checked + span::before {
+    border: 6px solid #fff;
+    background-color: #4d72d3;
+    background-size: rem(8) rem(8);
+    padding: 6px;
+}
+
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.post-survey__possible > input:disabled + span::before {
+    background-color: #e9ecef;
+}

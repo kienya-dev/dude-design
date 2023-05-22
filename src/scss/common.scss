@@ -1,1 +1,342 @@
-// Заголовки, общие БЄМ блоки и проче...
+.logo {
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+        width: rem(65);
+        height: rem(15);
+        fill: #131313;
+
+        @media (min-width: $mobile) {
+            width: rem(90);
+            height: rem(23);
+        }
+    }
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+
+    @media (any-hover: hover) {
+        &:hover {
+        }
+    }
+
+    &_size_small {
+        column-gap: rem(10);
+        height: rem(24);
+        padding: rem(4) rem(8);
+        border-radius: 4px;
+
+        @media (min-width: $mobile) {
+            height: rem(32);
+            padding: rem(4) rem(12);
+        }
+    }
+
+    &_size_big {
+        padding: rem(12) rem(24);
+        border-radius: 4px;
+        font-weight: 500;
+    }
+
+    &_theme_default {
+        svg {
+            fill: currentColor;
+        }
+    }
+
+    &_theme_light-red {
+        border: 1px solid #EFD4D5;
+        color: #bf707a;
+        background-color: #FDE8E9;
+    }
+
+    &_theme_brown {
+        color: #ffffff;
+    }
+
+    &_theme_black {
+        color: #ffffff;
+        background-color: #252525;
+    }
+
+    &_share {
+        &_black {
+            color: #252525;
+        }
+
+        &_white {
+            color: #ffffff;
+        }
+
+        svg {
+            width: rem(24);
+            height: rem(20);
+            fill: currentColor;
+        }
+    }
+
+    &_partner {
+        span {
+            @media (max-width: $mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &__partner-icon {
+        width: rem(18);
+        height: rem(13);
+        @media (min-width: $mobile) {
+            width: rem(24);
+            height: rem(17);
+        }
+    }
+}
+
+.icon {
+    display: inline-block;
+}
+
+.title {
+    line-height: 1.25;
+    &_size_14 {
+        font-size: rem(14);
+    }
+
+    &_size_18 {
+        font-size: rem(18);
+    }
+
+    &_size_22 {
+        font-size: rem(22);
+    }
+
+    &_size_24 {
+        font-size: rem(24);
+    }
+    &_wight_bold {
+        font-weight: 700;
+    }
+
+    &_color_white {
+        color: #ffffff;
+    }
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    column-gap: rem(9);
+
+    &__link {
+        flex: 0 0 rem(32);
+        width: rem(32);
+        height: rem(32);
+        border-radius: 8px;
+
+        &_facebook {
+            svg {
+                width: rem(11);
+                height: rem(22);
+            }
+        }
+
+        &_vk {
+            svg {
+                width: rem(24);
+                height: rem(12);
+            }
+        }
+
+        &_twitter {
+            svg {
+                width: rem(20);
+                height: rem(16);
+            }
+        }
+
+        &_telegram {
+            svg {
+                width: rem(20);
+                height: rem(16);
+            }
+        }
+    }
+}
+
+.post-info {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: rem(12);
+    padding: rem(16);
+
+    &__row {
+        display: flex;
+        align-items: center;
+
+        &_panel {
+            column-gap: rem(8);
+        }
+
+        &_nums {
+            column-gap: rem(18);
+        }
+    }
+
+    &__date {
+        @media (max-width: $mobile) {
+            font-size: rem(14);
+        }
+    }
+
+    &__num {
+        display: flex;
+        align-items: center;
+        column-gap: rem(8);
+
+        &_theme_white {
+            color: #ffffff;
+        }
+
+        svg {
+            fill: currentColor;
+        }
+        &_views {
+            svg {
+                width: rem(20);
+                height: rem(13);
+
+                @media (min-width: $mobile) {
+                    width: rem(26);
+                    height: rem(17);
+                }
+            }
+        }
+
+        &_comments {
+            svg {
+                width: rem(17);
+                height: rem(17);
+
+                @media (min-width: $mobile) {
+                    width: rem(22);
+                    height: rem(22);
+                }
+            }
+        }
+    }
+}
+
+.share-post {
+    position: absolute;
+    bottom: -150%;
+    left: 0;
+    z-index: 2;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(110%);
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+    transition: bottom 0.3s, opacity 0.3s, visibility 0.3s;
+
+    &_active {
+        bottom: rem(16);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        column-gap: rem(12);
+        width: rem(168);
+        height: rem(40);
+        padding: 0 rem(12);
+        &_twitter {
+            svg {
+                width: rem(20);
+                height: rem(16);
+                fill: #00acee;
+            }
+        }
+
+        &_telegram {
+            svg {
+                width: rem(20);
+                height: rem(16);
+                fill: #0088cc;
+            }
+        }
+
+        &_facebook {
+            svg {
+                width: rem(11);
+                height: rem(22);
+                fill: #3b5998;
+            }
+        }
+
+        &_vk {
+            svg {
+                width: rem(24);
+                height: rem(12);
+                fill: #597da3;
+            }
+        }
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 rem(24);
+        height: 100%;
+    }
+}
+
+.video-player {
+    position: relative;
+    &__player {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        svg {
+            width: rem(72);
+            height: rem(72);
+            fill: #ffffff;
+        }
+    }
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s all;
+
+    &_active {
+        opacity: 1;
+        visibility: visible;
+    }
+}

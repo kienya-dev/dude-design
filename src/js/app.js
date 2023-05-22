@@ -1,195 +1,195 @@
-/*
-(i) Код попадает в итоговый файл,
-только когда вызвана функция,
-например flsFunctions.spollers();
-Или когда импортирован весь файл,
-например import "files/script.js";
-Неиспользуемый (не вызванный)
-код в итоговый файл не попадает.
-
-Если мы хотим добавить модуль
-следует его расскоментировать
-*/
-
-// Включить/выключить FLS (Full Logging System) (в работе)
-window['FLS'] = true;
-
 // Подключение основного файла стилей
 import "../scss/style.scss";
 
 // ========================================================================================================================================================================================================================================================
 // Функционал ========================================================================================================================================================================================================================================================
 // ========================================================================================================================================================================================================================================================
-import * as flsFunctions from "./files/functions.js";
+function isWebp() {
+	// Проверка поддержки webp
+	function testWebP(callback) {
+		let webP = new Image();
+		webP.onload = webP.onerror = function () {
+			callback(webP.height == 2);
+		};
+		webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+	}
+	// Добавление класса _webp или _no-webp для HTML
+	testWebP(function (support) {
+		let className = support === true ? 'webp' : 'no-webp';
+		document.documentElement.classList.add(className);
+	});
+}
+isWebp();
 
-/* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
-/* (i) необходимо для корректного отображения webp из css  */
-flsFunctions.isWebp();
-/* Добавление класса touch для HTML если браузер мобильный */
-// flsFunctions.addTouchClass();
-/* Добавление loaded для HTML после полной загрузки страницы */
-// flsFunctions.addLoadedClass();
-/* Модуль для работы с меню (Бургер) */
-// flsFunctions.menuInit();
-/* Учет плавающей панели на мобильных устройствах при 100vh */
-// flsFunctions.fullVHfix();
+import "./files/sliders.js";
 
-/*
-Модуль работы со спойлерами
-Документация: https://template.fls.guru/template-docs/modul-spojlery.html
-Сниппет (HTML): spollers
-*/
-// flsFunctions.spollers();
+ /* Burger menu*/
+    //============================================================================================================================================================================================================================================
+    const menuToggle = document.querySelector('.icon-menu');
+    const menu = document.querySelector('[data-nav-menu]');
 
-/*
-Модуль работы с табами
-Документация: https://template.fls.guru/template-docs/modul-taby.html
-Сниппет (HTML): tabs
-*/
-// flsFunctions.tabs();
+    const overlay = document.querySelector('.overlay');
 
-/*
-Модуль "показать еще"
-Документация: https://template.fls.guru/template-docs/modul-pokazat-eshhjo.html
-Сниппет (HTML): showmore
-*/
-// flsFunctions.showMore();
 
-/*
-Попапы
-Документация: https://template.fls.guru/template-docs/funkcional-popup.html
-Сниппет (HTML): pl
-*/
-// import './libs/popup.js'
+    const closeMenu = () => {
+        menu.classList.remove('app__aside_active');
+        menuToggle.classList.remove('icon-menu_active');
+        overlay.classList.remove('overlay_active');
+        document.body.classList.remove('lock');
+        document.body.removeEventListener('click', closeMenu);
+    }
 
-/*
-Модуль параллакса мышью
-Документация: 
-Сниппет (HTML): 
-*/
-// import './libs/parallax-mouse.js'
+    const toggleMenu = (event) => {
+        event.stopPropagation();
+        const expanded = menuToggle.classList.contains('icon-menu_active');
+        menuToggle.classList.toggle('icon-menu_active');
+        menu.classList.toggle('app__aside_active', !expanded);
+        overlay.classList.toggle('overlay_active');
+        document.body.classList.toggle('lock');
+        if (!menu.classList.contains('app__aside_active')) {
+            closeMenu();
+        }
+    };
 
-// ========================================================================================================================================================================================================================================================
-// Работа с формами ========================================================================================================================================================================================================================================================
-// ========================================================================================================================================================================================================================================================
-import * as flsForms from "./files/forms/forms.js";
+    menuToggle.addEventListener('click', (event) => toggleMenu(event));
 
-/* Работа с полями формы */
-/* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
-// flsForms.formFieldsInit({ viewPass: false });
+    document.body.addEventListener('click', (event) => {
+        if (menu.classList.contains('app__aside_active') && !menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            closeMenu();
+        }
+    });
 
-/* Oтправка формы */
-/* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
-// flsForms.formSubmit();
+//Скрыть верхнюю панель с рекламой============================================================================================================================================================================================================================================
+const advTop = document.querySelector('[data-adv-top]');
 
-/* Модуль формы "колличество" */
-// flsForms.formQuantity();
+if (advTop) {
+    const closeAdvTop = document.querySelector('[data-adv-close]');
 
-/* Модуль звездного рейтинга */
-// flsForms.formRating();
+    const hideAdvToppanel = () => {
+        advTop.classList.remove('header__adv_active');
+    }
 
-/* Модуль работы с select. */
-// import './libs/select.js'
+    closeAdvTop.addEventListener('click', hideAdvToppanel);
+}
 
-/* (В работе) Модуль работы с масками.*/
-/*
-Подключение и настройка выполняется в файле js/files/forms/inputmask.js
-Документация по работе в шаблоне:
-Документация плагина: https://github.com/RobinHerbots/inputmask
-Сниппет(HTML):
-*/
-// import "./files/forms/inputmask.js";
+//Показать/скрыть поисковую форму============================================================================================================================================================================================================================================
+const searchForm = document.querySelector('[data-search-form]');
+const searchButton = document.querySelector('[data-search-button]');
+const look = document.querySelector('[data-look]');
+const choiceTheme = document.querySelector('[data-choice-theme]');
 
-/* Модуль работы с ползунком */
-/*
-Подключение и настройка выполняется в файле js/files/forms/range.js
-Документация по работе в шаблоне:
-Документация плагина: https://refreshless.com/nouislider/
-Сниппет (HTML): range
-*/
-// import "./files/forms/range.js";
+const toggleSearchForm = () => {
+    searchForm.classList.toggle('header__search_active');
+    look.classList.toggle('header__look_hide');
+    choiceTheme.classList.toggle('choice-theme_hide');
+}
 
-/* Модуль работы с подсказками (tippy) */
-/*
-Подключение плагина Tippy.js и настройка выполняется в файле js/files/tippy.js
-Документация по работе в шаблоне:
-Документация плагина: https://atomiks.github.io/tippyjs/
-Сниппет (HTML): tip (добавляет атрибут с подсказкой для html тега)
-*/
-// import "./files/tippy.js";
+searchButton.addEventListener('click', toggleSearchForm);
 
-// ========================================================================================================================================================================================================================================================
-// Работа со слайдером (Swiper) ========================================================================================================================================================================================================================================================
-// ========================================================================================================================================================================================================================================================
-/*
-Настройка подключения плагина слайдера Swiper и новых слайдеров выполняется в файле js/files/sliders.js
-Документация по работе в шаблоне: https://template.fls.guru/template-docs/rabota-so-slajderom-swiper.html
-Документация плагина: https://swiperjs.com/
-Сниппет(HTML): swiper
-*/
-// import "./files/sliders.js";
 
-// ========================================================================================================================================================================================================================================================
-// Модули работы с прокруткой страницы ========================================================================================================================================================================================================================================================
-// ========================================================================================================================================================================================================================================================
+//Выбрать цветовую тему============================================================================================================================================================================================================================================
+const themeSwitcher = document.querySelector('#switch-theme');
+const body = document.querySelector('body');
+const buttonThemeLight = document.querySelector('[data-button-theme-light]');
+const buttonThemeDark = document.querySelector('[data-button-theme-dark]');
 
-/*
-Изменение дизайна скроллбара
-Документация по работе в шаблоне: В HTML добавляем к блоку атрибут data-simplebar
-Документация плагина: https://github.com/Grsmto/simplebar/tree/master/packages/simplebar
-Сниппет(HTML): 
-*/
-// import './files/scroll/simplebar.js';
+const toggleDarkTheme = () => {
+    if (themeSwitcher.checked) {
+        body.setAttribute('data-theme', 'dark');
+        buttonThemeLight.classList.remove('choice-theme__button_active');
+        buttonThemeDark.classList.add('choice-theme__button_active');
+    } else {
+        body.setAttribute('data-theme', 'light');
+        buttonThemeLight.classList.add('choice-theme__button_active');
+        buttonThemeDark.classList.remove('choice-theme__button_active');
+    }
+}
 
-// Ленивая (отложенная) загрузка картинок
-// Документация по работе в шаблоне: https://template.fls.guru/template-docs/modul-lenivaya-podgruzka-lazy-loading.html
-// Документация плагина: https://github.com/verlok/vanilla-lazyload
-// Сниппет(HTML):
-// import './files/scroll/lazyload.js';
+buttonThemeLight.addEventListener('click', () => {
+    themeSwitcher.checked = !themeSwitcher.checked;
+    toggleDarkTheme(themeSwitcher.checked);
+});
 
-// Наблюдатель за объектами c атрибутом data-watch
-// Документация: https://template.fls.guru/template-docs/modul-nabljudatel-za-poyavleniem-elementa-pri-skrolle.html
-// Сниппет(HTML):
-// import './libs/watcher.js'
+buttonThemeDark.addEventListener('click', () => {
+    themeSwitcher.checked = !themeSwitcher.checked;
+    toggleDarkTheme(themeSwitcher.checked);
+});
 
-// Функции работы скроллом
-import * as flsScroll from "./files/scroll/scroll.js";
 
-// Плавная навигация по странице
-// Документация: https://template.fls.guru/template-docs/modul-plavnoj-navigacii-po-stranice.html
-// flsScroll.pageNavigation();
+themeSwitcher.addEventListener('input', () => toggleDarkTheme(themeSwitcher.checked));
 
-// Функционал добавления классов к хедеру при прокрутке
-// Документация: https://template.fls.guru/template-docs/modul-dobavleniya-klassov-k-shapke-pri-prokrutke-stranicy.html
-// flsScroll.headerScroll();
 
-// Функционал липкого блока
-// flsScroll.stickyBlock();
+//Голосование ============================================================================================================================================================================================================================================
+const postSurvey = document.querySelector('[data-post-survey]')
+const surveyInputs = postSurvey.querySelectorAll('input')
+let totalVotes = +document.querySelector('[data-post-survey]').getAttribute('data-total-votes');
+const vote = {
+    wasVote: false,
+    lastVote: null
+}
 
-// ========================================================================================================================================================================================================================================================
-// Галерея ========================================================================================================================================================================================================================================================
-// ========================================================================================================================================================================================================================================================
-/*
-Документация по работе в шаблоне: 
-Документация плагина: https://www.lightgalleryjs.com/docs/
-Сниппет(HTML):
-*/
-// import "./files/gallery.js";
+const changeVote = (inputs) => {
+    inputs.forEach(input => {
+        const result = `${(+input.getAttribute('data-number-votes') * 100 / totalVotes).toFixed(1)}%`;
+        const surveyBox = input.closest('.post-survey__row');
+        const surveyResult = surveyBox.querySelector('.post-survey__result');
+        const surveyProgress = surveyBox.querySelector('.post-survey__progress');        
+        surveyResult.innerHTML = result;
+        surveyProgress.style.width = result;
+        if(!(input === vote.lastVote)) {
+            surveyBox.classList.remove('post-survey__row_select');
+            surveyBox.classList.add('post-survey__row_active');   
+        } else {
+            surveyBox.classList.add('post-survey__row_active', 'post-survey__row_select');        
+        }          
+    })
+}
 
-// ========================================================================================================================================================================================================================================================
-// Прочие плагины ============================================================================================================================================================================================================================================================================================================
-// ========================================================================================================================================================================================================================================================
+const calcSurvey= (inputs) => {
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            if (vote.wasVote === false) {
+                postSurvey.setAttribute('data-total-votes', ++totalVotes);
+                input.setAttribute('data-number-votes', +input.getAttribute('data-number-votes') + 1);
+                vote.wasVote = true;
+                vote.lastVote = input;
+            } else {
+                vote.lastVote.setAttribute('data-number-votes', +vote.lastVote.getAttribute('data-number-votes') - 1);
+                input.setAttribute('data-number-votes', +input.getAttribute('data-number-votes') + 1);
+                vote.lastVote = input;
+            }
+            changeVote(inputs);
+        })
+    })
+}
 
-/* Динамический адаптив */
-// Документация: https://template.fls.guru/template-docs/dinamicheskij-adaptiv.html
-// import "./libs/dynamic_adapt.js";
+calcSurvey(surveyInputs);
 
-/* Форматирование чисел */
-// import './libs/wNumb.min.js';
 
-// ========================================================================================================================================================================================================================================================
-// Прочее ========================================================================================================================================================================================================================================================
-// ========================================================================================================================================================================================================================================================
-/* Подключаем файлы со своим кодом */
-import "./files/script.js";
-//============================================================================================================================================================================================================================================
+//------------Наброски видеоплеера
+const video = document.querySelector('[data-video-player]');
+const playButton = document.querySelector('[data-video-play]');
+
+
+video.addEventListener('play', () => {
+  playButton.style.display = 'none';
+  video.setAttribute('controls', true)
+});
+
+video.addEventListener('pause', () => {
+  playButton.style.display = 'block';
+  video.removeAttribute('controls', true)
+});
+
+video.addEventListener('ended', () => {
+  playButton.style.display = 'block';
+});
+
+playButton.addEventListener('click', () => {
+  if (video.paused) {
+    video.play();
+
+  } else {
+    video.pause();
+  }
+});

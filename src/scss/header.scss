@@ -1,18 +1,415 @@
 //====================================================================================================
+.header {
+	border: 1px solid transparent;
+	&__adv {
+		position: relative;
+		display: none;
+		padding: rem(10) 0;
+		background: linear-gradient(0deg, #232323, #232323), #d34b22;
+		overflow: hidden;
+
+		&_active {
+			@media (min-width: $tablet) {
+				display: block;
+			}
+		}
+	}
+
+	&__redbarn {
+		position: relative;
+		width: rem(61);
+		margin-right: rem(15);
+		img {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+		}
+	}
+
+	&__close-adv {
+		position: absolute;
+		top: 50%;
+		right: rem(24);
+		transform: translateY(-50%);
+		background-color: transparent;
+
+		svg {
+			width: rem(10);
+			height: rem(10);
+			stroke: #ffffff;
+		}
+	}
+
+	&__container {
+		align-items: center;
+
+		&_adv {
+			display: flex;
+			justify-content: center;
+			column-gap: rem(13);
+		}
+
+		&_main {
+			display: grid;
+			
+			grid-template-columns: auto auto 1fr;
+			justify-content: space-between;
+			column-gap: rem(10);
+			// height: rem(56);
+
+			@media (min-width: $tablet) {
+				grid-template-columns: auto 1fr auto;
+			}
+			@media (min-width: $mobile) {
+				// grid-template-columns: auto auto 1fr auto;
+				grid-auto-flow: column;
+				column-gap: rem(20);
+				height: rem(72);
+			}
+
+			@media (max-width: $mobile) {
+				padding: rem(19) rem(8);
+			}
+		}
+	}
+
+	&__podcast {
+		display: flex;
+		align-items: center;
+		column-gap: rem(12);
+		font-size: rem(14);
+		font-weight: 500;
+		color: #ffccbd;
+	}
+
+	&__podcast-icon {
+		width: rem(12);
+		height: rem(19);
+		fill: currentColor;
+	}
+
+	&__logo {
+	}
+
+	&__look {
+		column-gap: rem(8);
+		font-size: rem(14);
+		font-weight: 500;
+
+		@media (max-width: $mobile) {
+			display: none;
+		}
+
+		&_hide {
+			display: none;
+		}
+	}
+
+	&__eyes {
+		width: 100%;
+		max-width: rem(24);
+	}
+
+	&__panel {
+		display: flex;
+		justify-content: end;
+		align-items: center;
+		column-gap: rem(24);
+	}
+
+	&__switcher {
+		margin-right: rem(38);
+	}
+
+	&__search-icon {
+		width: rem(17);
+		height: rem(18);
+
+		@media (min-width: $mobile) {
+			width: rem(22);
+			height: rem(23);
+		}
+	}
+
+	&__login {
+		@media (min-width: $mobile) {
+			column-gap: rem(8);
+			font-size: rem(16);
+			font-weight: 500;
+		}
+		svg {
+			width: rem(18);
+			height: rem(18);
+			fill: currentColor;
+
+			@media (min-width: $mobile) {
+				width: rem(23);
+				height: rem(24);
+			}
+		}
+
+		span {
+			@media (max-width: $mobile) {
+				display: none;
+			}
+		}
+	}
+}
+
+.go-podcast {
+	column-gap: rem(9);
+	font-size: rem(14);
+
+	&_font_wieght {
+		font-weight: 700;
+	}
+
+	&_color_white {
+		color: #ffffff;
+	}
+
+	&_color_gray {
+		color: #b8916d;
+	}
+
+	&__icon {
+		width: rem(6);
+		height: rem(9);
+		margin-top: rem(1);
+		stroke: currentColor;
+	}
+}
+
+.choice-theme {
+	position: relative;
+	display: flex;
+	align-items: center;
+	column-gap: rem(10);
+
+	&_hide {
+		display: none;
+	}
+
+	&__button {
+		&_light {
+			svg {
+				width: rem(18);
+				height: rem(18);
+
+				@media (min-width: $mobile) {
+					width: rem(26);
+					height: rem(26);
+				}
+			}
+		}
+
+		&_dark {
+			svg {
+				width: rem(14);
+				height: rem(18);
+
+				@media (min-width: $mobile) {
+					width: rem(16);
+					height: rem(26);
+				}
+			}
+		}
+
+		&_active {
+			@media (max-width: $mobile) {
+				display: none;
+			}
+		}
+	}
+
+	&__switcher {
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 0;
+		width: 0;
+		visibility: hidden;
+	}
+
+	&__label {
+		position: relative;
+		display: block;
+		width: rem(42);
+		height: rem(24);
+		border: 2px solid;
+		border-radius: 42px;
+		cursor: pointer;
+		text-indent: -9999px;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: rem(2);
+			left: rem(2);
+			width: rem(16);
+			height: rem(16);
+			background-color: #252525;
+			border-radius: 90px;
+			transition: 0.3s;
+		}
+	}
+
+	input:checked + label::after {
+		left: calc(100% - 2px);
+		transform: translateX(-100%);
+	}
+}
+
+//------------
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input {
+	display: block;
+	width: 100%;
+	height: rem(48);
+
+	padding: rem(16) rem(13);
+	border: 1px solid #ebebeb;
+	border-radius: 4px;
+	background-color: #f0f0f0;
+	&._form-focus {
+	}
+	&._form-error {
+	}
+}
+textarea.input {
+	resize: none;
+	padding: 0px 0px;
+}
+
+.header {
+	&__search {
+		display: none;
+		justify-self: end;
+		width: 100%;
+		max-width: rem(832);
+
+		@media (max-width: $mobile) {
+			order: 1;
+			grid-column: 1/-1;
+			margin-top: rem(19)
+		}
+
+		&_active {
+			display: flex;
+		}
+	}
+}
+.search-form {
+	&__input {
+		flex: 1 1 auto;
+		border-radius: 4px 0 0 4px !important;
+	}
+
+	&__button {
+		padding: rem(12) rem(16);
+		border-radius: 0px 4px 4px 0px;
+		color: #ffffff;
+		background-color: #d1aa7c;
+	}
+}
 
 //====================================================================================================
 
+body[data-theme="light"] {
+	.header__look {
+		color: #252525;
+	}
+	.header__search-icon {
+		fill: #252525;
+	}
+	.header__login {
+		color: #252525;
+	}
+
+	.choice-theme {
+		&__label {
+			border-color: #252525;
+
+			&::after {
+				background-color: #252525;
+			}
+		}
+	}
+
+	.choice-theme__button {
+		svg {
+			fill: #979797;
+		}
+
+		&_active {
+			svg {
+				fill: #252525;
+			}
+		}
+	}
+}
+
+body[data-theme="dark"] {
+	.header {
+		border-color: #413e3c;
+		background-color: #2b2929;
+	}
+	.header__look {
+		color: #d1cdc9;
+	}
+	.header__search-icon {
+		fill: #d1cdc9;
+	}
+	.header__login {
+		color: #d1cdc9;
+	}
+	.choice-theme {
+		&__label {
+			border-color: #d1aa7c;
+
+			&::after {
+				background-color: #d1aa7c;
+			}
+		}
+	}
+	.choice-theme__button {
+		svg {
+			fill: #787574;
+		}
+
+		&_active {
+			svg {
+				fill: #d1aa7c;
+			}
+		}
+	}
+}
+
 //Burger
-/*
+
 .icon-menu {
 	display: none;
-	@media (max-width: $mobile) {
+	@media (max-width: $tablet) {
 		display: block;
 		position: relative;
-		width: rem(30);
-		height: rem(18);
+		width: rem(18);
+		height: rem(14);
 		cursor: pointer;
-		z-index: 5;
+		z-index: 9;
 		span,
 		&::before,
 		&::after {
@@ -22,7 +419,8 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #000;
+			border-radius: 2px;
+			background-color: #252525;
 		}
 		&::before {
 			top: 0;
@@ -33,7 +431,8 @@
 		span {
 			top: calc(50% - rem(1));
 		}
-		.menu-open & {
+
+		&_active {
 			span {
 				width: 0;
 			}
@@ -51,4 +450,3 @@
 		}
 	}
 }
-*/

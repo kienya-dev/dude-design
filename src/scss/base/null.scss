@@ -22,7 +22,6 @@ body {
 	min-width: $minWidth + px;
 }
 body {
-	color: $mainColor;
 	line-height: 1;
 	font-family: $fontFamily;
 	font-size: $fontSize;
@@ -68,4 +67,12 @@ h5,
 h6 {
 	font-weight: inherit;
 	font-size: inherit;
+}
+
+body[data-theme="light"] {
+	color: $mainColor;
+}
+
+body[data-theme="dark"] {
+	color: #aba6a5;
 }
