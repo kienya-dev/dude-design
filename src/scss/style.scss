@@ -48,7 +48,7 @@ $responsiveType: 1;
 // Обнуление и общие параметры ============================================================================================================================================================================================== =============================================================================================== ===============================================================================================
 @import "base/null";
 
-.lock  {
+.lock {
 	overflow: hidden;
 	touch-action: none;
 }
@@ -90,12 +90,13 @@ body {
 
 		@media (min-width: $tablet) {
 			display: flex;
-			justify-content: space-between;			
+			justify-content: space-between;
 		}
 	}
 
 	&__main {
 		flex: 1 1 rem(640);
+		overflow: hidden;
 	}
 
 	&__aside {
@@ -112,20 +113,18 @@ body {
 				width: rem(254);
 				max-height: 100vh;
 				min-height: 100%;
-				padding: rem(16);
 				z-index: 99;
 				overflow: scroll auto;
 				overflow-x: auto;
 				visibility: hidden;
-				background-color: #ffffff;
 				transition: left 0.3s, visibility 0.3s;
-			}			
+			}
 		}
 
-		&_active{
+		&_active {
 			@media (max-width: $tablet) {
-			left: 0;
-			visibility: visible;			
+				left: 0;
+				visibility: visible;
 			}
 		}
 
@@ -159,12 +158,6 @@ body[data-theme="dark"] {
 
 // Ограничивающий контейнер ======================================================================================================================================================================================================================
 
-/*
-(i) Стили будут применяться ко 
-всем классам содержащим *__container
-Например header__container, main__container и т.д.
-Снипет (HTML): cnt
-*/
 [class*="__container"] {
 	@if ($maxWidthContainer>0) {
 		max-width: rem($maxWidthContainer);
@@ -178,6 +171,43 @@ body[data-theme="dark"] {
 	}
 }
 
+//------------
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input {
+	display: block;
+	width: 100%;
+	height: rem(48);
+	padding: rem(16) rem(13);
+	border-radius: 4px;
+	color: #757a84;
+	transition: border-color 0.3s;
+
+	&::placeholder {
+		transition: color 0.3s;
+	}
+
+	&:focus {
+		border-color: #d1aa7c !important;
+		&::placeholder {
+			color: transparent;
+		}
+	}
+	&._form-focus {
+	}
+	&._form-error {
+	}
+}
+textarea.input {
+	resize: none;
+	padding: 0px 0px;
+}
 
 // Подключение стилей общих элементов проекта
 @import "common";
@@ -186,8 +216,9 @@ body[data-theme="dark"] {
 @import "header";
 @import "footer";
 @import "aside";
-
+@import "popup";
 // Подключение стилей отдельных страниц
 @import "home";
 
-
+@import "light";
+@import "dark";

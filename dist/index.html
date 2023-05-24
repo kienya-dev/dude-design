@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230522074017">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230524092546">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,11 +45,17 @@
 				<div class="icon-menu">
 					<span></span>
 				</div>
-				<a href="/" class="header__logo logo">
-					<svg class="icon">
-						<use xlink:href="img/icons/sprite.svg#i-logo"></use>
-					</svg>
-				</a>
+
+				<!-- logo oбернул в div-->
+				<div class="header__logo">
+					<a href="/" class="header__logo logo">
+						<svg class="icon">
+							<use xlink:href="img/icons/sprite.svg#i-logo"></use>
+						</svg>
+					</a>
+				</div>
+				<!-- logo oбернул в div-->
+
 				<form class="header__search search-form" data-search-form>
 					<input type="text" class="input search-form__input" placeholder="Что ищем?">
 					<button class="button search-form__button">Искать</button>
@@ -80,12 +86,16 @@
 							<use xlink:href="img/icons/sprite.svg#i-search"></use>
 						</svg>
 					</button>
-					<button class="button header__login">
+
+					<!--Добавил data атрибут (data-authorization-button) на кнопку войти-->
+					<button class="button header__login" data-authorization-button>
 						<svg class="icon header__login-icon">
 							<use xlink:href="img/icons/sprite.svg#i-user"></use>
 						</svg>
 						<span>Войти</span>
 					</button>
+					<!--Добавил data атрибут (data-authorization-button) на кнопку войти-->
+
 				</div>
 
 
@@ -94,6 +104,20 @@
 		<div class="app__page">
 			<div class="app__container">
 				<aside class="aside app__aside app__aside_left" data-nav-menu>
+
+					<!--Добавил блок с логотипом и бургер меню-->
+					<div class="aside__head">
+						<div class="icon-menu">
+							<span></span>
+						</div>
+						<a href="/" class="header__logo logo">
+							<svg class="icon">
+								<use xlink:href="img/icons/sprite.svg#i-logo"></use>
+							</svg>
+						</a>
+					</div>
+					<!--Добавил блок с логотипом и бургер меню-->
+
 					<div class="menu">
 						<h2 class="title title_size_24 title_wight_bold title_color_252525 aside__title menu__title">
 							<svg class="icon">
@@ -225,7 +249,7 @@
 											<svg class="icon">
 												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
 											</svg>
-											<span>1</span>
+											<span>3</span>
 										</div>
 									</div>
 
@@ -237,7 +261,7 @@
 											<svg class="icon">
 												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
 											</svg>
-											<span>1</span>
+											<span>2</span>
 										</div>
 									</div>
 
@@ -249,7 +273,7 @@
 											<svg class="icon">
 												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
 											</svg>
-											<span>1</span>
+											<span>5</span>
 										</div>
 									</div>
 
@@ -273,7 +297,7 @@
 											<svg class="icon">
 												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
 											</svg>
-											<span>1</span>
+											<span>2</span>
 										</div>
 									</div>
 									<div class="swiper-slide stories-card">
@@ -284,7 +308,7 @@
 											<svg class="icon">
 												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
 											</svg>
-											<span>1</span>
+											<span>3</span>
 										</div>
 									</div>
 								</div>
@@ -294,6 +318,7 @@
 					</section>
 
 					<section class="main__wall">
+
 						<div class="post post_theme_default">
 							<a href="#" class="post__link">
 								<figure class="post__img">
@@ -413,12 +438,71 @@
 							<div class="post-info">
 								<div class="post-info__row post-info__row_panel">
 									<span class="button button_size_small button_theme_black">Спецпроект</span>
-									<button class="button button_size_small button_share button_share_black">
-										<svg class="icon">
-											<use xlink:href="img/icons/sprite.svg#i-share"></use>
-										</svg>
-										<span>поделиться</span>
-									</button>
+
+									<!-- Изменил структуру post-info__share-->
+									<div class="post-info__share">
+										<button class="button button_size_small button_share button_share_black" data-share-post>
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-share"></use>
+											</svg>
+											<span>поделиться</span>
+										</button>
+
+										<ul class="share-post">
+											<li class="share-post__item share-post__item_link">
+												<button class="share-post__link share-post__link_copy">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-link"></use>
+														</svg>
+													</div>
+													<span>Копировать ссылку</span>
+												</button>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_twitter">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+														</svg>
+													</div>
+													<span>Твиттер</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_telegram">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+														</svg>
+													</div>
+													<span>Телеграмм</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_facebook">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+														</svg>
+													</div>
+													<span>Фейсбук</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_vk">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+														</svg>
+													</div>
+													<span>Вконтакте</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<!-- Изменил структуру post-info__share-->
+
 								</div>
 								<div class="post-info__row post-info__row_nums">
 									<div class="post-info__num post-info__num_theme_black post-info__num_views">
@@ -428,48 +512,6 @@
 										<span>2012</span>
 									</div>
 								</div>
-								<ul class="share-post share-post_active">
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_twitter">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
-												</svg>
-											</div>
-											<span>Твиттер</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_telegram">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
-												</svg>
-											</div>
-											<span>Телеграмм</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_facebook">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
-												</svg>
-											</div>
-											<span>Фейсбук</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_vk">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-vk"></use>
-												</svg>
-											</div>
-											<span>Вконтакте</span>
-										</a>
-									</li>
-								</ul>
 							</div>
 						</div>
 
@@ -646,12 +688,67 @@
 									<span class="button button_size_small button_theme_light-red">
 										Видео
 									</span>
-									<button class="button button_size_small button_share button_share_black">
-										<svg class="icon">
-											<use xlink:href="img/icons/sprite.svg#i-share"></use>
-										</svg>
-										<span>поделиться</span>
-									</button>
+									<div class="post-info__share">
+										<button class="button button_size_small button_share button_share_black" data-share-post>
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-share"></use>
+											</svg>
+											<span>поделиться</span>
+										</button>
+
+										<ul class="share-post">
+											<li class="share-post__item share-post__item_link">
+												<button class="share-post__link share-post__link_copy">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-link"></use>
+														</svg>
+													</div>
+													<span>Копировать ссылку</span>
+												</button>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_twitter">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+														</svg>
+													</div>
+													<span>Твиттер</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_telegram">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+														</svg>
+													</div>
+													<span>Телеграмм</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_facebook">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+														</svg>
+													</div>
+													<span>Фейсбук</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_vk">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+														</svg>
+													</div>
+													<span>Вконтакте</span>
+												</a>
+											</li>
+										</ul>
+									</div>
 								</div>
 								<div class="post-info__row post-info__row_nums">
 									<div class="post-info__num post-info__num_theme_black post-info__num_views">
@@ -667,48 +764,7 @@
 										<span>102</span>
 									</div>
 								</div>
-								<ul class="share-post share-post_active">
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_twitter">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
-												</svg>
-											</div>
-											<span>Твиттер</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_telegram">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
-												</svg>
-											</div>
-											<span>Телеграмм</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_facebook">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
-												</svg>
-											</div>
-											<span>Фейсбук</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_vk">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-vk"></use>
-												</svg>
-											</div>
-											<span>Вконтакте</span>
-										</a>
-									</li>
-								</ul>
+
 							</div>
 						</div>
 
@@ -774,12 +830,68 @@
 							<div class="post-info">
 								<div class="post-info__row post-info__row_panel">
 									<a href="#" class="button button_size_small button_theme_black">Спецпроект</a>
-									<button class="button button_size_small button_share button_share_white">
-										<svg class="icon">
-											<use xlink:href="img/icons/sprite.svg#i-share"></use>
-										</svg>
-										<span>поделиться</span>
-									</button>
+
+									<div class="post-info__share">
+										<button class="button button_size_small button_share button_share_white" data-share-post>
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-share"></use>
+											</svg>
+											<span>поделиться</span>
+										</button>
+
+										<ul class="share-post">
+											<li class="share-post__item share-post__item_link">
+												<button class="share-post__link share-post__link_copy">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-link"></use>
+														</svg>
+													</div>
+													<span>Копировать ссылку</span>
+												</button>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_twitter">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+														</svg>
+													</div>
+													<span>Твиттер</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_telegram">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+														</svg>
+													</div>
+													<span>Телеграмм</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_facebook">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+														</svg>
+													</div>
+													<span>Фейсбук</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_vk">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+														</svg>
+													</div>
+													<span>Вконтакте</span>
+												</a>
+											</li>
+										</ul>
+									</div>
 								</div>
 								<div class="post-info__row post-info__row_nums">
 									<div class="post-info__num post-info__num_theme_white post-info__num_views">
@@ -790,48 +902,7 @@
 									</div>
 								</div>
 
-								<ul class="share-post share-post_active">
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_twitter">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
-												</svg>
-											</div>
-											<span>Твиттер</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_telegram">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
-												</svg>
-											</div>
-											<span>Телеграмм</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_facebook">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
-												</svg>
-											</div>
-											<span>Фейсбук</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_vk">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-vk"></use>
-												</svg>
-											</div>
-											<span>Вконтакте</span>
-										</a>
-									</li>
-								</ul>
+
 							</div>
 						</div>
 
@@ -1048,7 +1119,274 @@
 		</div>
 	</div>
 	<div class="overlay"></div>
-	<script src="js/app.min.js?_v=20230522074017"></script>
+	<div class="popup popup_stories" data-popup-stories>
+		<div class="popup__wrapper">
+			<div class="popup__body popup__body_stories">
+				<button data-close type="button" class="popup__close popup__close_stories popup__close_active">
+					<span></span>
+				</button>
+				<div class="popup__content">
+					<div class="swiper stories-carousel" data-stories-carousel>
+						<div class="swiper-wrapper">
+							<div class="swiper-slide stories-carousel__story">
+								<div class="stories-carousel__head">
+									<span>Тут красивое название Lorem ipsum dolor sit amet.</span>
+								</div>
+								<div class="stories-carousel__images swiper" data-story-slider>
+									<div class="swiper-wrapper">
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_1.webp" type="image/webp"><img src="img/stories/stories_img_1.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_1.webp" type="image/webp"><img src="img/stories/stories_img_1.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_1.webp" type="image/webp"><img src="img/stories/stories_img_1.jpg" alt=""></picture>
+										</figure>
+									</div>
+									<div class="swiper-pagination"></div>
+									<div class="autoplay-progress">
+										<svg viewBox="0 0 48 48">
+											<circle cx="24" cy="24" r="20"></circle>
+										</svg>
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-slide stories-carousel__story">
+								<div class="stories-carousel__head">
+									<span>Тут красивое название Lorem ipsum dolor sit amet.</span>
+								</div>
+								<div class="stories-carousel__images swiper" data-story-slider>
+									<div class="swiper-wrapper">
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_2.webp" type="image/webp"><img src="img/stories/stories_img_2.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_2.webp" type="image/webp"><img src="img/stories/stories_img_2.jpg" alt=""></picture>
+										</figure>
+									</div>
+									<div class="swiper-pagination"></div>
+									<div class="autoplay-progress">
+										<svg viewBox="0 0 48 48">
+											<circle cx="24" cy="24" r="20"></circle>
+										</svg>
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-slide stories-carousel__story">
+								<div class="stories-carousel__head">
+									<span>Тут красивое название Lorem ipsum dolor sit amet.</span>
+								</div>
+								<div class="stories-carousel__images swiper" data-story-slider>
+									<div class="swiper-wrapper">
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+									</div>
+									<div class="swiper-pagination"></div>
+									<div class="autoplay-progress">
+										<svg viewBox="0 0 48 48">
+											<circle cx="24" cy="24" r="20"></circle>
+										</svg>
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-slide stories-carousel__story">
+								<div class="stories-carousel__head">
+									<span>Тут красивое название Lorem ipsum dolor sit amet.</span>
+								</div>
+								<div class="stories-carousel__images swiper" data-story-slider>
+									<div class="swiper-wrapper">
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_4.webp" type="image/webp"><img src="img/stories/stories_img_4.jpg" alt=""></picture>
+										</figure>
+									</div>
+									<div class="swiper-pagination"></div>
+									<div class="autoplay-progress">
+										<svg viewBox="0 0 48 48">
+											<circle cx="24" cy="24" r="20"></circle>
+										</svg>
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-slide stories-carousel__story">
+								<div class="stories-carousel__head">
+									<span>Тут красивое название Lorem ipsum dolor sit amet.</span>
+								</div>
+								<div class="stories-carousel__images swiper" data-story-slider>
+									<div class="swiper-wrapper">
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+									</div>
+									<div class="swiper-pagination"></div>
+									<div class="autoplay-progress">
+										<svg viewBox="0 0 48 48">
+											<circle cx="24" cy="24" r="20"></circle>
+										</svg>
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-slide stories-carousel__story">
+								<div class="stories-carousel__head">
+									<span>Тут красивое название Lorem ipsum dolor sit amet.</span>
+								</div>
+								<div class="stories-carousel__images swiper" data-story-slider>
+									<div class="swiper-wrapper">
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_2.webp" type="image/webp"><img src="img/stories/stories_img_2.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_2.webp" type="image/webp"><img src="img/stories/stories_img_2.jpg" alt=""></picture>
+										</figure>
+									</div>
+									<div class="swiper-pagination"></div>
+									<div class="autoplay-progress">
+										<svg viewBox="0 0 48 48">
+											<circle cx="24" cy="24" r="20"></circle>
+										</svg>
+										<span></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup popup_authorization" data-popup-authorization>
+		<div class="popup__wrapper">
+			<div class="popup__body popup__body_authorization">
+				<div class="popup__content popup__content_authorization">
+					<button data-close type="button" class="popup__close popup__close_authorization popup__close_active">
+					</button>
+					<div class="authorization authorization_active" data-authorization-form>
+						<h4 class="title title_size_32 title_wight_bold title_color_131313 authorization__title">Вход</h4>
+						<span class="authorization__text">Авторизоваться через соцсети</span>
+						<div class="authorization__socials">
+							<button class="button authorization__social authorization__social_facebook">
+								<svg class="icon">
+									<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+								</svg>
+							</button>
+							<button class="button authorization__social authorization__social_vk">
+								<svg class="icon">
+									<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+								</svg>
+							</button>
+							<button class="button authorization__social authorization__social_twitter">
+								<svg class="icon">
+									<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+								</svg>
+							</button>
+						</div>
+						<form class="authorization__form ">
+							<label for="login" class="authorization__label authorization__label_login">
+								<span class="authorization__text">Логин или E-mail</span>
+								<input type="text" id="login" placeholder="test@test.ru" class="input">
+							</label>
+							<label for="password" class="authorization__label authorization__label_password">
+								<span class="authorization__text">Пароль</span>
+								<span class="authorization__icon-password authorization__icon-password_hide">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-show-password"></use>
+									</svg>
+								</span>
+								<input type="password" id="password" placeholder="••••••••••" class="input">
+							</label>
+							<label class="authorization__label authorization__label_person-data">
+								<p>Я даю согласие на обработку <a href="#">персональных данных</a></p>
+								<input type="checkbox">
+								<span class="authorization__checkmark"></span>
+							</label>
+							<button class="button authorization__send">Войти</button>
+						</form>
+						<div class="authorization__bottom">
+							<button class="authorization__button authorization__button_theme_gray" data-recovery-button>Забыли пароль?</button>
+							<button class="authorization__button authorization__button_theme_blue" data-register-button>Регистрация</button>
+						</div>
+					</div>
+					<!--Регистрация-->
+					<div class="authorization" data-register-form>
+						<h4 class="title title_size_32 title_wight_bold title_color_131313 authorization__title">Регистрация
+						</h4>
+						<form class="authorization__form ">
+							<label for="register-login" class="authorization__label authorization__label_login">
+								<span class="authorization__text">Логин или E-mail</span>
+								<input type="text" id="register-login" placeholder="test@test.ru" class="input">
+							</label>
+							<label for="register-password" class="authorization__label authorization__label_password">
+								<span class="authorization__text">Пароль</span>
+								<span class="authorization__icon-password authorization__icon-password_hide">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-show-password"></use>
+									</svg>
+								</span>
+								<input type="password" id="register-password" placeholder="••••••••••" class="input">
+							</label>
+							<label class="authorization__label authorization__label_person-data">
+								<p>Я даю согласие на обработку <a href="#">персональных данных</a></p>
+								<input type="checkbox">
+								<span class="authorization__checkmark"></span>
+							</label>
+							<button class="button authorization__send">Войти</button>
+						</form>
+						<div class="authorization__bottom authorization__bottom_right">
+							<button class="authorization__button authorization__button_theme_blue" data-authorization-button>Вход</button>
+						</div>
+					</div>
+					<!--Восстановление пароля-->
+					<div class="authorization" data-recovery-form>
+						<h4 class="title title_size_32 title_wight_bold title_color_131313 authorization__title">
+							Восстановление пароля
+						</h4>
+						<span class="authorizatio__text">
+							Укажи свой E-mail, и мы вышлем тебе новый пароль
+						</span>
+						<form class="authorization__form">
+							<label for="mail" class="authorization__label authorization__label_recovery">
+								<span class="authorization__text">E-mail</span>
+								<input type="text" id="mail" placeholder="test@test.ru" class="input">
+							</label>
+							<button class="button authorization__send">Войти</button>
+						</form>
+						<div class="authorization__bottom">
+							<button class="authorization__button authorization__button_theme_blue" data-authorization-button>Вход</button>
+							<button class="authorization__button authorization__button_theme_blue" data-register-button>Регистрация</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230524092546"></script>
 </body>
 
 </html>

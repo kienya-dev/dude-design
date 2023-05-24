@@ -10,6 +10,20 @@
 		<div class="app__page">
 			<div class="app__container">
 				<aside class="aside app__aside app__aside_left" data-nav-menu>
+
+					<!--Добавил блок с логотипом и бургер меню-->
+					<div class="aside__head">
+						<div class="icon-menu">
+							<span></span>
+						</div>
+						<a href="/" class="header__logo logo">
+							<svg class="icon">
+								<use xlink:href="img/icons/sprite.svg#i-logo"></use>
+							</svg>
+						</a>
+					</div>
+					<!--Добавил блок с логотипом и бургер меню-->
+
 					<div class="menu">
 						<h2 class="title title_size_24 title_wight_bold title_color_252525 aside__title menu__title">
 							<svg class="icon">
@@ -141,7 +155,7 @@
 											<svg class="icon">
 												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
 											</svg>
-											<span>1</span>
+											<span>3</span>
 										</div>
 									</div>
 
@@ -153,7 +167,7 @@
 											<svg class="icon">
 												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
 											</svg>
-											<span>1</span>
+											<span>2</span>
 										</div>
 									</div>
 
@@ -165,7 +179,7 @@
 											<svg class="icon">
 												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
 											</svg>
-											<span>1</span>
+											<span>5</span>
 										</div>
 									</div>
 
@@ -189,7 +203,7 @@
 											<svg class="icon">
 												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
 											</svg>
-											<span>1</span>
+											<span>2</span>
 										</div>
 									</div>
 									<div class="swiper-slide stories-card">
@@ -200,7 +214,7 @@
 											<svg class="icon">
 												<use xlink:href="img/icons/sprite.svg#i-stories"></use>
 											</svg>
-											<span>1</span>
+											<span>3</span>
 										</div>
 									</div>
 								</div>
@@ -210,6 +224,7 @@
 					</section>
 
 					<section class="main__wall">
+
 						<div class="post post_theme_default">
 							<a href="#" class="post__link">
 								<figure class="post__img">
@@ -329,12 +344,71 @@
 							<div class="post-info">
 								<div class="post-info__row post-info__row_panel">
 									<span class="button button_size_small button_theme_black">Спецпроект</span>
-									<button class="button button_size_small button_share button_share_black">
-										<svg class="icon">
-											<use xlink:href="img/icons/sprite.svg#i-share"></use>
-										</svg>
-										<span>поделиться</span>
-									</button>
+																	
+									<!-- Изменил структуру post-info__share-->
+									<div class="post-info__share">
+										<button class="button button_size_small button_share button_share_black" data-share-post>
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-share"></use>
+											</svg>
+											<span>поделиться</span>
+										</button>
+
+										<ul class="share-post">
+											<li class="share-post__item share-post__item_link">
+												<button class="share-post__link share-post__link_copy">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-link"></use>
+														</svg>
+													</div>
+													<span>Копировать ссылку</span>
+												</button>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_twitter">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+														</svg>
+													</div>
+													<span>Твиттер</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_telegram">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+														</svg>
+													</div>
+													<span>Телеграмм</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_facebook">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+														</svg>
+													</div>
+													<span>Фейсбук</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_vk">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+														</svg>
+													</div>
+													<span>Вконтакте</span>
+												</a>
+											</li>
+										</ul>
+									</div>							
+									<!-- Изменил структуру post-info__share-->
+
 								</div>
 								<div class="post-info__row post-info__row_nums">
 									<div class="post-info__num post-info__num_theme_black post-info__num_views">
@@ -343,49 +417,7 @@
 										</svg>
 										<span>2012</span>
 									</div>
-								</div>
-								<ul class="share-post share-post_active">
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_twitter">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
-												</svg>
-											</div>
-											<span>Твиттер</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_telegram">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
-												</svg>
-											</div>
-											<span>Телеграмм</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_facebook">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
-												</svg>
-											</div>
-											<span>Фейсбук</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_vk">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-vk"></use>
-												</svg>
-											</div>
-											<span>Вконтакте</span>
-										</a>
-									</li>
-								</ul>
+								</div>							
 							</div>
 						</div>
 
@@ -566,12 +598,67 @@
 									<span class="button button_size_small button_theme_light-red">
 										Видео
 									</span>
-									<button class="button button_size_small button_share button_share_black">
-										<svg class="icon">
-											<use xlink:href="img/icons/sprite.svg#i-share"></use>
-										</svg>
-										<span>поделиться</span>
-									</button>
+									<div class="post-info__share">
+										<button class="button button_size_small button_share button_share_black" data-share-post>
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-share"></use>
+											</svg>
+											<span>поделиться</span>
+										</button>
+
+										<ul class="share-post">
+											<li class="share-post__item share-post__item_link">
+												<button class="share-post__link share-post__link_copy">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-link"></use>
+														</svg>
+													</div>
+													<span>Копировать ссылку</span>
+												</button>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_twitter">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+														</svg>
+													</div>
+													<span>Твиттер</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_telegram">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+														</svg>
+													</div>
+													<span>Телеграмм</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_facebook">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+														</svg>
+													</div>
+													<span>Фейсбук</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_vk">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+														</svg>
+													</div>
+													<span>Вконтакте</span>
+												</a>
+											</li>
+										</ul>
+									</div>	
 								</div>
 								<div class="post-info__row post-info__row_nums">
 									<div class="post-info__num post-info__num_theme_black post-info__num_views">
@@ -587,48 +674,7 @@
 										<span>102</span>
 									</div>
 								</div>
-								<ul class="share-post share-post_active">
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_twitter">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
-												</svg>
-											</div>
-											<span>Твиттер</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_telegram">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
-												</svg>
-											</div>
-											<span>Телеграмм</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_facebook">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
-												</svg>
-											</div>
-											<span>Фейсбук</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_vk">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-vk"></use>
-												</svg>
-											</div>
-											<span>Вконтакте</span>
-										</a>
-									</li>
-								</ul>
+								
 							</div>
 						</div>
 
@@ -694,12 +740,68 @@
 							<div class="post-info">
 								<div class="post-info__row post-info__row_panel">
 									<a href="#" class="button button_size_small button_theme_black">Спецпроект</a>
-									<button class="button button_size_small button_share button_share_white">
-										<svg class="icon">
-											<use xlink:href="img/icons/sprite.svg#i-share"></use>
-										</svg>
-										<span>поделиться</span>
-									</button>
+									
+									<div class="post-info__share">
+										<button class="button button_size_small button_share button_share_white" data-share-post>
+											<svg class="icon">
+												<use xlink:href="img/icons/sprite.svg#i-share"></use>
+											</svg>
+											<span>поделиться</span>
+										</button>
+
+										<ul class="share-post">
+											<li class="share-post__item share-post__item_link">
+												<button class="share-post__link share-post__link_copy">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-link"></use>
+														</svg>
+													</div>
+													<span>Копировать ссылку</span>
+												</button>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_twitter">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+														</svg>
+													</div>
+													<span>Твиттер</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_telegram">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+														</svg>
+													</div>
+													<span>Телеграмм</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_facebook">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+														</svg>
+													</div>
+													<span>Фейсбук</span>
+												</a>
+											</li>
+											<li class="share-post__item">
+												<a href="#" class="share-post__link share-post__link_vk">
+													<div class="share-post__icon">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+														</svg>
+													</div>
+													<span>Вконтакте</span>
+												</a>
+											</li>
+										</ul>
+									</div>
 								</div>
 								<div class="post-info__row post-info__row_nums">
 									<div class="post-info__num post-info__num_theme_white post-info__num_views">
@@ -710,48 +812,7 @@
 									</div>
 								</div>
 
-								<ul class="share-post share-post_active">
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_twitter">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
-												</svg>
-											</div>
-											<span>Твиттер</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_telegram">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
-												</svg>
-											</div>
-											<span>Телеграмм</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_facebook">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
-												</svg>
-											</div>
-											<span>Фейсбук</span>
-										</a>
-									</li>
-									<li class="share-post__item">
-										<a href="#" class="share-post__link share-post__link_vk">
-											<div class="share-post__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-vk"></use>
-												</svg>
-											</div>
-											<span>Вконтакте</span>
-										</a>
-									</li>
-								</ul>
+								
 							</div>
 						</div>
 
@@ -969,6 +1030,7 @@
 		</div>
 	</div>
 	<div class="overlay"></div>
+	@@include('html/_popup.htm',{})
 	@@include('html/_js.htm',{})
 </body>
 

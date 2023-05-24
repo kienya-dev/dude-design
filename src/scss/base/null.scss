@@ -22,6 +22,7 @@ body {
 	min-width: $minWidth + px;
 }
 body {
+	color: $mainColor;
 	line-height: 1;
 	font-family: $fontFamily;
 	font-size: $fontSize;
@@ -32,6 +33,28 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+input[type="date"],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
 input,
 button,
 textarea {
@@ -68,11 +91,9 @@ h6 {
 	font-weight: inherit;
 	font-size: inherit;
 }
-
-body[data-theme="light"] {
-	color: $mainColor;
-}
-
-body[data-theme="dark"] {
-	color: #aba6a5;
+a,
+button,
+.swiper-slide,
+label {
+	-webkit-tap-highlight-color: transparent;
 }

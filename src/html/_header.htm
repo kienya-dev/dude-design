@@ -23,17 +23,23 @@
 			<svg class="icon">
 				<use xlink:href="img/icons/sprite.svg#i-close"></use>
 			</svg>
-		</button>		
+		</button>
 	</div>
 	<div class="header__container header__container_main">
 		<div class="icon-menu">
 			<span></span>
 		</div>
-		<a href="/" class="header__logo logo">
-			<svg class="icon">
-				<use xlink:href="img/icons/sprite.svg#i-logo"></use>
-			</svg>
-		</a>
+
+		<!-- logo oбернул в div-->
+		<div class="header__logo">
+			<a href="/" class="header__logo logo">
+				<svg class="icon">
+					<use xlink:href="img/icons/sprite.svg#i-logo"></use>
+				</svg>
+			</a>
+		</div>
+		<!-- logo oбернул в div-->
+
 		<form class="header__search search-form" data-search-form>
 			<input type="text" class="input search-form__input" placeholder="Что ищем?">
 			<button class="button search-form__button">Искать</button>
@@ -44,7 +50,8 @@
 		</a>
 		<div class="header__panel">
 			<div class="choice-theme" data-choice-theme>
-				<button class="button choice-theme__button choice-theme__button_light choice-theme__button_active" data-button-theme-light>
+				<button class="button choice-theme__button choice-theme__button_light choice-theme__button_active"
+					data-button-theme-light>
 					<svg class="icon">
 						<use xlink:href="img/icons/sprite.svg#i-light"></use>
 					</svg>
@@ -64,12 +71,16 @@
 					<use xlink:href="img/icons/sprite.svg#i-search"></use>
 				</svg>
 			</button>
-			<button class="button header__login">
+
+			<!--Добавил data атрибут (data-authorization-button) на кнопку войти-->
+			<button class="button header__login" data-authorization-button>
 				<svg class="icon header__login-icon">
 					<use xlink:href="img/icons/sprite.svg#i-user"></use>
 				</svg>
 				<span>Войти</span>
 			</button>
+			<!--Добавил data атрибут (data-authorization-button) на кнопку войти-->
+
 		</div>
 
 

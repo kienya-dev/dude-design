@@ -3120,12 +3120,249 @@
             destroy
         });
     }
+    function Autoplay({swiper, extendParams, on, emit, params}) {
+        swiper.autoplay = {
+            running: false,
+            paused: false,
+            timeLeft: 0
+        };
+        extendParams({
+            autoplay: {
+                enabled: false,
+                delay: 3e3,
+                waitForTransition: true,
+                disableOnInteraction: true,
+                stopOnLastSlide: false,
+                reverseDirection: false,
+                pauseOnMouseEnter: false
+            }
+        });
+        let timeout;
+        let raf;
+        let autoplayDelayTotal = params && params.autoplay ? params.autoplay.delay : 3e3;
+        let autoplayDelayCurrent = params && params.autoplay ? params.autoplay.delay : 3e3;
+        let autoplayTimeLeft;
+        let autoplayStartTime = (new Date).getTime;
+        let wasPaused;
+        let isTouched;
+        let pausedByTouch;
+        let touchStartTimeout;
+        let slideChanged;
+        let pausedByInteraction;
+        function onTransitionEnd(e) {
+            if (!swiper || swiper.destroyed || !swiper.wrapperEl) return;
+            if (e.target !== swiper.wrapperEl) return;
+            swiper.wrapperEl.removeEventListener("transitionend", onTransitionEnd);
+            resume();
+        }
+        const calcTimeLeft = () => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            if (swiper.autoplay.paused) wasPaused = true; else if (wasPaused) {
+                autoplayDelayCurrent = autoplayTimeLeft;
+                wasPaused = false;
+            }
+            const timeLeft = swiper.autoplay.paused ? autoplayTimeLeft : autoplayStartTime + autoplayDelayCurrent - (new Date).getTime();
+            swiper.autoplay.timeLeft = timeLeft;
+            emit("autoplayTimeLeft", timeLeft, timeLeft / autoplayDelayTotal);
+            raf = requestAnimationFrame((() => {
+                calcTimeLeft();
+            }));
+        };
+        const getSlideDelay = () => {
+            let activeSlideEl;
+            if (swiper.virtual && swiper.params.virtual.enabled) activeSlideEl = swiper.slides.filter((slideEl => slideEl.classList.contains("swiper-slide-active")))[0]; else activeSlideEl = swiper.slides[swiper.activeIndex];
+            if (!activeSlideEl) return;
+            const currentSlideDelay = parseInt(activeSlideEl.getAttribute("data-swiper-autoplay"), 10);
+            return currentSlideDelay;
+        };
+        const run = delayForce => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            cancelAnimationFrame(raf);
+            calcTimeLeft();
+            let delay = typeof delayForce === "undefined" ? swiper.params.autoplay.delay : delayForce;
+            autoplayDelayTotal = swiper.params.autoplay.delay;
+            autoplayDelayCurrent = swiper.params.autoplay.delay;
+            const currentSlideDelay = getSlideDelay();
+            if (!Number.isNaN(currentSlideDelay) && currentSlideDelay > 0 && typeof delayForce === "undefined") {
+                delay = currentSlideDelay;
+                autoplayDelayTotal = currentSlideDelay;
+                autoplayDelayCurrent = currentSlideDelay;
+            }
+            autoplayTimeLeft = delay;
+            const speed = swiper.params.speed;
+            const proceed = () => {
+                if (!swiper || swiper.destroyed) return;
+                if (swiper.params.autoplay.reverseDirection) {
+                    if (!swiper.isBeginning || swiper.params.loop || swiper.params.rewind) {
+                        swiper.slidePrev(speed, true, true);
+                        emit("autoplay");
+                    } else if (!swiper.params.autoplay.stopOnLastSlide) {
+                        swiper.slideTo(swiper.slides.length - 1, speed, true, true);
+                        emit("autoplay");
+                    }
+                } else if (!swiper.isEnd || swiper.params.loop || swiper.params.rewind) {
+                    swiper.slideNext(speed, true, true);
+                    emit("autoplay");
+                } else if (!swiper.params.autoplay.stopOnLastSlide) {
+                    swiper.slideTo(0, speed, true, true);
+                    emit("autoplay");
+                }
+                if (swiper.params.cssMode) {
+                    autoplayStartTime = (new Date).getTime();
+                    requestAnimationFrame((() => {
+                        run();
+                    }));
+                }
+            };
+            if (delay > 0) {
+                clearTimeout(timeout);
+                timeout = setTimeout((() => {
+                    proceed();
+                }), delay);
+            } else requestAnimationFrame((() => {
+                proceed();
+            }));
+            return delay;
+        };
+        const start = () => {
+            swiper.autoplay.running = true;
+            run();
+            emit("autoplayStart");
+        };
+        const stop = () => {
+            swiper.autoplay.running = false;
+            clearTimeout(timeout);
+            cancelAnimationFrame(raf);
+            emit("autoplayStop");
+        };
+        const pause = (internal, reset) => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            clearTimeout(timeout);
+            if (!internal) pausedByInteraction = true;
+            const proceed = () => {
+                emit("autoplayPause");
+                if (swiper.params.autoplay.waitForTransition) swiper.wrapperEl.addEventListener("transitionend", onTransitionEnd); else resume();
+            };
+            swiper.autoplay.paused = true;
+            if (reset) {
+                if (slideChanged) autoplayTimeLeft = swiper.params.autoplay.delay;
+                slideChanged = false;
+                proceed();
+                return;
+            }
+            const delay = autoplayTimeLeft || swiper.params.autoplay.delay;
+            autoplayTimeLeft = delay - ((new Date).getTime() - autoplayStartTime);
+            if (swiper.isEnd && autoplayTimeLeft < 0 && !swiper.params.loop) return;
+            if (autoplayTimeLeft < 0) autoplayTimeLeft = 0;
+            proceed();
+        };
+        const resume = () => {
+            if (swiper.isEnd && autoplayTimeLeft < 0 && !swiper.params.loop || swiper.destroyed || !swiper.autoplay.running) return;
+            autoplayStartTime = (new Date).getTime();
+            if (pausedByInteraction) {
+                pausedByInteraction = false;
+                run(autoplayTimeLeft);
+            } else run();
+            swiper.autoplay.paused = false;
+            emit("autoplayResume");
+        };
+        const onVisibilityChange = () => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            const document = ssr_window_esm_getDocument();
+            if (document.visibilityState === "hidden") {
+                pausedByInteraction = true;
+                pause(true);
+            }
+            if (document.visibilityState === "visible") resume();
+        };
+        const onPointerEnter = e => {
+            if (e.pointerType !== "mouse") return;
+            pausedByInteraction = true;
+            pause(true);
+        };
+        const onPointerLeave = e => {
+            if (e.pointerType !== "mouse") return;
+            if (swiper.autoplay.paused) resume();
+        };
+        const attachMouseEvents = () => {
+            if (swiper.params.autoplay.pauseOnMouseEnter) {
+                swiper.el.addEventListener("pointerenter", onPointerEnter);
+                swiper.el.addEventListener("pointerleave", onPointerLeave);
+            }
+        };
+        const detachMouseEvents = () => {
+            swiper.el.removeEventListener("pointerenter", onPointerEnter);
+            swiper.el.removeEventListener("pointerleave", onPointerLeave);
+        };
+        const attachDocumentEvents = () => {
+            const document = ssr_window_esm_getDocument();
+            document.addEventListener("visibilitychange", onVisibilityChange);
+        };
+        const detachDocumentEvents = () => {
+            const document = ssr_window_esm_getDocument();
+            document.removeEventListener("visibilitychange", onVisibilityChange);
+        };
+        on("init", (() => {
+            if (swiper.params.autoplay.enabled) {
+                attachMouseEvents();
+                attachDocumentEvents();
+                autoplayStartTime = (new Date).getTime();
+                start();
+            }
+        }));
+        on("destroy", (() => {
+            detachMouseEvents();
+            detachDocumentEvents();
+            if (swiper.autoplay.running) stop();
+        }));
+        on("beforeTransitionStart", ((_s, speed, internal) => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            if (internal || !swiper.params.autoplay.disableOnInteraction) pause(true, true); else stop();
+        }));
+        on("sliderFirstMove", (() => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            if (swiper.params.autoplay.disableOnInteraction) {
+                stop();
+                return;
+            }
+            isTouched = true;
+            pausedByTouch = false;
+            pausedByInteraction = false;
+            touchStartTimeout = setTimeout((() => {
+                pausedByInteraction = true;
+                pausedByTouch = true;
+                pause(true);
+            }), 200);
+        }));
+        on("touchEnd", (() => {
+            if (swiper.destroyed || !swiper.autoplay.running || !isTouched) return;
+            clearTimeout(touchStartTimeout);
+            clearTimeout(timeout);
+            if (swiper.params.autoplay.disableOnInteraction) {
+                pausedByTouch = false;
+                isTouched = false;
+                return;
+            }
+            if (pausedByTouch && swiper.params.cssMode) resume();
+            pausedByTouch = false;
+            isTouched = false;
+        }));
+        on("slideChange", (() => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            slideChanged = true;
+        }));
+        Object.assign(swiper.autoplay, {
+            start,
+            stop,
+            pause,
+            resume
+        });
+    }
     function initSliders() {
         if (document.querySelector("[data-post-slider]")) new core("[data-post-slider]", {
             modules: [ Navigation, Pagination ],
             slidesPerView: 1,
             spaceBetween: 20,
-            autoHeight: true,
             speed: 800,
             loop: true,
             pagination: {
@@ -3147,6 +3384,80 @@
                 nextEl: "[data-stories-slider-right]"
             }
         });
+        if (document.querySelector("[data-stories-carousel]")) var carousel = new core("[data-stories-carousel]", {
+            effect: "fade",
+            allowTouchMove: false,
+            speed: 200,
+            spaceBetween: 40,
+            slidesPerView: 3,
+            centeredSlides: true,
+            clickable: true,
+            breakpoints: {
+                10: {
+                    slidesPerView: 1
+                },
+                991.98: {
+                    slidesPerView: 2
+                },
+                1399.98: {
+                    slidesPerView: 3
+                }
+            }
+        });
+        if (document.querySelector("[data-story-slider]")) {
+            const progressCircle = document.querySelector(".autoplay-progress svg");
+            const progressContent = document.querySelector(".autoplay-progress span");
+            new core("[data-story-slider]", {
+                effect: "fade",
+                speed: 800,
+                modules: [ Autoplay, Pagination ],
+                delay: 4e3,
+                finite: true,
+                loop: false,
+                spaceBetween: 0,
+                slidesPerView: 1,
+                centeredSlides: true,
+                clickable: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true
+                },
+                on: {
+                    autoplayTimeLeft(s, time, progress) {
+                        progressCircle.style.setProperty("--progress", 1 - progress);
+                        progressContent.textContent = `${Math.ceil(time / 1e3)}s`;
+                    }
+                }
+            });
+        }
+        const authorizationPopup = document.querySelector("[data-popup-authorization]");
+        const showAuthorizationPopupButton = document.querySelector("[data-authorization-button]");
+        const storiesPopup = document.querySelector("[data-popup-stories]");
+        const showPopup = popup => {
+            const closeButton = popup.querySelector("[data-close]");
+            popup.classList.add("popup_show");
+            document.body.classList.add("lock");
+            popup.addEventListener("click", (event => {
+                if (!event.target.closest(".popup__content")) closePopup(popup);
+            }));
+            closeButton.addEventListener("click", (() => closePopup(popup)));
+        };
+        const closePopup = popup => {
+            popup.classList.remove("popup_show");
+            document.body.classList.remove("lock");
+        };
+        showAuthorizationPopupButton.addEventListener("click", (() => showPopup(authorizationPopup)));
+        const storiesCards = document.querySelectorAll(".stories-card");
+        storiesCards.forEach(((card, idx) => card.addEventListener("click", (() => {
+            showPopup(storiesPopup);
+            carousel.slideTo(idx);
+        }))));
+        const slides = document.querySelectorAll(".stories-carousel__story");
+        slides.forEach((function(slide, index) {
+            slide.addEventListener("click", (function() {
+                carousel.slideTo(index);
+            }));
+        }));
     }
     window.addEventListener("load", (function(e) {
         initSliders();
@@ -3165,28 +3476,52 @@
         }));
     }
     isWebp();
-    const menuToggle = document.querySelector(".icon-menu");
+    const mainTogglerMenu = document.querySelector(".icon-menu");
+    const menuToggles = document.querySelectorAll(".icon-menu");
     const menu = document.querySelector("[data-nav-menu]");
     const overlay = document.querySelector(".overlay");
     const closeMenu = () => {
         menu.classList.remove("app__aside_active");
-        menuToggle.classList.remove("icon-menu_active");
+        menuToggles.forEach((menu => menu.classList.remove("icon-menu_active")));
         overlay.classList.remove("overlay_active");
         document.body.classList.remove("lock");
         document.body.removeEventListener("click", closeMenu);
     };
     const toggleMenu = event => {
         event.stopPropagation();
-        const expanded = menuToggle.classList.contains("icon-menu_active");
-        menuToggle.classList.toggle("icon-menu_active");
+        const expanded = mainTogglerMenu.classList.contains("icon-menu_active");
+        menuToggles.forEach((menu => menu.classList.toggle("icon-menu_active")));
         menu.classList.toggle("app__aside_active", !expanded);
         overlay.classList.toggle("overlay_active");
         document.body.classList.toggle("lock");
         if (!menu.classList.contains("app__aside_active")) closeMenu();
     };
-    menuToggle.addEventListener("click", (event => toggleMenu(event)));
+    menuToggles.forEach((menu => menu.addEventListener("click", (event => toggleMenu(event)))));
+    const shareButtons = document.querySelectorAll("[data-share-post]");
+    let isOpenShareList = true;
+    let activeShareList = null;
+    const showShareList = e => {
+        e.stopPropagation();
+        const shareList = e.target.closest(".post-info__share").querySelector(".share-post");
+        shareList.classList.add("share-post_active");
+        activeShareList = shareList;
+        isOpenShareList = true;
+        if (window.innerWidth < 767.98) {
+            overlay.classList.add("overlay_active");
+            document.body.classList.add("lock");
+        }
+    };
+    const hideShareList = () => {
+        activeShareList.classList.remove("share-post_active");
+        isOpenShareList = false;
+        activeShareList = null;
+        overlay.classList.remove("overlay_active");
+        document.body.classList.remove("lock");
+    };
+    shareButtons.forEach((button => button.addEventListener("click", (event => showShareList(event)))));
     document.body.addEventListener("click", (event => {
-        if (menu.classList.contains("app__aside_active") && !menu.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+        if (menu.classList.contains("app__aside_active") && !menu.contains(event.target) && !mainTogglerMenu.contains(event.target)) closeMenu();
+        if (isOpenShareList && activeShareList) hideShareList();
     }));
     const advTop = document.querySelector("[data-adv-top]");
     if (advTop) {
@@ -3196,6 +3531,7 @@
         };
         closeAdvTop.addEventListener("click", hideAdvToppanel);
     }
+    const header = document.querySelector(".header");
     const searchForm = document.querySelector("[data-search-form]");
     const searchButton = document.querySelector("[data-search-button]");
     const look = document.querySelector("[data-look]");
@@ -3204,6 +3540,10 @@
         searchForm.classList.toggle("header__search_active");
         look.classList.toggle("header__look_hide");
         choiceTheme.classList.toggle("choice-theme_hide");
+        if (window.innerWidth < 767.98) {
+            choiceTheme.classList.remove("choice-theme_hide");
+            header.classList.toggle("header_search_active");
+        }
     };
     searchButton.addEventListener("click", toggleSearchForm);
     const themeSwitcher = document.querySelector("#switch-theme");
@@ -3284,5 +3624,38 @@
     }));
     playButton.addEventListener("click", (() => {
         if (video.paused) video.play(); else video.pause();
+    }));
+    const iconsPassword = document.querySelectorAll(".authorization__icon-password");
+    const showHidePassword = icon => {
+        const input = icon.closest(".authorization__label_password").querySelector(".input");
+        input.getAttribute("type") === "password" ? input.setAttribute("type", "text") : input.setAttribute("type", "password");
+        icon.classList.toggle("authorization__icon-password_hide");
+    };
+    iconsPassword.forEach((icon => icon.addEventListener("click", (() => showHidePassword(icon)))));
+    const authorization = document.querySelector("[data-popup-authorization]");
+    const authorizationForms = authorization.querySelectorAll(".authorization");
+    const registerFormButtons = authorization.querySelectorAll("[data-register-button]");
+    const authorizationButtons = authorization.querySelectorAll("[data-authorization-button]");
+    const recoveryButtons = authorization.querySelectorAll("[data-recovery-button]");
+    authorizationButtons.forEach((button => {
+        button.addEventListener("click", (() => {
+            authorizationForms.forEach((form => {
+                if (!form.hasAttribute("data-authorization-form")) form.classList.remove("authorization_active"); else form.classList.add("authorization_active");
+            }));
+        }));
+    }));
+    registerFormButtons.forEach((button => {
+        button.addEventListener("click", (() => {
+            authorizationForms.forEach((form => {
+                if (!form.hasAttribute("data-register-form")) form.classList.remove("authorization_active"); else form.classList.add("authorization_active");
+            }));
+        }));
+    }));
+    recoveryButtons.forEach((button => {
+        button.addEventListener("click", (() => {
+            authorizationForms.forEach((form => {
+                if (!form.hasAttribute("data-recovery-form")) form.classList.remove("authorization_active"); else form.classList.add("authorization_active");
+            }));
+        }));
     }));
 })();

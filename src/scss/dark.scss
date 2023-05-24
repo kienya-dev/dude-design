@@ -1,0 +1,299 @@
+body[data-theme="dark"] {
+    .app {
+        &__page {
+            background-color: #1f1e1d;
+        }
+
+        &__aside_left {
+            @media (max-width: $tablet) {
+                background-color: #2b2929;
+            }
+        }
+    }
+
+    .aside {
+        &__head {
+            border-bottom: 1px solid #413e3c;
+        }
+    }
+
+    .input {
+        border: 1px solid #413e3c;
+        background-color: #1f1e1d;
+    }
+
+    .logo {
+        svg {
+            fill: #d1cdc9;
+        }
+    }
+
+    .stories {
+        &__button {
+            svg {
+                fill: #d1cdc9;
+            }
+        }
+    }
+
+    .post {
+        &_theme_default {
+            background-color: #2b2929;
+
+            .post__text {
+                color: #aba6a5;
+            }
+        }
+
+        &_theme_dark-blue {
+            border: 1px solid #495e94;
+            background-color: #495e94;
+        }
+
+        &__footer {
+            border-top: 1px solid #413e3c;
+        }
+    }
+
+    .post-info {
+        &__num {
+            &_theme_black {
+                color: #d1cdc9;
+            }
+        }
+
+        &__date {
+            color: #787574;
+        }
+    }
+
+    .share-post {
+        border: 1px solid #413e3c;
+        background-color: #2b2929;
+
+        &__item {
+            &:not(:first-child) {
+                border-top: 1px solid #413e3c;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #413e3c;
+                }
+            }
+            &:active {
+                background-color: #413e3c;
+            }
+        }
+
+        &__link {
+            color: #d1cdc9;
+        }
+    }
+
+    .ask-us {
+        border: 1px solid #b8916d;
+        background-color: #b8916d;
+
+        &__icon {
+            fill: #a88361;
+        }
+
+        &__text {
+            color: #f4efe9;
+        }
+    }
+
+    .podcast-card {
+        &__likes {
+            color: #787574;
+        }
+    }
+
+    .post-slider {
+        &__pagination {
+            & > .swiper-pagination-bullet {
+                background-color: #787574 !important;
+            }
+
+            & > .swiper-pagination-bullet-active {
+                background-color: #d1cdc9 !important;
+            }
+        }
+
+        &__button {
+            svg {
+                fill: #d1cdc9;
+            }
+        }
+    }
+
+    .post-survey {
+        &__row {
+            background-color: rgba(255, 255, 255, 0.1);
+
+            &_active {
+                .post-survey__progress {
+                    background-color: #667cb4;
+                }
+            }
+
+            &_select {
+                .post-survey__progress {
+                    background-color: #6b8ce0;
+                }
+            }
+        }
+
+        &__possible {
+            color: #f8f8f8;
+        }
+
+        &__result {
+            color: #f8f8f8;
+            &_active {
+                color: #6b8ce0;
+            }
+        }
+    }
+
+    .post-survey__possible > span::before {
+        box-shadow: 0 0 0 1px #495e94;
+    }
+
+    .button {
+        &_theme_default {
+            border: 1px solid #413e3c;
+            color: #787574;
+        }
+
+        &_theme_light-brown {
+            border: 1px solid #52473d;
+            color: #bab2a9;
+            background-color: #453c34;
+        }
+
+        &_theme_light-blue {
+            border: 1px solid #3c5273;
+            color: #b5bbc4;
+            background-color: #31435e;
+        }
+
+        &_theme_brown {
+            background-color: #252525;
+        }
+    }
+
+    .title {
+        &_color_131313 {
+            color: #d1cdc9;
+        }
+
+        &_color_252525 {
+            color: #dfddda;
+        }
+    }
+
+    .social {
+        &__link {
+            border: 1px solid #474747;
+            svg {
+                fill: #474747;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    border-color: #2b2929;
+                    background-color: #2b2929;
+                }
+            }
+            &:active {
+                border-color: #2b2929;
+                background-color: #2b2929;
+            }
+        }
+    }
+
+    .menu {
+        &__link {
+            &_main {
+                color: #dfddda;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: #d1aa7c;
+                    }
+                }
+            }
+        }
+    }
+
+    .popup__content_authorization {
+        background-color: #2b2929;
+    }
+
+    .popup__close_authorization {
+        &::before,
+        &::after {
+            background-color: #d1cdc9;
+        }
+    }
+
+    .authorization__social {
+        border: 1px solid #413e3c;
+    }
+
+    .articles-list__link {
+        @media (any-hover: hover) {
+            &:hover {
+                .articles-list__img {
+                    background-color: #000000;
+                }
+            }
+        }
+    }
+
+    .menu__link_small {
+        @media (any-hover: hover) {
+            &:hover {
+                color: #dfddda;
+            }
+        }
+
+        &:active {
+            color: #dfddda;
+        }
+    }
+
+    .popular-tags__link {
+        @media (any-hover: hover) {
+            &:hover {
+                border-color: #a5a4a1;
+                color: #a5a4a1;
+            }
+        }
+
+        &:active {
+            border-color: #a5a4a1;
+            color: #a5a4a1;
+        }
+    }
+
+    .authorization__text {
+        color: #aba6a5;
+    }
+
+    .authorization__send {
+        background-color: #5681f0;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #4d72d3;
+            }
+        }
+
+        &:active {
+            background-color: #4d72d3;
+        }
+    }
+}

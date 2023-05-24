@@ -1,74 +1,146 @@
-import Swiper, { Navigation, Pagination } from 'swiper';
-/*
-Основниые модули слайдера:
-Navigation, Pagination, Autoplay, 
-EffectFade, Lazy, Manipulation
-Подробнее смотри https://swiperjs.com/
-*/
+import Swiper, { Navigation, Pagination, Autoplay, EffectCards } from 'swiper';
 
-// Стили Swiper
-// Базовые стили
 import "../../scss/base/swiper.scss";
-// Полный набор стилей из scss/libs/swiper.scss
 import "../../scss/libs/swiper.scss";
-// Полный набор стилей из node_modules
 import 'swiper/css';
 
-// Инициализация слайдеров
 function initSliders() {
-	// Перечень слайдеров
-	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('[data-post-slider]')) { // Указываем скласс нужного слайдера
-		// Создаем слайдер
-		new Swiper('[data-post-slider]', { // Указываем скласс нужного слайдера
-			// Подключаем модули слайдера
-			// для конкретного случая
+
+	if (document.querySelector('[data-post-slider]')) {
+		new Swiper('[data-post-slider]', {
 			modules: [Navigation, Pagination],
 			slidesPerView: 1,
 			spaceBetween: 20,
-			autoHeight: true,
 			speed: 800,
-
-			//touchRatio: 0,
-			//simulateTouch: false,
 			loop: true,
-
 			pagination: {
 				el: '[data-post-slider-pagination]',
 				clickable: true,
 			},
-
-
 			navigation: {
 				prevEl: '[data-post-slider-left]',
 				nextEl: '[data-post-slider-right]',
 			},
-
 		});
 	}
 
-	if (document.querySelector('[data-stories-slider]')) { // Указываем скласс нужного слайдера
-		// Создаем слайдер
-		new Swiper('[data-stories-slider]', { // Указываем скласс нужного слайдера
-			// Подключаем модули слайдера
-			// для конкретного случая
+	if (document.querySelector('[data-stories-slider]')) {
+		new Swiper('[data-stories-slider]', {
 			modules: [Navigation],
 			autoHeight: true,
 			speed: 800,
 			slidesPerView: "auto",
-
-
-			// Кнопки "влево/вправо"
 			navigation: {
 				prevEl: '[data-stories-slider-left]',
 				nextEl: '[data-stories-slider-right]',
 			},
 		});
 	}
+
+	if (document.querySelector('[data-stories-carousel]')) {
+		var carousel = new Swiper('[data-stories-carousel]', {
+			effect: "fade",
+			allowTouchMove: false,
+			speed: 200,
+			spaceBetween: 40,
+			slidesPerView: 3, 
+			centeredSlides: true, 
+			clickable: true,
+
+			breakpoints: {
+				10: {
+					slidesPerView: 1
+				  },
+
+				991.98: {
+					slidesPerView: 2
+				  },
+
+				1399.98: {
+					slidesPerView: 3
+				  }
+			}
+		});
+	}
+
+
+	if (document.querySelector('[data-story-slider]')) {
+		const progressCircle = document.querySelector(".autoplay-progress svg");
+		const progressContent = document.querySelector(".autoplay-progress span");
+		new Swiper('[data-story-slider]', {
+			effect: "fade",
+			speed: 800,
+			modules: [Autoplay, Pagination],
+			delay: 4000,
+			finite: true,
+			loop: false,
+			spaceBetween: 0,
+			slidesPerView: 1, 
+			centeredSlides: true, 
+			clickable: true,		
+
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true
+			},
+			on: {
+				autoplayTimeLeft(s, time, progress) {
+					progressCircle.style.setProperty("--progress", 1 - progress);
+					progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+				},
+			}
+		});
+	}
+
+
+
+
+	const authorizationPopup = document.querySelector('[data-popup-authorization]');
+	const showAuthorizationPopupButton = document.querySelector('[data-authorization-button]');
+	const storiesPopup = document.querySelector('[data-popup-stories]');
+
+	const showPopup = (popup) => {
+		const closeButton = popup.querySelector('[data-close]');
+		popup.classList.add('popup_show');
+		document.body.classList.add('lock');
+
+		popup.addEventListener('click', (event) => {
+			if (!event.target.closest('.popup__content')) {
+				closePopup(popup);
+			}
+		});
+
+		closeButton.addEventListener('click', () => closePopup(popup))
+	}
+
+	const closePopup = (popup) => {
+		popup.classList.remove('popup_show')
+		document.body.classList.remove('lock');
+	}
+
+	showAuthorizationPopupButton.addEventListener('click', () => showPopup(authorizationPopup));
+
+	const storiesCards = document.querySelectorAll('.stories-card')
+	storiesCards.forEach((card, idx) => card.addEventListener('click', () => {				
+		showPopup(storiesPopup);
+		carousel.slideTo(idx);
+	}))
+
+	const slides = document.querySelectorAll('.stories-carousel__story');
+	slides.forEach(function (slide, index) {
+		slide.addEventListener('click', function () {
+			carousel.slideTo(index); 
+		});
+	});
 }
 
 window.addEventListener("load", function (e) {
 	// Запуск инициализации слайдеров
 	initSliders();
-
 });
+
+
+
+
+
+
