@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Статья</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230528083212">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="preload" data-theme="light">
+	<div class="app">
+		<header class="header">
+			<div class="header__adv header__adv_active" data-adv-top>
+				<div class="header__container header__container_adv">
+					<div class="header__podcast">
+						<svg class="icon header__podcast-icon">
+							<use xlink:href="img/icons/sprite.svg#i-microphone"></use>
+						</svg>
+						<span>
+							Слушайте подкасты нашей студии
+						</span>
+					</div>
+					<figure class="header__redbarn">
+						<img src="img/icons/redbarn.svg" alt="">
+					</figure>
+					<a href="#" class="button go-podcast go-podcast_font_wieght go-podcast_color_white">
+						<span>Слушать</span>
+						<svg class="icon go-podcast__icon">
+							<use xlink:href="img/icons/sprite.svg#i-arrow"></use>
+						</svg>
+					</a>
+				</div>
+				<button class="button header__close-adv" data-adv-close>
+					<svg class="icon">
+						<use xlink:href="img/icons/sprite.svg#i-close"></use>
+					</svg>
+				</button>
+			</div>
+			<div class="header__container header__container_main">
+				<div class="icon-menu">
+					<span></span>
+				</div>
+
+				<!-- logo oбернул в div-->
+				<div class="header__logo">
+					<a href="/" class="header__logo logo">
+						<svg class="icon">
+							<use xlink:href="img/icons/sprite.svg#i-logo"></use>
+						</svg>
+					</a>
+				</div>
+				<!-- logo oбернул в div-->
+
+				<form class="header__search search-form" data-search-form>
+					<input type="text" class="input search-form__input" placeholder="Что ищем?">
+					<button class="button search-form__button">Искать</button>
+				</form>
+				<a href="#" class="button header__look" data-look>
+					<picture><source srcset="img/icons/eyes.webp" type="image/webp"><img src="img/icons/eyes.png" class="header__eyes" alt=""></picture>
+					<span>На себя посмотри</span>
+				</a>
+				<div class="header__panel">
+					<div class="choice-theme" data-choice-theme>
+						<button class="button choice-theme__button choice-theme__button_light choice-theme__button_active" data-button-theme-light>
+							<svg class="icon">
+								<use xlink:href="img/icons/sprite.svg#i-light"></use>
+							</svg>
+						</button>
+						<div class="choice-theme__switcher">
+							<input type="checkbox" id="switch-theme" class="choice-theme__input" />
+							<label for="switch-theme" class="choice-theme__label"></label>
+						</div>
+						<button class="button choice-theme__button choice-theme__button_dark" data-button-theme-dark>
+							<svg class="icon">
+								<use xlink:href="img/icons/sprite.svg#i-dark"></use>
+							</svg>
+						</button>
+					</div>
+					<button class="button" data-search-button>
+						<svg class="icon header__search-icon">
+							<use xlink:href="img/icons/sprite.svg#i-search"></use>
+						</svg>
+					</button>
+
+					<!--Добавил data атрибут (data-authorization-button) на кнопку войти-->
+					<button class="button header__login" data-authorization-button>
+						<svg class="icon header__login-icon">
+							<use xlink:href="img/icons/sprite.svg#i-user"></use>
+						</svg>
+						<span>Войти</span>
+					</button>
+					<!--Добавил data атрибут (data-authorization-button) на кнопку войти-->
+
+				</div>
+
+
+			</div>
+		</header>
+		<div class="app__page">
+			<div class="app__container">
+				<aside class="aside app__aside app__aside_left" data-nav-menu>
+					<div class="aside__head">
+						<div class="icon-menu">
+							<span></span>
+						</div>
+						<a href="/" class="header__logo logo">
+							<svg class="icon">
+								<use xlink:href="img/icons/sprite.svg#i-logo"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="menu">
+						<h2 class="title title_size_24 title_wight_bold title_color_252525 aside__title menu__title">
+							<svg class="icon">
+								<use xlink:href="img/icons/sprite.svg#i-rubric"></use>
+							</svg>
+							<span>Рубрики</span>
+						</h2>
+						<nav>
+							<ul class="menu__list menu__list_main">
+								<li>
+									<a href="#" class="menu__link menu__link_main menu__link_popular">Популярное</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Подруги</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Отношения</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Образ жизни</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Лайфхак</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Инвентарь</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Герои</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Еда</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Фитнес</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Наука</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Культура</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Карьера</a>
+								</li>
+							</ul>
+							<ul class="menu__list menu__list_small">
+								<li>
+									<a href="#" class="menu__link menu__link_small">
+										Соглашения и правила
+									</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_small">
+										Правообладателям
+									</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_small">
+										Рекламодателям
+									</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_small">
+										Контакты
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<ul class="social">
+							<li>
+								<a href="#" class="button social__link social__link_facebook">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="button social__link social__link_vk">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="button social__link social__link_twitter">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="button social__link social__link_telegram">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</aside>
+
+				<main class="main app__articles app__articles_basic">
+					<section class="article-section article-section_column">
+						<div class="article-section__main">
+							<div class="post-info article-section__info">
+								<div class="post-info__row post-info__row_panel">
+									<span class="button button_size_small button_theme_light-brown">Образ
+										жизни</span>
+									<div class="button button_partner button_size_small button_theme_default">
+										<svg class="icon button__partner-icon">
+											<use xlink:href="img/icons/sprite.svg#i-money"></use>
+										</svg>
+										<span>Партнерский материал</span>
+									</div>
+								</div>
+								<div class="post-info__row post-info__row_nums">
+									<div class="post-info__num post-info__num_theme_black post-info__num_views">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-views"></use>
+										</svg>
+										<span>2012</span>
+									</div>
+									<div class="post-info__num post-info__num_theme_black post-info__num_comments">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-comments"></use>
+										</svg>
+										<span>102</span>
+									</div>
+								</div>
+							</div>
+							<article class="article-section__article article">
+								<div class="article__holder">
+									<div class="article__head article__head_type_basic">
+										<div class="article__over">
+											<div class="article__author">
+												<figure class="article__ava">
+													<picture><source srcset="img/stories/stories_img_4.webp" type="image/webp"><img src="img/stories/stories_img_4.jpg" alt=""></picture>
+												</figure>
+												<span>Степан Иванов</span>
+											</div>
+											<time datetime="20023-05-25 22:15" class="article__date">вчера в
+												22:15</time>
+										</div>
+										<h1 class="title title_size_40 title_wight_bold title_color_131313 article__main-title">
+											12 причин, почему ты постоянно испытываешь страх перед своим будущим
+										</h1>
+
+										<div class="article__panel">
+											<div class="share share_column">
+												<ul class="share__list share__list_column" data-list-share>
+													<li>
+														<button class="button share__button share__button_circle share__button_facebook share__button_facebook_circle">
+															<span class="share__icon">
+																<svg class="icon">
+																	<use xlink:href="img/icons/sprite.svg#i-facebook">
+																	</use>
+																</svg>
+															</span>
+															<span class="share__num">34</span>
+														</button>
+													</li>
+													<li>
+														<button class="button share__button share__button_circle share__button_vk share__button_vk_circle">
+															<span class="share__icon">
+																<svg class="icon">
+																	<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+																</svg>
+															</span>
+															<span class="share__num">34</span>
+														</button>
+													</li>
+													<li>
+														<button class="button share__button share__button_circle share__button_twitter share__button_twitter_circle">
+															<span class="share__icon">
+																<svg class="icon">
+																	<use xlink:href="img/icons/sprite.svg#i-twitter">
+																	</use>
+																</svg>
+															</span>
+															<span class="share__num share__num_hide">0</span>
+														</button>
+													</li>
+													<li>
+														<button class="button share__button share__button_circle  share__button_telegram  share__button_telegram_circle">
+															<span class="share__icon">
+																<svg class="icon">
+																	<use xlink:href="img/icons/sprite.svg#i-telegram">
+																	</use>
+																</svg>
+															</span>
+															<span class="share__num share__num_hide">0</span>
+														</button>
+													</li>
+												</ul>
+												<button class="button share__toggler" data-toggler-share>
+													<svg class="icon">
+														<use xlink:href="img/icons/sprite.svg#i-share"></use>
+													</svg>
+												</button>
+											</div>
+											<button class="button article__postpone  article__postpone_later article__postpone_postponed" data-postponed="false">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-flag"></use>
+												</svg>
+												<span>Читать позже</span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="article__main">
+									<div class="article__holder" style="margin-bottom: 50px;">
+										<div class="article__text article__text_column">
+											<p class="article__redline">
+												Ответь-ка предельно честно на один вопрос: как часто ты испытываешь
+												тревогу
+												и
+												страх, задумываясь о своем будущем? Воображение сразу же рисует в твоей
+												голове
+												мрачные картинки, и кажется, что никаких глобальных изменений к лучшему
+												не
+												предвидится.
+											</p>
+
+											<p class="article__bold">
+												Ответь-ка предельно честно на один вопрос: как часто ты испытываешь
+												тревогу
+												и
+												страх, задумываясь о своем будущем? Воображение сразу же рисует в твоей
+												голове
+												мрачные картинки, и кажется, что никаких глобальных изменений к лучшему
+												не
+												предвидится.
+											</p>
+
+											<p class="article__italic">
+												Ответь-ка предельно честно на один вопрос: как часто ты испытываешь
+												тревогу
+												и
+												страх, задумываясь о своем будущем? Воображение сразу же рисует в твоей
+												голове
+												мрачные картинки, и кажется, что никаких глобальных изменений к лучшему
+												не
+												предвидится.
+											</p>
+										</div>
+									</div>
+
+									<div class="article__holder">
+										<div class="article__box article__box_level_2">
+											<div class="article__title article__title_level_2">
+												<span></span>
+												<h2 class="title title_wight_bold title_color_131313">
+													Ты не действуешь, боясь, что о тебе скажут/подумают окружающие
+												</h2>
+											</div>
+											<div class="article__text">
+												<p>
+													<a href="#" class="article__link article__link_underlined">
+														Cсылка по тексту
+													</a>
+													Тяжело начать реализовывать собственный потенциал, если тебя
+													пугает
+													чужое
+													мнение. Большинство людей уверены, что им необходимо строить
+													будущее, в
+													котором их поступки будут одобрительно оценены окружающими. Но
+													не
+													каждому
+													подходит такой вариант. Твои мечты могут противоречить привычным
+													нормам и
+													ожиданиям. Это может тормозить тебя, отталкивать от той жизни,
+													которую ты
+													хочешь прожить.
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<div style="margin-bottom: 50px;">
+										<div class="article__box article__box_insert article__box_bg_light-brown">
+											<div class="article__title article__title_level_2 article__holder">
+												<span></span>
+												<h2 class="title title_wight_bold title_color_131313">
+													Ты не действуешь, боясь, что о тебе скажут/подумают окружающие
+												</h2>
+											</div>
+											<div class="article__text article__text_column article__holder">
+												<p>Тяжело начать реализовывать собственный потенциал, если тебя пугает
+													чужое
+													мнение. Большинство людей уверены, что им необходимо строить
+													будущее, в
+													котором их поступки будут одобрительно оценены окружающими. Но не
+													каждому
+													подходит такой вариант. Твои мечты могут противоречить привычным
+													нормам
+													и
+													ожиданиям. Это может тормозить тебя, отталкивать от той жизни,
+													которую
+													ты
+													хочешь прожить.</p>
+												<p>
+													В итоге противоречие истинных желаний и общественных требований
+													загоняет
+													тебя в состояние тревоги и беспокойства. Ты просто не можешь
+													собраться с
+													силами и принять то единственно верное решение, от которого зависит
+													твое
+													благополучие в будущем.
+												</p>
+												<p>
+													<a href="#" class="article__link article__link_bold ">
+														8 советов тому, кто не прислушивается к мнению окружающих
+													</a>
+												</p>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="article__holder">
+										<div class="article__box article__box_level_3">
+											<div class="article__title article__title_level_3">
+												<span></span>
+												<h3 class="title title_wight_bold title_color_131313">
+													Ты не действуешь, боясь, что о тебе скажут/подумают окружающие
+												</h3>
+											</div>
+											<div class="article__text">
+												<p>
+													<a href="#" class="article__link article__link_underlined">
+														Cсылка по тексту
+													</a>
+													Тяжело начать реализовывать собственный потенциал, если тебя
+													пугает
+													чужое
+													мнение. Большинство людей уверены, что им необходимо строить
+													будущее, в
+													котором их поступки будут одобрительно оценены окружающими. Но
+													не
+													каждому
+													подходит такой вариант. Твои мечты могут противоречить привычным
+													нормам и
+													ожиданиям. Это может тормозить тебя, отталкивать от той жизни,
+													которую ты
+													хочешь прожить.
+												</p>
+											</div>
+										</div>
+
+										<div class="article__box article__box_level_4">
+											<div class="article__title article__title_level_4">
+												<span></span>
+												<h4 class="title title_wight_bold title_color_131313">
+													Ты не действуешь, боясь, что о тебе скажут/подумают окружающие
+												</h4>
+											</div>
+											<div class="article__text">
+												<p>
+													<a href="#" class="article__link article__link_underlined">
+														Cсылка по тексту
+													</a>
+													Тяжело начать реализовывать собственный потенциал, если тебя
+													пугает
+													чужое
+													мнение. Большинство людей уверены, что им необходимо строить
+													будущее, в
+													котором их поступки будут одобрительно оценены окружающими. Но
+													не
+													каждому
+													подходит такой вариант. Твои мечты могут противоречить привычным
+													нормам и
+													ожиданиям. Это может тормозить тебя, отталкивать от той жизни,
+													которую ты
+													хочешь прожить.
+												</p>
+											</div>
+										</div>
+
+										<div class="article__box article__box_level_5">
+											<div class="article__title article__title_level_5">
+												<span></span>
+												<h5 class="title title_wight_bold title_color_131313">
+													Ты не действуешь, боясь, что о тебе скажут/подумают окружающие
+												</h5>
+											</div>
+											<div class="article__text">
+												<p>
+													<a href="#" class="article__link article__link_underlined">
+														Cсылка по тексту
+													</a>
+													Тяжело начать реализовывать собственный потенциал, если тебя
+													пугает
+													чужое
+													мнение. Большинство людей уверены, что им необходимо строить
+													будущее, в
+													котором их поступки будут одобрительно оценены окружающими. Но
+													не
+													каждому
+													подходит такой вариант. Твои мечты могут противоречить привычным
+													нормам и
+													ожиданиям. Это может тормозить тебя, отталкивать от той жизни,
+													которую ты
+													хочешь прожить.
+												</p>
+											</div>
+										</div>
+
+										<div class="article__box article__box_level_6">
+											<div class="article__title article__title_level_6">
+												<span></span>
+												<h6 class="title title_wight_bold title_color_131313">
+													Ты не действуешь, боясь, что о тебе скажут/подумают окружающие
+												</h6>
+											</div>
+											<div class="article__text">
+												<p>
+													<a href="#" class="article__link article__link_underlined">
+														Cсылка по тексту
+													</a>
+													Тяжело начать реализовывать собственный потенциал, если тебя
+													пугает
+													чужое
+													мнение. Большинство людей уверены, что им необходимо строить
+													будущее, в
+													котором их поступки будут одобрительно оценены окружающими. Но
+													не
+													каждому
+													подходит такой вариант. Твои мечты могут противоречить привычным
+													нормам и
+													ожиданиям. Это может тормозить тебя, отталкивать от той жизни,
+													которую ты
+													хочешь прожить.
+												</p>
+											</div>
+										</div>
+										Граница (Линия)
+										<span class="article__line"></span>
+
+										<br><br><br><br><br>
+
+										<ol class="article__list">
+											<li>
+												<div class="article__box article__box_level_2">
+													<div class="article__title article__title_level_2">
+														<h2 class="title title_color_131313">
+															У тебя негативное представление о будущем
+														</h2>
+													</div>
+													<div class="article__text">
+														<p>
+															Тяжело начать реализовывать собственный потенциал, если тебя
+															пугает
+															чужое
+															мнение. Большинство людей уверены, что им необходимо строить
+															будущее, в
+															котором их поступки будут одобрительно оценены окружающими.
+															Но
+															не
+															каждому
+															подходит такой вариант. Твои мечты могут противоречить
+															привычным
+															нормам и
+															ожиданиям. Это может тормозить тебя, отталкивать от той
+															жизни,
+															которую ты
+															хочешь прожить.
+														</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="article__box article__box_level_2">
+													<div class="article__title article__title_level_2">
+														<h2 class="title title_color_131313">
+															У тебя негативное представление о будущем
+														</h2>
+													</div>
+													<div class="article__text">
+														<p>
+															Тяжело начать реализовывать собственный потенциал, если тебя
+															пугает
+															чужое
+															мнение. Большинство людей уверены, что им необходимо строить
+															будущее, в
+															котором их поступки будут одобрительно оценены окружающими.
+															Но
+															не
+															каждому
+															подходит такой вариант. Твои мечты могут противоречить
+															привычным
+															нормам и
+															ожиданиям. Это может тормозить тебя, отталкивать от той
+															жизни,
+															которую ты
+															хочешь прожить.
+														</p>
+													</div>
+												</div>
+											</li>
+										</ol>
+
+										<div class="article__read article-read article-read_bg_light-blue">
+											<h3 class="title title_size_24 title_wight_bold title_color_252525 article-read__title">
+												Читать также:
+											</h3>
+											<ul class="article-read__list">
+												<li>
+													<a href="#" class="article-read__link">
+														5 плохих черт характера, которые, согласно науке, на самом деле
+														полезны для здоровья
+													</a>
+												</li>
+												<li>
+													<a href="#" class="article-read__link">
+														12 способов открыть для себя новые возможности
+													</a>
+												</li>
+												<li>
+													<a href="#" class="article-read__link">
+														8 способов перестать накручивать себя и усложнять жизнь
+													</a>
+												</li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+
+
+				</main>
+			</div>
+		</div>
+	</div>
+	<div class="overlay"></div>
+	<div class="popup popup_stories" data-popup-stories>
+		<div class="popup__wrapper">
+			<div class="popup__body popup__body_stories">
+				<button data-close type="button" class="popup__close popup__close_stories popup__close_active">
+					<span></span>
+				</button>
+				<div class="popup__content">
+					<div class="swiper stories-carousel" data-stories-carousel>
+						<div class="swiper-wrapper">
+							<div class="swiper-slide stories-carousel__story">
+								<div class="stories-carousel__head">
+									<span>Тут красивое название Lorem ipsum dolor sit amet.</span>
+								</div>
+								<div class="stories-carousel__images swiper" data-story-slider>
+									<div class="swiper-wrapper">
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_1.webp" type="image/webp"><img src="img/stories/stories_img_1.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_1.webp" type="image/webp"><img src="img/stories/stories_img_1.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_1.webp" type="image/webp"><img src="img/stories/stories_img_1.jpg" alt=""></picture>
+										</figure>
+									</div>
+									<div class="swiper-pagination"></div>
+									<div class="autoplay-progress">
+										<svg viewBox="0 0 48 48">
+											<circle cx="24" cy="24" r="20"></circle>
+										</svg>
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-slide stories-carousel__story">
+								<div class="stories-carousel__head">
+									<span>Тут красивое название Lorem ipsum dolor sit amet.</span>
+								</div>
+								<div class="stories-carousel__images swiper" data-story-slider>
+									<div class="swiper-wrapper">
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_2.webp" type="image/webp"><img src="img/stories/stories_img_2.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_2.webp" type="image/webp"><img src="img/stories/stories_img_2.jpg" alt=""></picture>
+										</figure>
+									</div>
+									<div class="swiper-pagination"></div>
+									<div class="autoplay-progress">
+										<svg viewBox="0 0 48 48">
+											<circle cx="24" cy="24" r="20"></circle>
+										</svg>
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-slide stories-carousel__story">
+								<div class="stories-carousel__head">
+									<span>Тут красивое название Lorem ipsum dolor sit amet.</span>
+								</div>
+								<div class="stories-carousel__images swiper" data-story-slider>
+									<div class="swiper-wrapper">
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+									</div>
+									<div class="swiper-pagination"></div>
+									<div class="autoplay-progress">
+										<svg viewBox="0 0 48 48">
+											<circle cx="24" cy="24" r="20"></circle>
+										</svg>
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-slide stories-carousel__story">
+								<div class="stories-carousel__head">
+									<span>Тут красивое название Lorem ipsum dolor sit amet.</span>
+								</div>
+								<div class="stories-carousel__images swiper" data-story-slider>
+									<div class="swiper-wrapper">
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_4.webp" type="image/webp"><img src="img/stories/stories_img_4.jpg" alt=""></picture>
+										</figure>
+									</div>
+									<div class="swiper-pagination"></div>
+									<div class="autoplay-progress">
+										<svg viewBox="0 0 48 48">
+											<circle cx="24" cy="24" r="20"></circle>
+										</svg>
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-slide stories-carousel__story">
+								<div class="stories-carousel__head">
+									<span>Тут красивое название Lorem ipsum dolor sit amet.</span>
+								</div>
+								<div class="stories-carousel__images swiper" data-story-slider>
+									<div class="swiper-wrapper">
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_3.webp" type="image/webp"><img src="img/stories/stories_img_3.jpg" alt=""></picture>
+										</figure>
+									</div>
+									<div class="swiper-pagination"></div>
+									<div class="autoplay-progress">
+										<svg viewBox="0 0 48 48">
+											<circle cx="24" cy="24" r="20"></circle>
+										</svg>
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-slide stories-carousel__story">
+								<div class="stories-carousel__head">
+									<span>Тут красивое название Lorem ipsum dolor sit amet.</span>
+								</div>
+								<div class="stories-carousel__images swiper" data-story-slider>
+									<div class="swiper-wrapper">
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_2.webp" type="image/webp"><img src="img/stories/stories_img_2.jpg" alt=""></picture>
+										</figure>
+										<figure class="stories-carousel__img swiper-slide">
+											<picture><source srcset="img/stories/stories_img_2.webp" type="image/webp"><img src="img/stories/stories_img_2.jpg" alt=""></picture>
+										</figure>
+									</div>
+									<div class="swiper-pagination"></div>
+									<div class="autoplay-progress">
+										<svg viewBox="0 0 48 48">
+											<circle cx="24" cy="24" r="20"></circle>
+										</svg>
+										<span></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup popup_authorization" data-popup-authorization>
+		<div class="popup__wrapper">
+			<div class="popup__body popup__body_authorization">
+				<div class="popup__content popup__content_authorization">
+					<button data-close type="button" class="popup__close popup__close_authorization popup__close_active">
+					</button>
+					<div class="authorization authorization_active" data-authorization-form>
+						<h4 class="title title_size_32 title_wight_bold title_color_131313 authorization__title">Вход</h4>
+						<span class="authorization__text">Авторизоваться через соцсети</span>
+						<div class="authorization__socials">
+							<button class="button authorization__social authorization__social_facebook">
+								<svg class="icon">
+									<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+								</svg>
+							</button>
+							<button class="button authorization__social authorization__social_vk">
+								<svg class="icon">
+									<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+								</svg>
+							</button>
+							<button class="button authorization__social authorization__social_twitter">
+								<svg class="icon">
+									<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+								</svg>
+							</button>
+						</div>
+						<form class="authorization__form ">
+							<label for="login" class="authorization__label authorization__label_login">
+								<span class="authorization__text">Логин или E-mail</span>
+								<input type="text" id="login" placeholder="test@test.ru" class="input">
+							</label>
+							<label for="password" class="authorization__label authorization__label_password">
+								<span class="authorization__text">Пароль</span>
+								<span class="authorization__icon-password authorization__icon-password_hide">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-show-password"></use>
+									</svg>
+								</span>
+								<input type="password" id="password" placeholder="••••••••••" class="input">
+							</label>
+							<label class="authorization__label authorization__label_person-data">
+								<p>Я даю согласие на обработку <a href="#">персональных данных</a></p>
+								<input type="checkbox">
+								<span class="authorization__checkmark"></span>
+							</label>
+							<button class="button authorization__send">Войти</button>
+						</form>
+						<div class="authorization__bottom">
+							<button class="authorization__button authorization__button_theme_gray" data-recovery-button>Забыли пароль?</button>
+							<button class="authorization__button authorization__button_theme_blue" data-register-button>Регистрация</button>
+						</div>
+					</div>
+					<!--Регистрация-->
+					<div class="authorization" data-register-form>
+						<h4 class="title title_size_32 title_wight_bold title_color_131313 authorization__title">Регистрация
+						</h4>
+						<form class="authorization__form ">
+							<label for="register-login" class="authorization__label authorization__label_login">
+								<span class="authorization__text">Логин или E-mail</span>
+								<input type="text" id="register-login" placeholder="test@test.ru" class="input">
+							</label>
+							<label for="register-password" class="authorization__label authorization__label_password">
+								<span class="authorization__text">Пароль</span>
+								<span class="authorization__icon-password authorization__icon-password_hide">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-show-password"></use>
+									</svg>
+								</span>
+								<input type="password" id="register-password" placeholder="••••••••••" class="input">
+							</label>
+							<label class="authorization__label authorization__label_person-data">
+								<p>Я даю согласие на обработку <a href="#">персональных данных</a></p>
+								<input type="checkbox">
+								<span class="authorization__checkmark"></span>
+							</label>
+							<button class="button authorization__send">Войти</button>
+						</form>
+						<div class="authorization__bottom authorization__bottom_right">
+							<button class="authorization__button authorization__button_theme_blue" data-authorization-button>Вход</button>
+						</div>
+					</div>
+					<!--Восстановление пароля-->
+					<div class="authorization" data-recovery-form>
+						<h4 class="title title_size_32 title_wight_bold title_color_131313 authorization__title">
+							Восстановление пароля
+						</h4>
+						<span class="authorizatio__text">
+							Укажи свой E-mail, и мы вышлем тебе новый пароль
+						</span>
+						<form class="authorization__form">
+							<label for="mail" class="authorization__label authorization__label_recovery">
+								<span class="authorization__text">E-mail</span>
+								<input type="text" id="mail" placeholder="test@test.ru" class="input">
+							</label>
+							<button class="button authorization__send">Войти</button>
+						</form>
+						<div class="authorization__bottom">
+							<button class="authorization__button authorization__button_theme_blue" data-authorization-button>Вход</button>
+							<button class="authorization__button authorization__button_theme_blue" data-register-button>Регистрация</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230528083212"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<div class="article__main design__grid">
+
+	<div class="article__holder">
+		<h2 class="design__title">2. Жирный -> (название класса:
+			<span>article__bold</span>
+			)
+		</h2>
+		<div class="design__text">
+
+		</div>
+	</div>
+	<div class="article__holder">
+		<h2 class="design__title">3. Курсив -> (название класса:
+			<span>article__italic</span>
+			)
+		</h2>
+		<div class="design__text">
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+	<ul class="article-list article-list_type_marker article__holder">
+		<li class="article-list__item article-list__item_basic">
+			<span>
+				700-800 грамм куриной грудки без кожи;
+			</span>
+		</li>
+		<li class="article-list__item article-list__item_basic">
+			<span>
+				2 столовые ложки растительного масла;
+			</span>
+		</li>
+		<li class="article-list__item article-list__item_basic">
+			<span>
+				2 столовые ложки порошка чили;
+			</span>
+		</li>
+		<li class="article-list__item article-list__item_basic">
+			<span>
+				2 зубчика чеснока (мелко порежь);
+			</span>
+		</li>
+	</ul>
+
+	<ol class="article-list article-list_type_number article__holder">
+		<li class="article-list__item article-list__item_basic">
+			<span>
+				700-800 грамм куриной грудки без кожи;
+			</span>
+		</li>
+		<li class="article-list__item article-list__item_basic">
+			<span>
+				2 столовые ложки растительного масла;
+			</span>
+		</li>
+		<li class="article-list__item article-list__item_basic">
+			<span>
+				2 столовые ложки порошка чили;
+			</span>
+		</li>
+		<li class="article-list__item article-list__item_basic">
+			<span>
+				2 зубчика чеснока (мелко порежь);
+			</span>
+		</li>
+	</ol>
+
+
+	<div class="article__holder">
+		<div class="swiper aricle__slider-2" data-article-slider-2>
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<figure class="article__img article__img_middle">
+						<picture><source srcset="img/article.webp" type="image/webp"><img src="img/article.jpg" alt=""></picture>
+					</figure>
+				</div>
+				<div class="swiper-slide">
+					<figure class="article__img article__img_middle">
+						<picture><source srcset="img/article.webp" type="image/webp"><img src="img/article.jpg" alt=""></picture>
+					</figure>
+				</div>
+				<div class="swiper-slide">
+					<figure class="article__img article__img_middle">
+						<picture><source srcset="img/article.webp" type="image/webp"><img src="img/article.jpg" alt=""></picture>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</div>

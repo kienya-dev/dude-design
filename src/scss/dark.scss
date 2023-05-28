@@ -22,6 +22,12 @@ body[data-theme="dark"] {
         background-color: #1f1e1d;
     }
 
+    .textarea {
+        border: 1px solid #413e3c;
+        color: #aba6a5;
+        background-color: #1f1e1d;
+    }
+
     .logo {
         svg {
             fill: #d1cdc9;
@@ -181,6 +187,15 @@ body[data-theme="dark"] {
 
         &_theme_brown {
             background-color: #252525;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #a88361;
+                }
+            }
+            &:active {
+                background-color: #a88361;
+            }
         }
     }
 
@@ -295,5 +310,258 @@ body[data-theme="dark"] {
         &:active {
             background-color: #4d72d3;
         }
+    }
+
+    .share {
+        &__list {
+            &_column {
+                @media (max-width: $mobile) {
+                    background-color: #2b2929;
+                    border: 1px solid #413e3c;
+                }
+            }
+        }
+
+        &__toggler {
+            background-color: #d1aa7c;
+
+            svg {
+                fill: #2b2929;
+            }
+        }
+    }
+
+    .hab {
+        &__article {
+            background-color: #2b2929;
+        }
+
+        &__text {
+            color: #aba6a5;
+        }
+    }
+
+    .article-section {
+        &_bg_color {
+            background-color: #2b2929;
+        }
+
+        &__info {
+            border-bottom: 1px solid #413e3c;
+            &_bg_color {
+                background-color: #2b2929;
+            }
+        }
+        &__main {
+            background-color: #2b2929;
+        }
+    }
+
+    .article {
+        &__head {
+            &_type_bg {
+                background-color: #2b2929;
+            }
+        }
+
+        &__main_bg {
+            background-color: #2b2929;
+        }
+
+        &__author {
+            color: #d1cdc9;
+        }
+
+        &__date {
+            color: #787574;
+        }
+
+        &__text {
+            color: #aba6a5;
+        }
+
+        &__box {
+            &_bg_light-brown {
+                background-color: #36312e;
+            }
+        }
+
+        &__highlight {
+            color: #aba6a5;
+            background-color: #32374f;
+        }
+
+        &__link {
+            color: #5681f0;
+        }
+
+        &__quote-1 {
+            color: #d1cdc9;
+            &_bg_light-gray {
+                background-color: #21201f;
+            }
+        }
+
+        &__tag {
+            @media (any-hover: hover) {
+                &:hover {
+                    border-color: #a5a4a1;
+                    color: #a5a4a1;
+                }
+            }
+
+            &:active {
+                border-color: #a5a4a1;
+                color: #a5a4a1;
+            }
+        }
+    }
+
+    .article-read {
+        &__title {
+            color: #e3deda;
+        }
+
+        &_bg_light-blue {
+            background: #2c3447;
+            box-shadow: 0px 4px 0px #344264;
+        }
+
+        &__link {
+            border-bottom: 1px solid #5681f0;
+            color: #e3deda;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    border-bottom: 1px solid transparent;
+                    color: #5681f0;
+                }
+            }
+            &:active {
+                border-bottom: 1px solid transparent;
+                color: #5681f0;
+            }
+        }
+    }
+
+    //-----инструкция
+    .article-instruction {
+        &__marker {
+            &::before {
+                background-color: #cdb4b7;
+            }
+        }
+        &__number {
+            &::before {
+                color: #2b2929;
+                background-color: #d1cdc9;
+            }
+        }
+        &__insert {
+            border: 1px solid #59373b;
+            color: #cdb4b7;
+            background-color: #492e31;
+        }
+    }
+
+    .article-list {
+        &__item {
+            color: #aba6a5;
+        }
+    }
+
+    //карточки
+    .article-cards {
+        &__head {
+            background-color: #2b2929;
+        }
+
+        &__card {
+            background-color: #2b2929;
+
+            &::after {
+                background: #787574;
+            }
+        }
+
+        &__bottom {
+            background-color: #2b2929;
+        }
+    }
+
+    .article-contents {
+        background-color: #2b2929;
+
+        &__item {
+            span {
+                &::before {
+                    color: #787574;
+                }
+            }
+        }
+    }
+
+    .article-comments {
+        background-color: #2b2929;
+
+        &__head {
+            color: #d1cdc9;
+        }
+
+        &__button {
+            background-color: #5681f0;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #4d72d3;
+                }
+            }
+
+            &:active {
+                background-color: #4d72d3;
+            }
+        }
+    }
+
+    .comment {
+        & > .comments__list {
+            border-left: 1px solid #413e3c;
+        }
+
+        &__username {
+            color: #d1cdc9;
+        }
+
+        &__date {
+            color: #787574;
+        }
+
+        &__reply {
+            color: #787574;
+        }
+
+        &__text {
+            color: #aba6a5;
+        }
+    }
+
+    .comment-vote {
+        &__button {
+            border: 1px solid #413e3c;
+
+            &::before {
+                background-color: #787574;
+            }
+
+            &_dec {
+                &::after {
+                    background-color: #787574;
+                }
+            }
+        }
+    }
+
+    .dzen {
+        background-color: #2b2929;
     }
 }

@@ -5,6 +5,19 @@ import "../../scss/libs/swiper.scss";
 import 'swiper/css';
 
 function initSliders() {
+	if (document.querySelector('[data-article-slider-2]')) {
+		new Swiper('[data-article-slider-2]', {
+			modules: [Pagination],
+			slidesPerView: 1,
+			spaceBetween: 20,
+			speed: 800,
+			// pagination: {
+			// 	el: '[data-post-slider-pagination]',
+			// 	clickable: true,
+			// },
+		});
+	}
+
 
 	if (document.querySelector('[data-post-slider]')) {
 		new Swiper('[data-post-slider]', {
@@ -23,6 +36,16 @@ function initSliders() {
 			},
 		});
 	}
+
+	if (document.querySelector('[data-dzen-slider]')) {
+		new Swiper('[data-dzen-slider]', {
+			autoHeight: true,
+			speed: 800,
+			slidesPerView: "auto",
+			spaceBetween: 16,
+		});
+	}
+
 
 	if (document.querySelector('[data-stories-slider]')) {
 		new Swiper('[data-stories-slider]', {
@@ -43,22 +66,22 @@ function initSliders() {
 			allowTouchMove: false,
 			speed: 200,
 			spaceBetween: 40,
-			slidesPerView: 3, 
-			centeredSlides: true, 
+			slidesPerView: 3,
+			centeredSlides: true,
 			clickable: true,
 
 			breakpoints: {
 				10: {
 					slidesPerView: 1
-				  },
+				},
 
 				991.98: {
 					slidesPerView: 2
-				  },
+				},
 
 				1399.98: {
 					slidesPerView: 3
-				  }
+				}
 			}
 		});
 	}
@@ -75,9 +98,9 @@ function initSliders() {
 			finite: true,
 			loop: false,
 			spaceBetween: 0,
-			slidesPerView: 1, 
-			centeredSlides: true, 
-			clickable: true,		
+			slidesPerView: 1,
+			centeredSlides: true,
+			clickable: true,
 
 			pagination: {
 				el: ".swiper-pagination",
@@ -121,7 +144,7 @@ function initSliders() {
 	showAuthorizationPopupButton.addEventListener('click', () => showPopup(authorizationPopup));
 
 	const storiesCards = document.querySelectorAll('.stories-card')
-	storiesCards.forEach((card, idx) => card.addEventListener('click', () => {				
+	storiesCards.forEach((card, idx) => card.addEventListener('click', () => {
 		showPopup(storiesPopup);
 		carousel.slideTo(idx);
 	}))
@@ -129,7 +152,7 @@ function initSliders() {
 	const slides = document.querySelectorAll('.stories-carousel__story');
 	slides.forEach(function (slide, index) {
 		slide.addEventListener('click', function () {
-			carousel.slideTo(index); 
+			carousel.slideTo(index);
 		});
 	});
 }

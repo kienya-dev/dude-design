@@ -53,6 +53,14 @@ $responsiveType: 1;
 	touch-action: none;
 }
 
+.preload * {
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	-o-transition: none !important;
+	transition: none !important;
+}
+
 body {
 	// Скролл заблокирован
 
@@ -97,6 +105,59 @@ body {
 	&__main {
 		flex: 1 1 rem(640);
 		overflow: hidden;
+	}
+
+	&__articles {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(32);
+		flex: 1 1 rem(980);
+		overflow: hidden;
+		@media (min-width: $tablet) {
+			row-gap: rem(64);
+		}
+
+		@media (min-width: $mobile) and (max-width: $tablet) {
+			row-gap: rem(48);
+		}
+
+		&_hab {
+			padding-bottom: rem(40);
+
+			@media (min-width: $tablet) {
+				padding-bottom: rem(82);
+			}
+			@media (min-width: $mobile) and (max-width: $tablet) {
+				padding-bottom: rem(62);
+			}
+		}
+
+		&_basic {
+			padding-bottom: rem(40);
+
+			@media (min-width: $tablet) {
+				padding-bottom: rem(82);
+			}
+			@media (min-width: $mobile) and (max-width: $tablet) {
+				padding-bottom: rem(62);
+			}
+		}
+
+		&_instruction {
+			@media (min-width: $pc) {
+				padding-bottom: rem(142);
+			}
+
+			@media (min-width: $tablet) and (max-width: $pc) {
+				padding-bottom: rem(100);
+			}
+			@media (min-width: $mobile) and (max-width: $tablet) {
+				padding-bottom: rem(60);
+			}
+			@media (min-width: $mobileSmall) and (max-width: $mobile) {
+				padding-bottom: rem(40);
+			}
+		}
 	}
 
 	&__aside {
@@ -199,14 +260,25 @@ textarea {
 			color: transparent;
 		}
 	}
-	&._form-focus {
-	}
-	&._form-error {
-	}
 }
-textarea.input {
+.textarea {
+	display: block;
+	width: 100%;
+	padding: rem(16);
+	border-radius: 4px;
 	resize: none;
-	padding: 0px 0px;
+	transition: border-color 0.3s;
+
+	&:focus {
+		border-color: #d1aa7c !important;
+		&::placeholder {
+			color: transparent;
+		}
+	}
+
+	&::placeholder {
+		transition: color 0.3s;
+	}
 }
 
 // Подключение стилей общих элементов проекта
@@ -219,6 +291,7 @@ textarea.input {
 @import "popup";
 // Подключение стилей отдельных страниц
 @import "home";
+@import "articles";
 
 @import "light";
 @import "dark";

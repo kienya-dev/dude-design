@@ -20,11 +20,6 @@
     text-align: center;
     white-space: nowrap;
 
-    @media (any-hover: hover) {
-        &:hover {
-        }
-    }
-
     &_size_small {
         column-gap: rem(10);
         height: rem(24);
@@ -57,6 +52,7 @@
 
     &_theme_brown {
         color: #ffffff;
+        transition: background-color 0.3s;
     }
 
     &_theme_black {
@@ -103,7 +99,7 @@
 }
 
 .title {
-    line-height: 1.25;
+    line-height: 1.2;
     &_size_14 {
         font-size: rem(14);
     }
@@ -128,6 +124,17 @@
         font-size: rem(24);
 
         @media (min-width: $mobile) {
+            font-size: rem(32);
+        }
+    }
+
+    &_size_40 {
+        font-size: rem(28);
+
+        @media (min-width: $tablet) {
+            font-size: rem(40);
+        }
+        @media (min-width: $mobile) and (max-width: $tablet) {
             font-size: rem(32);
         }
     }
@@ -336,7 +343,6 @@
             bottom: 0;
         }
     }
-
 
     &__item {
         transition: background-color 0.3s;
