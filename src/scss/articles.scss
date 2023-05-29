@@ -619,6 +619,22 @@
         margin-bottom: em(23, 40);
     }
 
+    &__insert_mt_64 {
+        margin-top: rem(32);
+
+        @media (min-width: $mobile) {
+            margin-top: rem(64);
+        }
+    }
+
+    &__insert_mb_64 {
+        margin-bottom: rem(32);
+
+        @media (min-width: $mobile) {
+            margin-bottom: rem(64);
+        }
+    }
+
     &__box {
         position: relative;
 
@@ -959,6 +975,13 @@
     &__text {
         line-height: 1.6;
         font-size: rem(18);
+
+        &_mb_48 {
+            margin-bottom: rem(40);
+            @media (min-width: $mobile) {
+                margin-bottom: rem(48);
+            }
+        }
 
         &_column {
             display: flex;
