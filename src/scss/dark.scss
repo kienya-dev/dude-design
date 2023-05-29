@@ -386,13 +386,37 @@ body[data-theme="dark"] {
             }
         }
 
+        &__figcaption {
+            color: #787574;
+        }
+
         &__highlight {
             color: #aba6a5;
             background-color: #32374f;
         }
 
+        &__title-center {
+            span {
+                background-color: #413e3c;
+
+                &::before {
+                    color: #d1cdc9;
+                }
+            }
+        }
+
         &__link {
             color: #5681f0;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: #4d72d3;
+                }
+            }
+
+            &:active {
+                color: #4d72d3;
+            }
         }
 
         &__quote-1 {
@@ -563,5 +587,149 @@ body[data-theme="dark"] {
 
     .dzen {
         background-color: #2b2929;
+    }
+
+    .article-list {
+        &_type_marker {
+            .article-list__item {
+                &_basic {
+                    &::before {
+                        background-color: #d1cdc9;
+                    }
+                }
+            }
+        }
+    }
+
+    .expert {
+        &__name {
+            color: #d1cdc9;
+        }
+
+        &__author {
+            color: #aba6a5;
+        }
+    }
+
+    .choice-edition {
+        border-top: 1px solid #413e3c;
+        border-bottom: 1px solid #413e3c;
+
+        &__title {
+            color: #aba6a5;
+        }
+    }
+
+    .quote-basic {
+        color: #d1cdc9;
+
+        &_quote_3 {
+            border: 1px solid #3d3d3d;
+            background-color: #373737;
+
+            &::after {
+                background: url(../img/icons/quote_black.svg) center no-repeat;
+            }
+        }
+
+        &_quote_4 {
+            border: 1px solid #d1cdc9;
+        }
+    }
+
+    .quote-1 {
+        color: #aba6a5;
+    }
+
+    .quote-2 {
+        color: #aba6a5;
+
+        &::before {
+            background: url(../img/icons/quote_1_black.svg);
+        }
+    }
+
+    .quote-5 {
+        border-left: 8px solid #d1cdc9;
+
+        &__main {
+            color: #b8916d;
+        }
+
+        &__caprion {
+            color: #d1cdc9;
+        }
+    }
+
+    .ui-button {
+        &_type_basic {
+            color: #1f1e1d;
+        }
+        &__grid {
+            color: #1f1e1d;
+        }
+
+        &__icon {
+            svg {
+                fill: #1f1e1d;
+            }
+        }
+
+        &_theme_black {
+            background-color: #d1aa7c;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #b8916d;
+                    .ui-button__grid {
+                        color: #2b2929;
+                    }
+                    svg {
+                        fill: #2b2929;
+                    }
+                }
+            }
+
+            &:active {
+                background-color: #d1aa7c;
+                .ui-button__grid {
+                    color: #2b2929;
+                }
+                svg {
+                    fill: #2b2929;
+                }
+            }
+        }
+
+        &_theme_blue {
+            background-color: #5681f0;
+            color: #ffffff;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #4d72d3;
+                }
+            }
+
+            &:active {
+                background-color: #4d72d3;
+            }
+        }
+    }
+
+    .article-lists {
+        &__title {
+            color: #aba6a5;
+        }
+    }
+
+    .ad-block {
+        &__body {
+            background-color: #303839;
+        }
+
+        &__title {
+            color: #a5b2b5;
+        }
     }
 }

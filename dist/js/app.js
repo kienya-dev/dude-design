@@ -3359,11 +3359,33 @@
         });
     }
     function initSliders() {
-        if (document.querySelector("[data-article-slider-2]")) new core("[data-article-slider-2]", {
+        if (document.querySelector("[data-article-slider-basic]")) new core("[data-article-slider-basic", {
             modules: [ Pagination ],
             slidesPerView: 1,
             spaceBetween: 20,
-            speed: 800
+            speed: 800,
+            loop: true,
+            pagination: {
+                el: "[data-article-sliderbasic-pagination]",
+                clickable: true
+            }
+        });
+        if (document.querySelector("[data-article-sliderfull]")) new core("[data-article-sliderfull]", {
+            modules: [ Pagination ],
+            loop: true,
+            spaceBetween: 20,
+            pagination: {
+                el: "[data-articleslider-full-pagination]",
+                clickable: true,
+                type: "custom",
+                bulletClass: "article-slider__pag-img",
+                bulletActiveClass: "ddd"
+            }
+        });
+        if (document.querySelector("[data-choice-slider]")) new core("[data-choice-slider]", {
+            spaceBetween: 8,
+            speed: 800,
+            slidesPerView: "auto"
         });
         if (document.querySelector("[data-post-slider]")) new core("[data-post-slider]", {
             modules: [ Navigation, Pagination ],

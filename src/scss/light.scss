@@ -356,6 +356,16 @@ body[data-theme="light"] {
             color: #252525;
         }
 
+        &__title-center {
+            span {
+                background-color: #ebebeb;
+
+                &::before {
+                    color: #252525;
+                }
+            }
+        }
+
         &__date {
             color: #757a84;
         }
@@ -371,6 +381,20 @@ body[data-theme="light"] {
 
         &__link {
             color: #4d72d3;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: #5681f0;
+                }
+            }
+
+            &:active {
+                color: #5681f0;
+            }
+        }
+
+        &__figcaption {
+            color: #757a84;
         }
 
         &__quote-1 {
@@ -526,5 +550,129 @@ body[data-theme="light"] {
 
     .dzen {
         background-color: #ffffff;
+    }
+
+    .article-list {
+        &_type_marker {
+            .article-list__item {
+                &_basic {
+                    &::before {
+                        background-color: #252525;
+                    }
+                }
+            }
+        }
+    }
+
+    .expert {
+        &__name {
+            color: #131313;
+        }
+    }
+
+    .choice-edition {
+        border-top: 1px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb;
+    }
+
+    .quote-basic {
+        color: #252525;
+
+        &_quote_3 {
+            border: 1px solid #e6e6e6;
+            background-color: #f4f4f4;
+
+            &::after {
+                background: url(../img/icons/quote.svg) center no-repeat;
+            }
+        }
+
+        &_quote_4 {
+            border: 1px solid #252525;
+        }
+    }
+
+    .quote-2 {
+        &::before {
+            background: url(../img/icons/quote_1.svg);
+        }
+    }
+
+    .quote-5 {
+        border-left: 8px solid #252525;
+
+        &__main {
+            color: #b8916d;
+        }
+
+        &__caprion {
+            color: #252525;
+        }
+    }
+
+    .ui-button {
+        &_type_basic {
+            color: #ffffff;
+        }
+
+        &__grid {
+            color: #ffffff;
+        }
+
+        &__icon {
+            svg {
+                fill: #ffffff;
+            }
+        }
+
+        &_theme_blue {
+            background-color: #4d72d3;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #5681f0;
+                }
+            }
+
+            &:active {
+                background-color: #5681f0;
+            }
+        }
+
+        &_theme_black {
+            background-color: #252525;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #d1aa7c;
+                    .ui-button__grid {
+                        color: #252525;
+                    }
+                    svg {
+                        fill: #252525;
+                    }
+                }
+            }
+
+            &:active {
+                background-color: #d1aa7c;
+                .ui-button__grid {
+                    color: #252525;
+                }
+                svg {
+                    fill: #252525;
+                }
+            }
+        }
+    }
+
+    .ad-block {
+        &__body {
+            background-color: #dfeff2;
+        }
+
+        &__title {
+            color: #1c3438;
+        }
     }
 }

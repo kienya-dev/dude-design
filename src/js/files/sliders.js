@@ -1,23 +1,47 @@
-import Swiper, { Navigation, Pagination, Autoplay, EffectCards } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay, EffectCards, FreeMode, Thumbs } from 'swiper';
 
 import "../../scss/base/swiper.scss";
 import "../../scss/libs/swiper.scss";
 import 'swiper/css';
 
 function initSliders() {
-	if (document.querySelector('[data-article-slider-2]')) {
-		new Swiper('[data-article-slider-2]', {
+	if (document.querySelector('[data-article-slider-basic]')) {
+		new Swiper('[data-article-slider-basic', {
 			modules: [Pagination],
 			slidesPerView: 1,
 			spaceBetween: 20,
 			speed: 800,
-			// pagination: {
-			// 	el: '[data-post-slider-pagination]',
-			// 	clickable: true,
-			// },
+			loop: true,
+			pagination: {
+				el: '[data-article-sliderbasic-pagination]',
+				clickable: true,
+			},
 		});
 	}
 
+	if (document.querySelector('[data-article-sliderfull]')) {
+
+		new Swiper("[data-article-sliderfull]", {
+			modules: [Pagination],
+			loop: true,
+			spaceBetween: 20,
+			pagination: {
+				el: '[data-articleslider-full-pagination]',
+				clickable: true,
+				type: 'custom',
+				bulletClass: 'article-slider__pag-img',
+				bulletActiveClass: 'ddd'
+			},
+		});
+	}
+
+	if (document.querySelector('[data-choice-slider]')) {
+		new Swiper('[data-choice-slider]', {
+			spaceBetween: 8,
+			speed: 800,
+			slidesPerView: "auto",
+		});
+	}
 
 	if (document.querySelector('[data-post-slider]')) {
 		new Swiper('[data-post-slider]', {
