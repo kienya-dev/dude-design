@@ -516,6 +516,10 @@ body[data-theme="dark"] {
     .article-contents {
         background-color: #2b2929;
 
+        & > div {
+            background-color: #2b2929 !important;
+        }
+
         &__item {
             span {
                 &::before {

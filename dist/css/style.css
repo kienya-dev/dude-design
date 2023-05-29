@@ -2451,6 +2451,25 @@ body[data-theme=dark] .choice-theme__button_active svg {
   row-gap: 1rem;
 }
 
+.share_column {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 2.125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 0.5rem;
+  z-index: 2;
+  border-radius: 29px;
+}
+
 .share__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3791,6 +3810,10 @@ body[data-theme=dark] .choice-theme__button_active svg {
   padding-top: 1.5rem;
 }
 
+.sticky {
+  background-color: inherit !important;
+}
+
 .article-cards {
   top: 1.25rem;
 }
@@ -4820,6 +4843,10 @@ body[data-theme=light] .article-contents {
   background-color: #ffffff;
 }
 
+body[data-theme=light] .article-contents > div {
+  background-color: #ffffff !important;
+}
+
 body[data-theme=light] .article-contents__item span::before {
   color: #757a84;
 }
@@ -5324,6 +5351,10 @@ body[data-theme=dark] .article-cards__bottom {
 
 body[data-theme=dark] .article-contents {
   background-color: #2b2929;
+}
+
+body[data-theme=dark] .article-contents > div {
+  background-color: #2b2929 !important;
 }
 
 body[data-theme=dark] .article-contents__item span::before {
@@ -6887,6 +6918,10 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .share_column {
+    display: none;
+  }
+
   .share__button_circle svg {
     fill: #ffffff;
   }
@@ -7775,23 +7810,8 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
     font-size: 0.875rem;
   }
 
-  .share_column {
-    position: fixed;
-    right: 1.5rem;
-    bottom: 4rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    row-gap: 0.5rem;
-    z-index: 2;
-    border-radius: 29px;
+  .share_hide {
+    display: none;
   }
 
   .share__list_column {

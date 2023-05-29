@@ -484,6 +484,10 @@ body[data-theme="light"] {
     .article-contents {
         background-color: #ffffff;
 
+        & > div {
+            background-color: #ffffff !important;
+        }
+
         &__item {
             span {
                 &::before {

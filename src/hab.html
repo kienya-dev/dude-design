@@ -122,28 +122,27 @@
                     </div>
                 </aside>
                 <main class="main app__articles app__articles_hab">
-                    <section class="hab">
+                    <section class="hab" data-article="Необходимые данные (Статья - 1)">
                         <article class="hab__article">
                             <a href="#" class="hab__link">Хаб</a>
                             <h1 class="title title_size_40 title_wight_bold title_color_131313 hab__title">
                                 Взгляд в будущее: все о возможностях современных 3D-принтеров
                             </h1>
-                            <div class="share share_column">
-                                <ul class="share__list share__list_column hab__share" data-list-share>
+                            <div class="share share_hide hab__share">
+                                <ul class="share__list">
                                     <li>
-                                        <button
-                                            class="button share__button share__button_circle share__button_facebook share__button_facebook_circle">
+                                        <button class="button share__button  share__button_facebook">
                                             <span class="share__icon">
                                                 <svg class="icon">
-                                                    <use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+                                                    <use xlink:href="img/icons/sprite.svg#i-facebook">
+                                                    </use>
                                                 </svg>
                                             </span>
                                             <span class="share__num">34</span>
                                         </button>
                                     </li>
                                     <li>
-                                        <button
-                                            class="button share__button share__button_circle share__button_vk share__button_vk_circle">
+                                        <button class="button share__button share__button_vk">
                                             <span class="share__icon">
                                                 <svg class="icon">
                                                     <use xlink:href="img/icons/sprite.svg#i-vk"></use>
@@ -153,33 +152,28 @@
                                         </button>
                                     </li>
                                     <li>
-                                        <button
-                                            class="button share__button share__button_circle share__button_twitter share__button_twitter_circle">
+                                        <button class="button share__button share__button_twitter">
                                             <span class="share__icon">
                                                 <svg class="icon">
-                                                    <use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+                                                    <use xlink:href="img/icons/sprite.svg#i-twitter">
+                                                    </use>
                                                 </svg>
                                             </span>
                                             <span class="share__num share__num_hide">0</span>
                                         </button>
                                     </li>
                                     <li>
-                                        <button
-                                            class="button share__button share__button_circle  share__button_telegram  share__button_telegram_circle">
+                                        <button class="button share__button share__button_telegram">
                                             <span class="share__icon">
                                                 <svg class="icon">
-                                                    <use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+                                                    <use xlink:href="img/icons/sprite.svg#i-telegram">
+                                                    </use>
                                                 </svg>
                                             </span>
                                             <span class="share__num share__num_hide">0</span>
                                         </button>
                                     </li>
                                 </ul>
-                                <button class="button share__toggler" data-toggler-share>
-                                    <svg class="icon">
-                                        <use xlink:href="img/icons/sprite.svg#i-share"></use>
-                                    </svg>
-                                </button>
                             </div>
                             <div class="hab__text">
                                 <p>Ответь-ка предельно честно на один вопрос: как часто ты испытываешь тревогу и страх,
@@ -325,6 +319,62 @@
                         </ul>
                     </section>
                 </main>
+                <div class="share share_column">
+                    <ul class="share__list share__list_column" data-show-article>
+                        <li>
+                            <button
+                                class="button share__button share__button_circle share__button_facebook share__button_facebook_circle">
+                                <span class="share__icon">
+                                    <svg class="icon">
+                                        <use xlink:href="img/icons/sprite.svg#i-facebook">
+                                        </use>
+                                    </svg>
+                                </span>
+                                <span class="share__num">34</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                class="button share__button share__button_circle share__button_vk share__button_vk_circle">
+                                <span class="share__icon">
+                                    <svg class="icon">
+                                        <use xlink:href="img/icons/sprite.svg#i-vk"></use>
+                                    </svg>
+                                </span>
+                                <span class="share__num">34</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                class="button share__button share__button_circle share__button_twitter share__button_twitter_circle">
+                                <span class="share__icon">
+                                    <svg class="icon">
+                                        <use xlink:href="img/icons/sprite.svg#i-twitter">
+                                        </use>
+                                    </svg>
+                                </span>
+                                <span class="share__num share__num_hide">0</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                class="button share__button share__button_circle  share__button_telegram  share__button_telegram_circle">
+                                <span class="share__icon">
+                                    <svg class="icon">
+                                        <use xlink:href="img/icons/sprite.svg#i-telegram">
+                                        </use>
+                                    </svg>
+                                </span>
+                                <span class="share__num share__num_hide">0</span>
+                            </button>
+                        </li>
+                    </ul>
+                    <button class="button share__toggler" data-toggler-share>
+                        <svg class=" icon">
+                            <use xlink:href="img/icons/sprite.svg#i-share"></use>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

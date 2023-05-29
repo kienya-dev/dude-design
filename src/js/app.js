@@ -334,22 +334,49 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         postponeButtons.forEach(button => button.addEventListener('click', () => togglePostponed(button)));
-
     }
 
-
-    //Share
+    //ShareList
     const shareToggler = document.querySelector('[data-toggler-share]');
+    const articles = document.querySelectorAll('[data-article]');
 
+    if (shareToggler && articles.length) {
+        const shareList = document.querySelector('[data-show-article]');
+        let activeArticle = articles[0].getAttribute('data-article');
+        shareList.setAttribute('data-show-article', activeArticle);
 
-    if (shareToggler) {
         const toggleShareList = () => {
-            const shareList = document.querySelector('[data-list-share]');
-            shareList.classList.toggle('share__list_show')
+            shareList.classList.toggle('share__list_show');
         }
 
-        shareToggler.addEventListener('click', toggleShareList)
+        const getVisibleArticle = (article) => {
+            const targetPosition = {
+                top: window.pageYOffset + article.getBoundingClientRect().top,
+                left: window.pageXOffset + article.getBoundingClientRect().left,
+                right: window.pageXOffset + article.getBoundingClientRect().right,
+                bottom: window.pageYOffset + article.getBoundingClientRect().bottom
+            },
+                windowPosition = {
+                    top: window.pageYOffset,
+                    left: window.pageXOffset,
+                    right: window.pageXOffset + document.documentElement.clientWidth,
+                    bottom: window.pageYOffset + document.documentElement.clientHeight
+                };
+
+            if (targetPosition.bottom > windowPosition.top &&
+                targetPosition.top < windowPosition.bottom &&
+                targetPosition.right > windowPosition.left &&
+                targetPosition.left < windowPosition.right) {
+                activeArticle = article.getAttribute('data-article');
+                shareList.setAttribute('data-show-article', activeArticle);
+            }
+        };
+
+        window.addEventListener('scroll', () => articles.forEach(elem => getVisibleArticle(elem)));
+        shareToggler.addEventListener('click', toggleShareList);
     }
+
+
 
     //---------------------------------------------------
 }, false);
@@ -364,7 +391,8 @@ if (a) {
         if (b == null) {
             var Sa = getComputedStyle(a, ''), s = '';
             for (var i = 0; i < Sa.length; i++) {
-                if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 || Sa[i].indexOf('background') == 0) {
+                if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 ||
+                    Sa[i].indexOf('background') == '0') {
                     s += Sa[i] + ': ' + Sa.getPropertyValue(Sa[i]) + '; '
                 }
             }
@@ -398,4 +426,11 @@ if (a) {
         }, false);
     }
 }
+
+
+
+
+
+
+
 

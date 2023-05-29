@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230529142612">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230529165226">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -217,7 +217,7 @@
 				</aside>
 
 				<main class="main app__articles app__articles_basic">
-					<section class="article-section">
+					<section class="article-section" data-article="Необходимые данные (Статья - 1)">
 						<div class="post-info article-section__info article-section__info_bg_color">
 							<div class="post-info__row post-info__row_panel">
 								<span class="button button_size_small button_theme_light-brown">Образ
@@ -266,10 +266,10 @@
 										</h1>
 
 										<div class="article__panel">
-											<div class="share share_column">
-												<ul class="share__list share__list_column">
+											<div class="share share_hide">
+												<ul class="share__list">
 													<li>
-														<button class="button share__button share__button_circle share__button_facebook share__button_facebook_circle">
+														<button class="button share__button  share__button_facebook">
 															<span class="share__icon">
 																<svg class="icon">
 																	<use xlink:href="img/icons/sprite.svg#i-facebook">
@@ -280,7 +280,7 @@
 														</button>
 													</li>
 													<li>
-														<button class="button share__button share__button_circle share__button_vk share__button_vk_circle">
+														<button class="button share__button share__button_vk">
 															<span class="share__icon">
 																<svg class="icon">
 																	<use xlink:href="img/icons/sprite.svg#i-vk"></use>
@@ -290,7 +290,7 @@
 														</button>
 													</li>
 													<li>
-														<button class="button share__button share__button_circle share__button_twitter share__button_twitter_circle">
+														<button class="button share__button share__button_twitter">
 															<span class="share__icon">
 																<svg class="icon">
 																	<use xlink:href="img/icons/sprite.svg#i-twitter">
@@ -301,7 +301,7 @@
 														</button>
 													</li>
 													<li>
-														<button class="button share__button share__button_circle  share__button_telegram  share__button_telegram_circle">
+														<button class="button share__button share__button_telegram">
 															<span class="share__icon">
 																<svg class="icon">
 																	<use xlink:href="img/icons/sprite.svg#i-telegram">
@@ -312,11 +312,6 @@
 														</button>
 													</li>
 												</ul>
-												<button class="button share__toggler" data-toggler-share>
-													<svg class="icon">
-														<use xlink:href="img/icons/sprite.svg#i-share"></use>
-													</svg>
-												</button>
 											</div>
 											<button class="button article__postpone  article__postpone_later article__postpone_postponed" data-postponed="false">
 												<svg class="icon">
@@ -846,7 +841,7 @@
 						</div>
 					</section>
 
-					<section class="article-section">
+					<section class="article-section" data-article="Необходимые данные (Статья - 2)">
 						<div class="post-info article-section__info article-section__info_bg_color">
 							<div class="post-info__row post-info__row_panel">
 								<span class="button button_size_small button_theme_light-brown">Образ
@@ -895,10 +890,10 @@
 										</h1>
 
 										<div class="article__panel">
-											<div class="share share_column">
-												<ul class="share__list share__list_column">
+											<div class="share share_hide">
+												<ul class="share__list">
 													<li>
-														<button class="button share__button share__button_circle share__button_facebook share__button_facebook_circle">
+														<button class="button share__button  share__button_facebook">
 															<span class="share__icon">
 																<svg class="icon">
 																	<use xlink:href="img/icons/sprite.svg#i-facebook">
@@ -909,7 +904,7 @@
 														</button>
 													</li>
 													<li>
-														<button class="button share__button share__button_circle share__button_vk share__button_vk_circle">
+														<button class="button share__button share__button_vk">
 															<span class="share__icon">
 																<svg class="icon">
 																	<use xlink:href="img/icons/sprite.svg#i-vk"></use>
@@ -919,7 +914,7 @@
 														</button>
 													</li>
 													<li>
-														<button class="button share__button share__button_circle share__button_twitter share__button_twitter_circle">
+														<button class="button share__button share__button_twitter">
 															<span class="share__icon">
 																<svg class="icon">
 																	<use xlink:href="img/icons/sprite.svg#i-twitter">
@@ -930,7 +925,7 @@
 														</button>
 													</li>
 													<li>
-														<button class="button share__button share__button_circle  share__button_telegram  share__button_telegram_circle">
+														<button class="button share__button share__button_telegram">
 															<span class="share__icon">
 																<svg class="icon">
 																	<use xlink:href="img/icons/sprite.svg#i-telegram">
@@ -941,11 +936,6 @@
 														</button>
 													</li>
 												</ul>
-												<button class="button share__toggler" data-toggler-share>
-													<svg class="icon">
-														<use xlink:href="img/icons/sprite.svg#i-share"></use>
-													</svg>
-												</button>
 											</div>
 											<button class="button article__postpone  article__postpone_later article__postpone_postponed" data-postponed="false">
 												<svg class="icon">
@@ -1076,10 +1066,16 @@
 												заниматься саморазвитием и вносить в будущее свои корректировки.
 											</p>
 
-											<p class="article__quote-1 article__quote-1_bg_light-gray article__bold">
-												Есть и такой вариант: ты знаешь, как тебе нужно менять свою жизнь, но до
-												последнего оттягиваешь тот самый момент внесения изменений.
-											</p>
+											<div class="quote-1 article__quote-1_bg_light-gray article__bold">
+												<div class="quote-1__main article__text_column">
+													<p>
+														Есть и такой вариант: ты знаешь, как тебе нужно менять свою
+														жизнь,
+														но до
+														последнего оттягиваешь тот самый момент внесения изменений.
+													</p>
+												</div>
+											</div>
 										</div>
 									</div>
 
@@ -1469,10 +1465,683 @@
 						</div>
 					</section>
 
+					<section class="article-section" data-article="Необходимые данные (Статья - 3)">
+						<div class="post-info article-section__info article-section__info_bg_color">
+							<div class="post-info__row post-info__row_panel">
+								<span class="button button_size_small button_theme_light-brown">Образ
+									жизни</span>
+								<div class="button button_partner button_size_small button_theme_default">
+									<svg class="icon button__partner-icon">
+										<use xlink:href="img/icons/sprite.svg#i-money"></use>
+									</svg>
+									<span>Партнерский материал</span>
+								</div>
+							</div>
+							<div class="post-info__row post-info__row_nums">
+								<div class="post-info__num post-info__num_theme_black post-info__num_views">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-views"></use>
+									</svg>
+									<span>2012</span>
+								</div>
+								<div class="post-info__num post-info__num_theme_black post-info__num_comments">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-comments"></use>
+									</svg>
+									<span>102</span>
+								</div>
+							</div>
+						</div>
+						<div class="article-section__column">
+							<article class="article">
+								<div class="article__top">
+									<figure class="article__type_bg">
+										<picture><source srcset="img/article_bg.webp" type="image/webp"><img src="img/article_bg.jpg" alt=""></picture>
+									</figure>
+									<div class="article__head article__head_type_bg">
+										<div class="article__over">
+											<div class="article__author">
+												<figure class="article__ava">
+													<picture><source srcset="img/stories/stories_img_4.webp" type="image/webp"><img src="img/stories/stories_img_4.jpg" alt=""></picture>
+												</figure>
+												<span>Степан Иванов</span>
+											</div>
+											<time datetime="20023-05-25 22:15" class="article__date">вчера в
+												22:15</time>
+										</div>
+										<h1 class="title title_size_40 title_wight_bold title_color_131313 article__main-title">
+											12 причин, почему ты постоянно испытываешь страх перед своим будущим
+										</h1>
+
+										<div class="article__panel">
+											<div class="share share_hide">
+												<ul class="share__list">
+													<li>
+														<button class="button share__button  share__button_facebook">
+															<span class="share__icon">
+																<svg class="icon">
+																	<use xlink:href="img/icons/sprite.svg#i-facebook">
+																	</use>
+																</svg>
+															</span>
+															<span class="share__num">34</span>
+														</button>
+													</li>
+													<li>
+														<button class="button share__button share__button_vk">
+															<span class="share__icon">
+																<svg class="icon">
+																	<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+																</svg>
+															</span>
+															<span class="share__num">34</span>
+														</button>
+													</li>
+													<li>
+														<button class="button share__button share__button_twitter">
+															<span class="share__icon">
+																<svg class="icon">
+																	<use xlink:href="img/icons/sprite.svg#i-twitter">
+																	</use>
+																</svg>
+															</span>
+															<span class="share__num share__num_hide">0</span>
+														</button>
+													</li>
+													<li>
+														<button class="button share__button share__button_telegram">
+															<span class="share__icon">
+																<svg class="icon">
+																	<use xlink:href="img/icons/sprite.svg#i-telegram">
+																	</use>
+																</svg>
+															</span>
+															<span class="share__num share__num_hide">0</span>
+														</button>
+													</li>
+												</ul>
+											</div>
+											<button class="button article__postpone  article__postpone_later article__postpone_postponed" data-postponed="false">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-flag"></use>
+												</svg>
+												<span>Читать позже</span>
+											</button>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="article__main article__main_bg">
+									<div class="article__text article__first article__holder">
+										<p>Ответь-ка предельно честно на один вопрос: как часто ты испытываешь
+											тревогу и
+											страх, задумываясь о своем будущем? Воображение сразу же рисует в твоей
+											голове мрачные картинки, и кажется, что никаких глобальных изменений к
+											лучшему не предвидится.
+										</p>
+										<p>Если ты узнал свои мысли и чувства, то тебе немедленно нужно что-то
+											менять,
+											чтобы избавиться от опасений. Мы собрали самые честные причины, почему
+											тебя
+											так пугает будущее.
+										</p>
+									</div>
+
+									<div class="article__box article__box_level_2">
+										<div class="article__title article__title_level_2 article__holder">
+											<span></span>
+											<h2 class="title title_wight_bold title_color_131313">
+												У тебя негативное представление о будущем
+											</h2>
+										</div>
+										<figure class="article__img article__img_big">
+											<picture><source srcset="img/article.webp" type="image/webp"><img src="img/article.jpg" alt=""></picture>
+										</figure>
+										<div class="article__text article__text_column article__holder">
+											<p>Большинство людей уверены в том, что безбедное, счастливое и безопасное
+												будущее может быть только у тех, кто родился в обеспеченных и
+												влиятельных
+												семьях или обладает каким-нибудь врожденным талантом. Проще говоря,
+												такие
+												люди заранее ставят на себе крест, смиряясь со своей судьбой, которую
+												они
+												считают предрешенной.</p>
+											<p>
+												<mark class="article__highlight">
+													Если ты тоже обладаешь таким типом мышления, вполне вероятно, что ты
+													позволяешь страху и неуверенности в себе контролировать свою жизнь.
+													А
+													раз
+													так, то ты вовсе не беспричинно беспокоишься о будущем.
+												</mark>
+											</p>
+										</div>
+									</div>
+
+
+									<div class="article__box article__box_level_2">
+										<div class="article__title article__title_level_2 article__holder">
+											<span></span>
+											<h2 class="title title_wight_bold title_color_131313">
+												Ты знаешь, что тебе нужно от жизни, но откладываешь всё на потом
+											</h2>
+										</div>
+										<div class="article__text article__text_column article__holder">
+											<p>Есть и такой вариант: ты знаешь, как тебе нужно менять свою жизнь, но до
+												последнего оттягиваешь тот самый момент внесения изменений. Это
+												происходит
+												по одной простой причине: ты боишься потерять то, что у тебя уже есть, а
+												именно стабильность.</p>
+											<p>
+												Легче поверить в то, что твоя жизнь сейчас не так плоха, как могла быть,
+												чем
+												заставить себя рисковать ради светлого будущего. Такая неуверенность в
+												себе
+												рано или поздно приводит к возникновению тревоги и стресса.
+											</p>
+										</div>
+									</div>
+
+									<div class="article__box article__box_level_2 article__box_insert article__box_bg_light-brown">
+										<div class="article__title article__title_level_2 article__holder">
+											<span></span>
+											<h2 class="title title_wight_bold title_color_131313">
+												Ты не действуешь, боясь, что о тебе скажут/подумают окружающие
+											</h2>
+										</div>
+										<div class="article__text article__text_column article__holder">
+											<p>Тяжело начать реализовывать собственный потенциал, если тебя пугает чужое
+												мнение. Большинство людей уверены, что им необходимо строить будущее, в
+												котором их поступки будут одобрительно оценены окружающими. Но не
+												каждому
+												подходит такой вариант. Твои мечты могут противоречить привычным нормам
+												и
+												ожиданиям. Это может тормозить тебя, отталкивать от той жизни, которую
+												ты
+												хочешь прожить.</p>
+											<p>
+												В итоге противоречие истинных желаний и общественных требований загоняет
+												тебя в состояние тревоги и беспокойства. Ты просто не можешь собраться с
+												силами и принять то единственно верное решение, от которого зависит твое
+												благополучие в будущем.
+											</p>
+											<p>
+												<a href="#" class="article__link article__link_bold ">
+													8 советов тому, кто не прислушивается к мнению окружающих
+												</a>
+											</p>
+										</div>
+									</div>
+
+									<div class="article__box article__box_level_2">
+										<div class="article__title article__title_level_2 article__holder">
+											<span></span>
+											<h2 class="title title_wight_bold title_color_131313">
+												Ты создаешь прогнозы на будущее, основываясь на опыте неудачников
+											</h2>
+										</div>
+										<div class="article__text article__text_column article__holder">
+											<p>Есть люди, которые не используют свои возможности, предпочитая принять
+												позицию жертвы и обвинить во всех своих бедах окружающих или неудачно
+												сложившиеся обстоятельства. Глядя на таких людей, ты можешь посчитать,
+												что
+												неудача неизбежна и для тебя. Такое мнение будет мешать тебе начать
+												заниматься саморазвитием и вносить в будущее свои корректировки.
+											</p>
+
+											<div class="quote-1 article__quote-1_bg_light-gray article__bold">
+												<div class="quote-1__main article__text_column">
+													<p>
+														Есть и такой вариант: ты знаешь, как тебе нужно менять свою
+														жизнь,
+														но до
+														последнего оттягиваешь тот самый момент внесения изменений.
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="article__bottom article__holder">
+										<div class="share">
+											<ul class="share__list">
+												<li>
+													<button class="button share__button share__button_facebook">
+														<span class="share__icon">
+															<svg class="icon">
+																<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+															</svg>
+														</span>
+														<span class="share__text">Поделиться</span>
+														<span class="share__num">34</span>
+													</button>
+												</li>
+												<li>
+													<button class="button share__button share__button_vk">
+														<span class="share__icon">
+															<svg class="icon">
+																<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+															</svg>
+														</span>
+														<span class="share__text">Поделиться</span>
+														<span class="share__num">34</span>
+													</button>
+												</li>
+												<li>
+													<button class="button share__button share__button_twitter">
+														<span class="share__icon">
+															<svg class="icon">
+																<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+															</svg>
+														</span>
+														<span class="share__num share__num_hide">0</span>
+													</button>
+												</li>
+												<li>
+													<button class="button share__button  share__button_telegram">
+														<span class="share__icon">
+															<svg class="icon">
+																<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+															</svg>
+														</span>
+														<span class="share__num share__num_hide">0</span>
+													</button>
+												</li>
+											</ul>
+										</div>
+										<ul class="article__tags">
+											<li>
+												<a href="#" class="button article__tag">игры</a>
+											</li>
+											<li>
+												<a href="#" class="button article__tag">психология</a>
+											</li>
+											<li>
+												<a href="#" class="button article__tag">история</a>
+											</li>
+										</ul>
+
+										<div class="article__read article-read article-read_bg_light-blue">
+											<h3 class="title title_size_24 title_wight_bold title_color_252525 article-read__title">
+												Читать также:
+											</h3>
+											<ul class="article-read__list">
+												<li>
+													<a href="#" class="article-read__link">
+														5 плохих черт характера, которые, согласно науке, на самом деле
+														полезны для здоровья
+													</a>
+												</li>
+												<li>
+													<a href="#" class="article-read__link">
+														12 способов открыть для себя новые возможности
+													</a>
+												</li>
+												<li>
+													<a href="#" class="article-read__link">
+														8 способов перестать накручивать себя и усложнять жизнь
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</article>
+
+							<div style="
+							width: 100%;
+							height: 90px;
+							background: #67C2AC;
+							display: flex;
+							align-items: center;
+							text-align: center;
+							justify-content: center;
+							border-radius: 10px;
+						">Временный баннер (удалить)</div>
+
+							<div class="ask-us article-section__ask">
+								<div class="ask-us__body">
+									<h2 class="title title_size_18 title_wight_bold title_color_131313">
+										Задайте вопрос редакции
+									</h2>
+									<p class="app__text ask-us__text">
+										возможно мы ответим на него в наших следующих статьях
+									</p>
+									<button class="button button_size_big button_theme_brown article-section__button">Задать
+										вопрос</button>
+								</div>
+								<svg class="icon ask-us__icon ask-us__icon_size_small">
+									<use xlink:href="img/icons/sprite.svg#i-sign"></use>
+								</svg>
+							</div>
+							<div class="article-comments">
+								<div class="article-comments__head">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-comments"></use>
+									</svg>
+									<h2 class="title title_color_252525 article-comments__title">
+										Комментарии
+									</h2>
+									<span>(4)</span>
+								</div>
+
+								<form action="#" class="article-comments__form">
+									<textarea placeholder="Написать комментарий" class="textarea article-comments__textarea"></textarea>
+
+									<button class="button article-comments__button">Отправить</button>
+								</form>
+
+								<ul class="comments__list">
+									<li class="comment">
+										<div class="comment__head">
+											<div class="comment__user">
+												<figure class="comment__ava">
+													<picture><source srcset="img/article_img_4.webp" type="image/webp"><img src="img/article_img_4.jpg" alt=""></picture>
+												</figure>
+												<span class="comment__username">Александр Иванов</span>
+												<time datetime="20023-05-25 22:15" class="comment__date">вчера в
+													22:15
+												</time>
+											</div>
+										</div>
+
+										<div class="app__text comment__text">
+											<p>Привет , люблю ваш контент и регулярно читаю.</p>
+											<p>Я тут заметил в ЖЖ мастерка что он скопировал полностью ваш пост. Хоть он
+												и
+												оставил ссылку но я не уверен что это с вашего ведома. Чисто из
+												любопытства
+												спрашиваю, потому не хотелось бы чтобы за счёт вашего контента росли
+												другие
+												блогеры
+											</p>
+										</div>
+										<div class="comment__panel">
+											<button class="button comment__reply">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-share"></use>
+												</svg>
+												<span>Ответить</span>
+											</button>
+											<div class="comment-vote">
+												<button class="button comment-vote__button"></button>
+												<span class="comment-vote__counter comment-vote__counter_neutral">2</span>
+												<button class="button comment-vote__button comment-vote__button_dec"></button>
+											</div>
+										</div>
+									</li>
+									<li class="comment">
+										<div class="comment__head">
+											<div class="comment__user">
+												<figure class="comment__ava">
+													<picture><source srcset="img/article_img_3.webp" type="image/webp"><img src="img/article_img_3.jpg" alt=""></picture>
+												</figure>
+												<span class="comment__username">Наталья Попова</span>
+												<time datetime="20023-05-25 22:15" class="comment__date">вчера в
+													22:15
+												</time>
+											</div>
+										</div>
+
+										<div class="app__text comment__text">
+											<p>Привет , люблю ваш контент и регулярно читаю.</p>
+										</div>
+										<div class="comment__panel">
+											<button class="button comment__reply">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-share"></use>
+												</svg>
+												<span>Ответить</span>
+											</button>
+											<div class="comment-vote">
+												<button class="button comment-vote__button"></button>
+												<span class="comment-vote__counter comment-vote__counter_positive">2</span>
+												<button class="button comment-vote__button comment-vote__button_dec"></button>
+											</div>
+										</div>
+
+										<ul class="comments__list">
+											<li class="comment">
+												<div class="comment__head">
+													<div class="comment__user">
+														<figure class="comment__ava">
+															<picture><source srcset="img/article_img_4.webp" type="image/webp"><img src="img/article_img_4.jpg" alt=""></picture>
+														</figure>
+														<span class="comment__username">Александр Иванов</span>
+														<time datetime="20023-05-25 22:15" class="comment__date">вчера в
+															22:15
+														</time>
+													</div>
+												</div>
+
+												<div class="app__text comment__text">
+													<p>Привет , люблю ваш контент и регулярно читаю.</p>
+												</div>
+												<div class="comment__panel">
+													<button class="button comment__reply">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-share"></use>
+														</svg>
+														<span>Ответить</span>
+													</button>
+													<div class="comment-vote">
+														<button class="button comment-vote__button"></button>
+														<span class="comment-vote__counter comment-vote__counter_negative">-2</span>
+														<button class="button comment-vote__button comment-vote__button_dec"></button>
+													</div>
+												</div>
+												<ul class="comments__list">
+													<li class="comment">
+														<div class="comment__head">
+															<div class="comment__user">
+																<figure class="comment__ava">
+																	<picture><source srcset="img/article_img_4.webp" type="image/webp"><img src="img/article_img_4.jpg" alt=""></picture>
+																</figure>
+																<span class="comment__username">Александр Иванов</span>
+																<time datetime="20023-05-25 22:15" class="comment__date">вчера в
+																	22:15
+																</time>
+															</div>
+														</div>
+
+														<div class="app__text comment__text">
+															<p>Привет , люблю ваш контент и регулярно читаю.</p>
+														</div>
+														<div class="comment__panel">
+															<button class="button comment__reply">
+																<svg class="icon">
+																	<use xlink:href="img/icons/sprite.svg#i-share">
+																	</use>
+																</svg>
+																<span>Ответить</span>
+															</button>
+															<div class="comment-vote">
+																<button class="button comment-vote__button"></button>
+																<span class="comment-vote__counter comment-vote__counter_negative">-2</span>
+																<button class="button comment-vote__button comment-vote__button_dec"></button>
+															</div>
+														</div>
+													</li>
+													<li class="comment">
+														<div class="comment__head">
+															<div class="comment__user">
+																<figure class="comment__ava">
+																	<picture><source srcset="img/article_img_3.webp" type="image/webp"><img src="img/article_img_3.jpg" alt=""></picture>
+																</figure>
+																<span class="comment__username">Наталья Попова</span>
+																<time datetime="20023-05-25 22:15" class="comment__date">вчера в
+																	22:15
+																</time>
+															</div>
+														</div>
+
+														<div class="app__text comment__text">
+															<p>Привет , люблю ваш контент и регулярно читаю.</p>
+														</div>
+														<div class="comment__panel">
+															<button class="button comment__reply">
+																<svg class="icon">
+																	<use xlink:href="img/icons/sprite.svg#i-share">
+																	</use>
+																</svg>
+																<span>Ответить</span>
+															</button>
+															<div class="comment-vote">
+																<button class="button comment-vote__button"></button>
+																<span class="comment-vote__counter comment-vote__counter_positive">2</span>
+																<button class="button comment-vote__button comment-vote__button_dec"></button>
+															</div>
+														</div>
+													</li>
+												</ul>
+											</li>
+											<li class="comment">
+												<div class="comment__head">
+													<div class="comment__user">
+														<figure class="comment__ava">
+															<picture><source srcset="img/article_img_3.webp" type="image/webp"><img src="img/article_img_3.jpg" alt=""></picture>
+														</figure>
+														<span class="comment__username">Наталья Попова</span>
+														<time datetime="20023-05-25 22:15" class="comment__date">вчера в
+															22:15
+														</time>
+													</div>
+												</div>
+
+												<div class="app__text comment__text">
+													<p>Привет , люблю ваш контент и регулярно читаю.</p>
+												</div>
+												<div class="comment__panel">
+													<button class="button comment__reply">
+														<svg class="icon">
+															<use xlink:href="img/icons/sprite.svg#i-share"></use>
+														</svg>
+														<span>Ответить</span>
+													</button>
+													<div class="comment-vote">
+														<button class="button comment-vote__button"></button>
+														<span class="comment-vote__counter comment-vote__counter_positive">2</span>
+														<button class="button comment-vote__button comment-vote__button_dec"></button>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+
+							<div class="dzen">
+								<figure class="dzen__logo">
+									<picture><source srcset="img/zen.webp" type="image/webp"><img src="img/zen.png" alt=""></picture>
+								</figure>
+
+								<div class="swiper" data-dzen-slider>
+									<div class="swiper-wrapper">
+										<div class="swiper-slide dzen__slide">
+											<figure class="dzen__card">
+												<picture><source srcset="img/dzen_img.webp" type="image/webp"><img src="img/dzen_img.jpg" alt=""></picture>
+											</figure>
+										</div>
+										<div class="swiper-slide  dzen__slide">
+											<figure class="dzen__card">
+												<picture><source srcset="img/dzen_img.webp" type="image/webp"><img src="img/dzen_img.jpg" alt=""></picture>
+											</figure>
+										</div>
+										<div class="swiper-slide  dzen__slide">
+											<figure class="dzen__card">
+												<picture><source srcset="img/dzen_img.webp" type="image/webp"><img src="img/dzen_img.jpg" alt=""></picture>
+											</figure>
+										</div>
+										<div class="swiper-slide  dzen__slide">
+											<figure class="dzen__card">
+												<picture><source srcset="img/dzen_img.webp" type="image/webp"><img src="img/dzen_img.jpg" alt=""></picture>
+											</figure>
+										</div>
+										<div class="swiper-slide  dzen__slide">
+											<figure class="dzen__card">
+												<picture><source srcset="img/dzen_img.webp" type="image/webp"><img src="img/dzen_img.jpg" alt=""></picture>
+											</figure>
+										</div>
+										<div class="swiper-slide  dzen__slide">
+											<figure class="dzen__card">
+												<picture><source srcset="img/dzen_img.webp" type="image/webp"><img src="img/dzen_img.jpg" alt=""></picture>
+											</figure>
+										</div>
+										<div class="swiper-slide  dzen__slide">
+											<figure class="dzen__card">
+												<picture><source srcset="img/dzen_img.webp" type="image/webp"><img src="img/dzen_img.jpg" alt=""></picture>
+											</figure>
+										</div>
+										<div class="swiper-slide  dzen__slide">
+											<figure class="dzen__card">
+												<picture><source srcset="img/dzen_img.webp" type="image/webp"><img src="img/dzen_img.jpg" alt=""></picture>
+											</figure>
+										</div>
+										<div class="swiper-slide  dzen__slide">
+											<figure class="dzen__card">
+												<picture><source srcset="img/dzen_img.webp" type="image/webp"><img src="img/dzen_img.jpg" alt=""></picture>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<div class="share share_column">
+						<ul class="share__list share__list_column" data-show-article>
+							<li>
+								<button class="button share__button share__button_circle share__button_facebook share__button_facebook_circle">
+									<span class="share__icon">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-facebook">
+											</use>
+										</svg>
+									</span>
+									<span class="share__num">34</span>
+								</button>
+							</li>
+							<li>
+								<button class="button share__button share__button_circle share__button_vk share__button_vk_circle">
+									<span class="share__icon">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+										</svg>
+									</span>
+									<span class="share__num">34</span>
+								</button>
+							</li>
+							<li>
+								<button class="button share__button share__button_circle share__button_twitter share__button_twitter_circle">
+									<span class="share__icon">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-twitter">
+											</use>
+										</svg>
+									</span>
+									<span class="share__num share__num_hide">0</span>
+								</button>
+							</li>
+							<li>
+								<button class="button share__button share__button_circle  share__button_telegram  share__button_telegram_circle">
+									<span class="share__icon">
+										<svg class="icon">
+											<use xlink:href="img/icons/sprite.svg#i-telegram">
+											</use>
+										</svg>
+									</span>
+									<span class="share__num share__num_hide">0</span>
+								</button>
+							</li>
+						</ul>
+						<button class="button share__toggler" data-toggler-share>
+							<svg class=" icon">
+								<use xlink:href="img/icons/sprite.svg#i-share"></use>
+							</svg>
+						</button>
+					</div>
 				</main>
-
-
-
 			</div>
 		</div>
 	</div>
@@ -1744,7 +2413,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230529142612"></script>
+	<script src="js/app.min.js?_v=20230529165226"></script>
 </body>
 
 </html>

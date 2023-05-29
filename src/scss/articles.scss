@@ -68,18 +68,25 @@
     }
 }
 .share {
-    &_column {
+    &_hide {
         @media (max-width: $mobile) {
-            position: fixed;
-            right: rem(24);
-            bottom: rem(64);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            row-gap: rem(8);
-            z-index: 2;
-            border-radius: 29px;
+            display: none;
         }
+    }
+
+    &_column {
+        @media (min-width: $mobile) {
+            display: none;
+        }
+        position: fixed;
+        right: rem(24);
+        bottom: rem(34);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: rem(8);
+        z-index: 2;
+        border-radius: 29px;
     }
 
     &__list {
@@ -1663,6 +1670,7 @@
 }
 
 .sticky {
+    background-color: inherit !important;
     @media (min-width: $pc) {
         position: fixed;
         z-index: 101;
