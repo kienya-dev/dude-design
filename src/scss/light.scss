@@ -191,6 +191,12 @@ body[data-theme="light"] {
                 background-color: #252525;
             }
         }
+
+        &_theme_light-red {
+            border: 1px solid #efd4d5;
+            color: #bf707a;
+            background-color: #fde8e9;
+        }
     }
 
     .title {
@@ -539,6 +545,13 @@ body[data-theme="light"] {
     .comment-vote {
         &__button {
             border: 1px solid #ebebeb;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    border-color: #757a84;
+                    opacity: 0.5;
+                }
+            }
 
             &::before {
                 background-color: #757a84;

@@ -114,6 +114,10 @@ body[data-theme="dark"] {
         &__likes {
             color: #787574;
         }
+
+        &__title {
+            color: #aba6a5;
+        }
     }
 
     .post-slider {
@@ -196,6 +200,12 @@ body[data-theme="dark"] {
             &:active {
                 background-color: #a88361;
             }
+        }
+
+        &_theme_light-red {
+            border: 1px solid #844d55;
+            color: #c2b2b2;
+            background-color: #693d43;
         }
     }
 
@@ -576,7 +586,12 @@ body[data-theme="dark"] {
     .comment-vote {
         &__button {
             border: 1px solid #413e3c;
-
+            @media (any-hover: hover) {
+                &:hover {
+                    border-color: #787574;
+                    opacity: 0.5;
+                }
+            }
             &::before {
                 background-color: #787574;
             }

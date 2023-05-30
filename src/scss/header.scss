@@ -228,6 +228,15 @@
 
 	&_color_gray {
 		color: #b8916d;
+		transition: color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #d1aa7c;
+			}
+		}
+		&:active {
+			color: #d1aa7c;
+		}
 	}
 
 	&__icon {

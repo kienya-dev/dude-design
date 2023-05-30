@@ -2025,6 +2025,10 @@
         width: rem(24);
         height: rem(24);
         border-radius: 2px;
+        transition: opacity 0.3s, border-color 0.3s, transform 0.3s;
+        &:active {
+            transform: scale(0.85);
+        }
 
         &::before {
             content: "";
