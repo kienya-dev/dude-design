@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Профиль</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230606180120">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body data-theme="light">
+	<div class="app profile">
+		<header class="header">
+			<div class="header__adv header__adv_active" data-adv-top>
+				<div class="header__container header__container_adv">
+					<div class="header__podcast">
+						<svg class="icon header__podcast-icon">
+							<use xlink:href="img/icons/sprite.svg#i-microphone"></use>
+						</svg>
+						<span>
+							Слушайте подкасты нашей студии
+						</span>
+					</div>
+					<figure class="header__redbarn">
+						<img src="img/icons/redbarn.svg" alt="">
+					</figure>
+					<a href="#" class="button go-podcast go-podcast_font_wieght go-podcast_color_white">
+						<span>Слушать</span>
+						<svg class="icon go-podcast__icon">
+							<use xlink:href="img/icons/sprite.svg#i-arrow"></use>
+						</svg>
+					</a>
+				</div>
+				<button class="button header__close-adv" data-adv-close>
+					<svg class="icon">
+						<use xlink:href="img/icons/sprite.svg#i-close"></use>
+					</svg>
+				</button>
+			</div>
+			<div class="header__container header__container_main">
+				<div class="icon-menu">
+					<span></span>
+				</div>
+
+				<div class="header__logo">
+					<a href="/" class="header__logo logo">
+						<svg class="icon">
+							<use xlink:href="img/icons/sprite.svg#i-logo"></use>
+						</svg>
+					</a>
+				</div>
+
+				<form class="header__search search-form" data-search-form>
+					<input type="text" class="input search-form__input" placeholder="Что ищем?">
+					<button class="button search-form__button">Искать</button>
+				</form>
+				<a href="#" class="button header__look" data-look>
+					<picture><source srcset="img/icons/eyes.webp" type="image/webp"><img src="img/icons/eyes.png" class="header__eyes" alt=""></picture>
+					<span>На себя посмотри</span>
+				</a>
+
+				<!--Добавил  класс header__panel_logged -> Если пользователь залогинен-->
+				<div class="header__panel header__panel_logged">
+					<!--Добавил  класс .header__panel_logged -> Если пользователь залогинен-->
+					<div class="choice-theme" data-choice-theme>
+						<button class="button choice-theme__button choice-theme__button_light choice-theme__button_active" data-button-theme-light>
+							<svg class="icon">
+								<use xlink:href="img/icons/sprite.svg#i-light"></use>
+							</svg>
+						</button>
+						<div class="choice-theme__switcher">
+							<input type="checkbox" id="switch-theme" class="choice-theme__input" />
+							<label for="switch-theme" class="choice-theme__label"></label>
+						</div>
+						<button class="button choice-theme__button choice-theme__button_dark" data-button-theme-dark>
+							<svg class="icon">
+								<use xlink:href="img/icons/sprite.svg#i-dark"></use>
+							</svg>
+						</button>
+					</div>
+					<button class="button" data-search-button>
+						<svg class="icon header__search-icon">
+							<use xlink:href="img/icons/sprite.svg#i-search"></use>
+						</svg>
+					</button>
+
+					<!--Добавил ссылку на лк и аватар пользователя вместо кнопки войти-->
+					<a href="#" class="header__avatar">
+						<figure class="header__avatar-img">
+							<picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt=""></picture>
+						</figure>
+					</a>
+					<!--Добавил ссылку на лк и аватар пользователя вместо кнопки войти-->
+
+				</div>
+
+
+			</div>
+		</header>
+		<div class="app__page">
+			<div class="app__container">
+				<aside class="aside app__aside app__aside_left app__aside_none" data-nav-menu>
+
+					<!--Добавил блок с логотипом и бургер меню-->
+					<div class="aside__head">
+						<div class="icon-menu">
+							<span></span>
+						</div>
+						<a href="/" class="header__logo logo">
+							<svg class="icon">
+								<use xlink:href="img/icons/sprite.svg#i-logo"></use>
+							</svg>
+						</a>
+					</div>
+					<!--Добавил блок с логотипом и бургер меню-->
+
+					<div class="menu">
+						<h2 class="title title_size_24 title_wight_bold title_color_252525 aside__title menu__title">
+							<svg class="icon">
+								<use xlink:href="img/icons/sprite.svg#i-rubric"></use>
+							</svg>
+							<span>Рубрики</span>
+						</h2>
+						<nav>
+							<ul class="menu__list menu__list_main">
+								<li>
+									<a href="#" class="menu__link menu__link_main menu__link_popular">Популярное</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Подруги</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Отношения</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Образ жизни</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Лайфхак</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Инвентарь</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Герои</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Еда</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Фитнес</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Наука</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Культура</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_main">Карьера</a>
+								</li>
+							</ul>
+							<ul class="menu__list menu__list_small">
+								<li>
+									<a href="#" class="menu__link menu__link_small">
+										Соглашения и правила
+									</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_small">
+										Правообладателям
+									</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_small">
+										Рекламодателям
+									</a>
+								</li>
+								<li>
+									<a href="#" class="menu__link menu__link_small">
+										Контакты
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<ul class="social">
+							<li>
+								<a href="#" class="button social__link social__link_facebook">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="button social__link social__link_vk">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-vk"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="button social__link social__link_twitter">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="button social__link social__link_telegram">
+									<svg class="icon">
+										<use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</aside>
+
+				<aside class="profile__aside">
+					<div class="profile__user">
+						<figure class="profile__avatar">
+							<picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt=""></picture>
+						</figure>
+
+						<div class="profile__info">
+							<h2 class="title title_size_22 title_wight_bold title_color_252525">
+								Екатерина Иванова
+							</h2>
+							<div class="profile__date">
+								<svg class="icon">
+									<use xlink:href="img/icons/sprite.svg#i-reg-date"></use>
+								</svg>
+								<div>
+									<span>на сайте с </span>
+									<time datetime="20021-04-12">12 апреля 2021</time>
+								</div>
+							</div>
+							<span class="button profile__role">Автор</span>
+						</div>
+					</div>
+
+					<nav class="menu profile__nav">
+						<ul class="menu__list profile__list">
+							<li>
+								<a href="#" class="menu__link menu__link_main profile__link menu__link_active profile__link_active">Читать
+									позже (6)</a>
+							</li>
+							<li>
+								<a href="#" class="menu__link menu__link_main profile__link">Комментарии (16)</a>
+							</li>
+							<li>
+								<a href="#" class="menu__link menu__link_main profile__link">Мои публикации (26)</a>
+							</li>
+						</ul>
+
+						<ul class="menu__list profile__list">
+							<li>
+								<a href="#" class="menu__link menu__link_main profile__link">Настройки</a>
+							</li>
+							<li>
+								<button class="menu__link menu__link_main profile__link profile__link_exit" data-button-out>
+									Выйти
+								</button>
+							</li>
+						</ul>
+					</nav>
+				</aside>
+
+				<main class="main app__main">
+					<section>
+						<div class="profile__head">
+							<h1 class="title title_wight_bold title_color_252525 profile__title">
+								Читать позже (6)
+							</h1>
+
+							<button class="button profile__sort">
+								<span>сначала последние</span>
+								<svg class="icon">
+									<use xlink:href="img/icons/sprite.svg#i-sort-arrow"></use>
+								</svg>
+
+							</button>
+						</div>
+						<div class="profile__column profile__column_wall">
+							<div class="post post_theme_default">
+								<a href="#" class="post__link">
+									<figure class="post__img">
+										<picture><source srcset="img/article_img.webp" type="image/webp"><img src="img/article_img.jpg" alt=""></picture>
+									</figure>
+									<div class="post__body">
+										<h2 class="title title_size_22 title_wight_bold title_color_131313 post__title">
+											Кем ты хотел стать в детстве и почему тебе повезло, что это осталось мечтой
+										</h2>
+										<div class="post__text app__text">
+											<p>
+												Многие профессии или занятия, которые в детстве казались тебе
+												идеальными, на
+												самом деле являются не только неинтересными, но и даже опасными.
+											</p>
+										</div>
+									</div>
+									<div class="post-info post__footer">
+										<div class="post-info__row post-info__row_panel">
+											<span class="button button_size_small button_theme_light-brown">Образ
+												жизни</span>
+											<div class="button button_partner button_size_small button_theme_default">
+												<svg class="icon button__partner-icon">
+													<use xlink:href="img/icons/sprite.svg#i-money"></use>
+												</svg>
+												<span>Партнерский материал</span>
+											</div>
+										</div>
+										<div class="post-info__row post-info__row_nums">
+											<div class="post-info__num post-info__num_theme_black post-info__num_views">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-views"></use>
+												</svg>
+												<span>2012</span>
+											</div>
+											<div class="post-info__num post-info__num_theme_black post-info__num_comments">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-comments"></use>
+												</svg>
+												<span>102</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+
+							<div class="post post_theme_default">
+								<a href="#" class="post__link">
+									<div class="post__body">
+										<h2 class="title title_size_22 title_wight_bold title_color_131313 post__title">
+											Кем ты хотел стать в детстве и почему тебе повезло, что это осталось мечтой
+										</h2>
+										<div class="post__text app__text">
+											<p>
+												Многие профессии или занятия, которые в детстве казались тебе
+												идеальными, на
+												самом деле являются не только неинтересными, но и даже опасными.
+											</p>
+										</div>
+									</div>
+									<div class="post-info post__footer">
+										<div class="post-info__row post-info__row_panel">
+											<span class="button button_size_small button_theme_light-blue">Новости</span>
+											<span class="post-info__date">вчера в 22:15</span>
+										</div>
+										<div class="post-info__row post-info__row_nums">
+											<div class="post-info__num post-info__num_theme_black post-info__num_views">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-views"></use>
+												</svg>
+												<span>202</span>
+											</div>
+											<div class="post-info__num post-info__num_theme_black post-info__num_comments">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-comments"></use>
+												</svg>
+												<span>102</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+
+							<div class="post post_theme_default">
+								<a href="#" class="post__link">
+									<figure class="post__img">
+										<picture><source srcset="img/article_img_2.webp" type="image/webp"><img src="img/article_img_2.jpg" alt=""></picture>
+									</figure>
+									<div class="post__body">
+										<h2 class="title title_size_22 title_wight_bold title_color_131313 post__title">
+											Кем ты хотел стать в детстве и почему тебе повезло, что это осталось мечтой
+										</h2>
+										<div class="post__text app__text">
+											<p>
+												Многие профессии или занятия, которые в детстве казались тебе
+												идеальными, на
+												самом деле являются не только неинтересными, но и даже опасными.
+											</p>
+										</div>
+									</div>
+									<div class="post-info post__footer">
+										<div class="post-info__row post-info__row_panel">
+											<span class="button button_size_small button_theme_light-brown">Образ
+												жизни</span>
+											<div class="button button_partner button_size_small button_theme_default">
+												<svg class="icon button__partner-icon">
+													<use xlink:href="img/icons/sprite.svg#i-money"></use>
+												</svg>
+												<span>Партнерский материал</span>
+											</div>
+										</div>
+										<div class="post-info__row post-info__row_nums">
+											<div class="post-info__num post-info__num_theme_black post-info__num_views">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-views"></use>
+												</svg>
+												<span>2012</span>
+											</div>
+											<div class="post-info__num post-info__num_theme_black post-info__num_comments">
+												<svg class="icon">
+													<use xlink:href="img/icons/sprite.svg#i-comments"></use>
+												</svg>
+												<span>102</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</section>
+				</main>
+
+				<aside class="aside app__aside app__aside_right">
+					<div class="aside__articles top-articles">
+						<h2 class="title title_size_18 title_wight_bold title_color_252525 profile__aside-title">
+							Вам может понравиться
+						</h2>
+						<ul class="articles-list">
+							<li>
+								<a href="#" class="articles-list__link">
+									<figure class="articles-list__img">
+										<picture><source srcset="img/article_img.webp" type="image/webp"><img src="img/article_img.jpg" alt=""></picture>
+									</figure>
+									<h3 class="title title_size_14 title_wight_bold title_color_252525">Сюжет фильма,
+										ставший сценарием жизни: истории трёх пар, нашедших друг друга на сайте
+										знакомств</h3>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="articles-list__link">
+									<figure class="articles-list__img">
+										<picture><source srcset="img/article_img.webp" type="image/webp"><img src="img/article_img.jpg" alt=""></picture>
+									</figure>
+									<h3 class="title title_size_14 title_wight_bold title_color_252525">Опасные
+										соперники и сложные миссии: 5 причин
+										скачать Gladiator Glory</h3>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="articles-list__link">
+									<figure class="articles-list__img">
+										<picture><source srcset="img/article_img.webp" type="image/webp"><img src="img/article_img.jpg" alt=""></picture>
+									</figure>
+									<h3 class="title title_size_14 title_wight_bold title_color_252525">Почему девушкам
+										дарят цветы и как выбрать
+										подходящий букет</h3>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="articles-list__link">
+									<figure class="articles-list__img">
+										<picture><source srcset="img/article_img.webp" type="image/webp"><img src="img/article_img.jpg" alt=""></picture>
+									</figure>
+									<h3 class="title title_size_14 title_wight_bold title_color_252525">9 атмосферных
+										фильмов ужасов, действие которых
+										происходит в Новый год и Рождество</h3>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="articles-list__link">
+									<figure class="articles-list__img">
+										<picture><source srcset="img/article_img.webp" type="image/webp"><img src="img/article_img.jpg" alt=""></picture>
+									</figure>
+									<h3 class="title title_size_14 title_wight_bold title_color_252525">Что делать, если
+										встречаешься с девушкой, у которой уже есть парень</h3>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</div>
+
+	<div class="overlay"></div>
+
+	<div class="popup log-out" data-popup-out>
+		<div class="popup__wrapper">
+			<div class="popup__body log-out__body">
+				<div class="popup__content">
+					<div class="log-out__content">
+						<p class="log-out__text">
+							Вы уверены, что хотите выйти из профиля?
+						</p>
+
+						<div class="log-out__buttons">
+							<button class="button button_no_bg log-out__button log-out__button_cancel" data-close>Остаться</button>
+							<button class="button button_theme_blue log-out__button">Хочу</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/app.min.js?_v=20230606180120"></script>
+</body>
+
+</html>

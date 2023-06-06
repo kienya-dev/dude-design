@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Хаб</title>
+	<title>404</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -12,7 +12,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body data-theme="light" class="preload">
+
+<body class="preload" data-theme="light">
+
 	<div class="app">
 		<header class="header">
 			<div class="header__adv header__adv_active" data-adv-top>
@@ -46,7 +48,6 @@
 					<span></span>
 				</div>
 
-				<!-- logo oбернул в div-->
 				<div class="header__logo">
 					<a href="/" class="header__logo logo">
 						<svg class="icon">
@@ -54,7 +55,6 @@
 						</svg>
 					</a>
 				</div>
-				<!-- logo oбернул в div-->
 
 				<form class="header__search search-form" data-search-form>
 					<input type="text" class="input search-form__input" placeholder="Что ищем?">
@@ -64,7 +64,10 @@
 					<picture><source srcset="img/icons/eyes.webp" type="image/webp"><img src="img/icons/eyes.png" class="header__eyes" alt=""></picture>
 					<span>На себя посмотри</span>
 				</a>
-				<div class="header__panel">
+
+				<!--Добавил  класс header__panel_logged -> Если пользователь залогинен-->
+				<div class="header__panel header__panel_logged">
+					<!--Добавил  класс .header__panel_logged -> Если пользователь залогинен-->
 					<div class="choice-theme" data-choice-theme>
 						<button class="button choice-theme__button choice-theme__button_light choice-theme__button_active" data-button-theme-light>
 							<svg class="icon">
@@ -87,23 +90,22 @@
 						</svg>
 					</button>
 
-					<!--Добавил data атрибут (data-authorization-button) на кнопку войти-->
-					<button class="button header__login" data-authorization-button>
-						<svg class="icon header__login-icon">
-							<use xlink:href="img/icons/sprite.svg#i-user"></use>
-						</svg>
-						<span>Войти</span>
-					</button>
-					<!--Добавил data атрибут (data-authorization-button) на кнопку войти-->
+					<!--Добавил ссылку на лк и аватар пользователя вместо кнопки войти-->
+					<a href="#" class="header__avatar">
+						<figure class="header__avatar-img">
+							<picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt=""></picture>
+						</figure>
+					</a>
+					<!--Добавил ссылку на лк и аватар пользователя вместо кнопки войти-->
 
 				</div>
 
 
 			</div>
 		</header>
-		<div class="app__page">
+		<div class="app__page error-page">
 			<div class="app__container">
-				<aside class="aside app__aside app__aside_left" data-nav-menu>
+				<aside class="aside app__aside app__aside_left app__aside_none" data-nav-menu>
 					<div class="aside__head">
 						<div class="icon-menu">
 							<span></span>
@@ -215,244 +217,36 @@
 						</ul>
 					</div>
 				</aside>
-				<main class="main app__articles app__articles_hab">
-					<section class="hab" data-article="Необходимые данные (Статья - 1)">
-						<article class="hab__article">
-							<a href="#" class="hab__link">Хаб</a>
-							<h1 class="title title_size_40 title_wight_bold title_color_131313 hab__title">
-								Взгляд в будущее: все о возможностях современных 3D-принтеров
-							</h1>
-							<div class="share share_hide hab__share">
-								<ul class="share__list">
-									<li>
-										<button class="button share__button  share__button_facebook">
-											<span class="share__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-facebook">
-													</use>
-												</svg>
-											</span>
-											<span class="share__num">34</span>
-										</button>
-									</li>
-									<li>
-										<button class="button share__button share__button_vk">
-											<span class="share__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-vk"></use>
-												</svg>
-											</span>
-											<span class="share__num">34</span>
-										</button>
-									</li>
-									<li>
-										<button class="button share__button share__button_twitter">
-											<span class="share__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-twitter">
-													</use>
-												</svg>
-											</span>
-											<span class="share__num share__num_hide">0</span>
-										</button>
-									</li>
-									<li>
-										<button class="button share__button share__button_telegram">
-											<span class="share__icon">
-												<svg class="icon">
-													<use xlink:href="img/icons/sprite.svg#i-telegram">
-													</use>
-												</svg>
-											</span>
-											<span class="share__num share__num_hide">0</span>
-										</button>
-									</li>
-								</ul>
-							</div>
-							<div class="hab__text">
-								<p>Ответь-ка предельно честно на один вопрос: как часто ты испытываешь тревогу и страх,
-									задумываясь о своем будущем? Воображение сразу же рисует в твоей голове мрачные
-									картинки, и кажется, что никаких глобальных изменений к лучшему не предвидится.
-								</p>
-								<p>
-									Если ты узнал свои мысли и чувства, то тебе немедленно нужно что-то менять, чтобы
-									избавиться от опасений. Мы собрали самые честные причины, почему тебя так пугает
-									будущее.
-								</p>
-							</div>
-						</article>
-						<ul class="hab__cards">
-							<li class="card-article">
-								<a href="#" class="card-article__link">
-									<figure class="card-article__img">
-										<picture><source srcset="img/article_img_3.webp" type="image/webp"><img src="img/article_img_3.jpg" alt=""></picture>
-									</figure>
-									<div class="card-article__content">
-										<h3 class="title title_size_22 title_wight_bold title_color_white card-article__title">
-											Взгляд в будущее: все о возможностях современных 3D-принтеров
-										</h3>
-										<div class="post-info card-article__info">
 
-											<div class="post-info__row post-info__row_nums">
-												<div class="post-info__num post-info__num_theme_white post-info__num_views">
-													<svg class="icon">
-														<use xlink:href="img/icons/sprite.svg#i-views"></use>
-													</svg>
-													<span>2012</span>
-												</div>
-												<div class="post-info__num post-info__num_theme_white post-info__num_comments">
-													<svg class="icon">
-														<use xlink:href="img/icons/sprite.svg#i-comments"></use>
-													</svg>
-													<span>102</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li class="card-article">
-								<a href="#" class="card-article__link">
-									<figure class="card-article__img">
-										<picture><source srcset="img/article_img_2.webp" type="image/webp"><img src="img/article_img_2.jpg" alt=""></picture>
-									</figure>
-									<div class="card-article__content">
-										<h3 class="title title_size_22 title_wight_bold title_color_white card-article__title">
-											Взгляд в будущее: все о возможностях современных 3D-принтеров
-										</h3>
-										<div class="post-info card-article__info">
 
-											<div class="post-info__row post-info__row_nums">
-												<div class="post-info__num post-info__num_theme_white post-info__num_views">
-													<svg class="icon">
-														<use xlink:href="img/icons/sprite.svg#i-views"></use>
-													</svg>
-													<span>2012</span>
-												</div>
-												<div class="post-info__num post-info__num_theme_white post-info__num_comments">
-													<svg class="icon">
-														<use xlink:href="img/icons/sprite.svg#i-comments"></use>
-													</svg>
-													<span>102</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li class="card-article">
-								<a href="#" class="card-article__link">
-									<figure class="card-article__img">
-										<picture><source srcset="img/article_img_4.webp" type="image/webp"><img src="img/article_img_4.jpg" alt=""></picture>
-									</figure>
-									<div class="card-article__content">
-										<h3 class="title title_size_22 title_wight_bold title_color_white card-article__title">
-											Взгляд в будущее: все о возможностях современных 3D-принтеров
-										</h3>
-										<div class="post-info card-article__info">
+				<main class="main app__main app__main_error app__main_404">
 
-											<div class="post-info__row post-info__row_nums">
-												<div class="post-info__num post-info__num_theme_white post-info__num_views">
-													<svg class="icon">
-														<use xlink:href="img/icons/sprite.svg#i-views"></use>
-													</svg>
-													<span>2012</span>
-												</div>
-												<div class="post-info__num post-info__num_theme_white post-info__num_comments">
-													<svg class="icon">
-														<use xlink:href="img/icons/sprite.svg#i-comments"></use>
-													</svg>
-													<span>102</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li class="card-article">
-								<a href="#" class="card-article__link">
-									<figure class="card-article__img">
-										<picture><source srcset="img/article_img_1.webp" type="image/webp"><img src="img/article_img_1.jpg" alt=""></picture>
-									</figure>
-									<div class="card-article__content">
-										<h3 class="title title_size_22 title_wight_bold title_color_white card-article__title">
-											Взгляд в будущее: все о возможностях современных 3D-принтеров
-										</h3>
-										<div class="post-info card-article__info">
-
-											<div class="post-info__row post-info__row_nums">
-												<div class="post-info__num post-info__num_theme_white post-info__num_views">
-													<svg class="icon">
-														<use xlink:href="img/icons/sprite.svg#i-views"></use>
-													</svg>
-													<span>2012</span>
-												</div>
-												<div class="post-info__num post-info__num_theme_white post-info__num_comments">
-													<svg class="icon">
-														<use xlink:href="img/icons/sprite.svg#i-comments"></use>
-													</svg>
-													<span>102</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</li>
-						</ul>
-					</section>
-				</main>
-				<div class="share share_column">
-					<ul class="share__list share__list_column" data-show-article>
-						<li>
-							<button class="button share__button share__button_circle share__button_facebook share__button_facebook_circle">
-								<span class="share__icon">
-									<svg class="icon">
-										<use xlink:href="img/icons/sprite.svg#i-facebook">
-										</use>
-									</svg>
-								</span>
-								<span class="share__num">34</span>
-							</button>
-						</li>
-						<li>
-							<button class="button share__button share__button_circle share__button_vk share__button_vk_circle">
-								<span class="share__icon">
-									<svg class="icon">
-										<use xlink:href="img/icons/sprite.svg#i-vk"></use>
-									</svg>
-								</span>
-								<span class="share__num">34</span>
-							</button>
-						</li>
-						<li>
-							<button class="button share__button share__button_circle share__button_twitter share__button_twitter_circle">
-								<span class="share__icon">
-									<svg class="icon">
-										<use xlink:href="img/icons/sprite.svg#i-twitter">
-										</use>
-									</svg>
-								</span>
-								<span class="share__num share__num_hide">0</span>
-							</button>
-						</li>
-						<li>
-							<button class="button share__button share__button_circle  share__button_telegram  share__button_telegram_circle">
-								<span class="share__icon">
-									<svg class="icon">
-										<use xlink:href="img/icons/sprite.svg#i-telegram">
-										</use>
-									</svg>
-								</span>
-								<span class="share__num share__num_hide">0</span>
-							</button>
-						</li>
-					</ul>
-					<button class="button share__toggler" data-toggler-share>
-						<svg class=" icon">
-							<use xlink:href="img/icons/sprite.svg#i-share"></use>
+					<section>
+						<svg class="icon error-page__img error-page__img_404">
+							<use xlink:href="img/icons/sprite.svg#i-404"></use>
 						</svg>
-					</button>
-				</div>
+						<h1 class="title title_wight_bold title_color_252525 error-page__title error-page__title_404">
+							Такой страницы не существует
+						</h1>
+						<div class="error-page__content">
+							<div class="app__text error-page__text error-page__text_404">
+								<p>
+									Возможно эта страница была удалена, переименована или никогда не существовала.
+									Пожалуйста, проверьте правильность ссылки либо воспользуйтесь формой поиска.
+								</p>
+							</div>
+						</div>
+						<form class="search-form error-page__search">
+							<input type="text" class="input search-form__input error-page__input" placeholder="Что ищем?">
+							<button class="button search-form__button">Искать</button>
+						</form>
+
+						<a href="/" class="error-page__link">На главную</a>
+					</section>
+
+				</main>
+
+
 			</div>
 		</div>
 	</div>

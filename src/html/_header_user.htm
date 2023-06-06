@@ -1,0 +1,88 @@
+<header class="header">
+    <div class="header__adv header__adv_active" data-adv-top>
+        <div class="header__container header__container_adv">
+            <div class="header__podcast">
+                <svg class="icon header__podcast-icon">
+                    <use xlink:href="img/icons/sprite.svg#i-microphone"></use>
+                </svg>
+                <span>
+                    Слушайте подкасты нашей студии
+                </span>
+            </div>
+            <figure class="header__redbarn">
+                <img src="img/icons/redbarn.svg" alt="">
+            </figure>
+            <a href="#" class="button go-podcast go-podcast_font_wieght go-podcast_color_white">
+                <span>Слушать</span>
+                <svg class="icon go-podcast__icon">
+                    <use xlink:href="img/icons/sprite.svg#i-arrow"></use>
+                </svg>
+            </a>
+        </div>
+        <button class="button header__close-adv" data-adv-close>
+            <svg class="icon">
+                <use xlink:href="img/icons/sprite.svg#i-close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="header__container header__container_main">
+        <div class="icon-menu">
+            <span></span>
+        </div>
+
+        <div class="header__logo">
+            <a href="/" class="header__logo logo">
+                <svg class="icon">
+                    <use xlink:href="img/icons/sprite.svg#i-logo"></use>
+                </svg>
+            </a>
+        </div>
+
+        <form class="header__search search-form" data-search-form>
+            <input type="text" class="input search-form__input" placeholder="Что ищем?">
+            <button class="button search-form__button">Искать</button>
+        </form>
+        <a href="#" class="button header__look" data-look>
+            <img src="img/icons/eyes.png" class="header__eyes" alt="">
+            <span>На себя посмотри</span>
+        </a>
+
+        <!--Добавил  класс header__panel_logged -> Если пользователь залогинен-->
+        <div class="header__panel header__panel_logged">
+            <!--Добавил  класс .header__panel_logged -> Если пользователь залогинен-->
+            <div class="choice-theme" data-choice-theme>
+                <button class="button choice-theme__button choice-theme__button_light choice-theme__button_active"
+                    data-button-theme-light>
+                    <svg class="icon">
+                        <use xlink:href="img/icons/sprite.svg#i-light"></use>
+                    </svg>
+                </button>
+                <div class="choice-theme__switcher">
+                    <input type="checkbox" id="switch-theme" class="choice-theme__input" />
+                    <label for="switch-theme" class="choice-theme__label"></label>
+                </div>
+                <button class="button choice-theme__button choice-theme__button_dark" data-button-theme-dark>
+                    <svg class="icon">
+                        <use xlink:href="img/icons/sprite.svg#i-dark"></use>
+                    </svg>
+                </button>
+            </div>
+            <button class="button" data-search-button>
+                <svg class="icon header__search-icon">
+                    <use xlink:href="img/icons/sprite.svg#i-search"></use>
+                </svg>
+            </button>
+
+            <!--Добавил ссылку на лк и аватар пользователя вместо кнопки войти-->
+            <a href="#" class="header__avatar">
+                <figure class="header__avatar-img">
+                    <img src="img/avatar.jpg" alt="">
+                </figure>
+            </a>
+            <!--Добавил ссылку на лк и аватар пользователя вместо кнопки войти-->
+
+        </div>
+
+
+    </div>
+</header>

@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230530201148">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230606180120">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -409,7 +409,8 @@
 								<p class="app__text ask-us__text">
 									возможно мы ответим на него в наших следующих статьях
 								</p>
-								<button class="button button_size_big button_theme_brown">Задать вопрос</button>
+								<button class="button button_size_big button_theme_brown" data-button-question>
+									Задать вопрос</button>
 							</div>
 							<svg class="icon ask-us__icon ask-us__icon_size_small">
 								<use xlink:href="img/icons/sprite.svg#i-sign"></use>
@@ -1374,7 +1375,50 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230530201148"></script>
+
+	<div class="popup popup_question" data-popup-question>
+		<div class="popup__wrapper popup__wrapper_question">
+			<div class="popup__body popup__body_question">
+				<div class="popup__content ask-question">
+					<button type="button" class="popup__close  popup__close_active ask-question__close" data-close>
+					</button>
+					<h4 class="title title_size_32 title_wight_bold title_color_131313 ask-question__title">Задай вопрос
+						редакции Dude</h4>
+					<form class="ask-question__form">
+						<div class="ask-question__grid">
+							<label for="question-username" class="ask-question__label">
+								<span class="ask-question__text ask-question__text_required">Имя</span>
+								<input type="text" id="question-username" class="input">
+							</label>
+
+							<label for="question-usermail" class="ask-question__label">
+								<span class="ask-question__text ask-question__text_required">E-mail</span>
+								<input type="text" id="question-usermail" class="input">
+							</label>
+
+							<label for="question-theme" class="ask-question__label ask-question__label_full">
+								<span class="ask-question__text">Тема</span>
+								<input type="text" id="question-theme" class="input">
+							</label>
+
+							<label for="question" class="ask-question__label ask-question__label_full">
+								<span class="ask-question__text">Вопрос</span>
+								<textarea id="question" class="textarea ask-question__textarea"></textarea>
+							</label>
+						</div>
+
+						<label class="ask-question__label ask-question__label_person-data">
+							<span>Я даю согласие на обработку <a href="#">персональных данных</a></span>
+							<input type="checkbox" checked>
+							<span class="ask-question__checkmark"></span>
+						</label>
+						<button class="button button_theme_blue ask-question__button">Отправить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230606180120"></script>
 </body>
 
 </html>

@@ -105,6 +105,22 @@ body {
 	&__main {
 		flex: 1 1 rem(640);
 		overflow: hidden;
+
+		&_error {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			padding-bottom: rem(20);
+		}
+
+		&_404 {
+			@include adaptiveValue(padding-top, 74, 48, 992, 375, 1);
+		}
+
+		&_close {
+			padding-top: rem(74);
+		}
 	}
 
 	&__articles {
@@ -182,6 +198,12 @@ body {
 			}
 		}
 
+		&_none {
+			@media (min-width: $tablet) {
+				display: none !important;
+			}
+		}
+
 		&_active {
 			@media (max-width: $tablet) {
 				left: 0;
@@ -204,7 +226,7 @@ body {
 body[data-theme="light"] {
 	.app {
 		&__page {
-			background-color: #f0f0f0;
+			// background-color: #f0f0f0;
 		}
 	}
 }
@@ -292,6 +314,8 @@ textarea {
 // Подключение стилей отдельных страниц
 @import "home";
 @import "articles";
+@import "error-page";
+@import "profile";
 
 @import "light";
 @import "dark";

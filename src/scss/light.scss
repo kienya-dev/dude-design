@@ -1,14 +1,17 @@
 body[data-theme="light"] {
-    .app {
-        &__page {
-            background-color: #f0f0f0;
-        }
+    background-color: #f0f0f0;
 
+    .app {
         &__aside_left {
             @media (max-width: $tablet) {
                 background-color: #ffffff;
             }
         }
+    }
+
+    .header {
+        border-bottom: 1px solid #ebebeb;
+        background-color: #ffffff;
     }
 
     .aside {
@@ -197,6 +200,19 @@ body[data-theme="light"] {
             color: #bf707a;
             background-color: #fde8e9;
         }
+
+        &_theme_blue {
+            background-color: #4d72d3;
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #557de8;
+                }
+            }
+
+            &:active {
+                background-color: #3253ab;
+            }
+        }
     }
 
     .title {
@@ -239,6 +255,10 @@ body[data-theme="light"] {
                         color: #b8916d;
                     }
                 }
+            }
+
+            &_active {
+                background-color: #ffffff;
             }
         }
     }
@@ -690,6 +710,191 @@ body[data-theme="light"] {
 
         &__title {
             color: #1c3438;
+        }
+    }
+
+    .error-page {
+        &__img {
+            fill: #252525;
+        }
+
+        &__input {
+            border-color: #757a84;
+            color: #757a84;
+
+            &::placeholder {
+                color: #757a84;
+            }
+
+            &:focus {
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+
+        &__link {
+            color: #4d72d3;
+            transition: color 0.3s, border-color 0.3s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    border-color: transparent;
+                    color: #5681f0;
+                }
+            }
+
+            &:active {
+                border-color: transparent;
+                color: #5681f0;
+            }
+        }
+    }
+
+    .profile {
+        &__user {
+            background-color: #ffffff;
+        }
+
+        &__date {
+            color: #757a84;
+
+            svg {
+                fill: currentColor;
+            }
+        }
+
+        &__role {
+            background-color: #f0f0f0;
+            color: #757a84;
+        }
+
+        &__link {
+            @media (max-width: $tablet) {
+                background-color: #ffffff;
+            }
+
+            &_exit {
+                color: #4d72d3;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: #5681f0;
+                    }
+                }
+            }
+        }
+
+        &__comment {
+            background-color: #ffffff;
+        }
+
+        &__settings {
+            background-color: #ffffff;
+        }
+    }
+
+    .my-comment {
+        &__date {
+            color: #757a84;
+        }
+
+        &__rating {
+            &_positive {
+                background-color: #e5f0ed;
+            }
+
+            &_negative {
+                background-color: #fde8e9;
+            }
+
+            &_neutral {
+                color: #757a84;
+                background-color: #ebebeb;
+            }
+        }
+    }
+
+    .log-out {
+        &__content {
+            background-color: #ffffff;
+        }
+
+        &__button {
+            &_cancel {
+                color: #757a84;
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: #252525;
+                    }
+                }
+
+                &:active {
+                    color: #dfddda !important;
+                }
+            }
+        }
+    }
+
+    .settings {
+        &__text {
+            color: #252525;
+        }
+
+        &__icon-password {
+            svg {
+                fill: #757a84;
+            }
+            &_hide {
+                &::after {
+                    background-color: #757a84;
+                }
+            }
+        }
+
+        &__load {
+            color: #4d72d3;
+            @media (any-hover: hover) {
+                &:hover {
+                    color: #557de8;
+                }
+            }
+
+            &:active {
+                color: #3253ab !important;
+            }
+        }
+
+        &__state-avatar {
+            color: #757a84;
+        }
+    }
+
+    .ask-question {
+        background-color: #ffffff;
+
+        &__close {
+            &::before,
+            &::after {
+                background-color: #252525;
+            }
+        }
+
+        &__label {
+            &_person-data {
+                color: #757a84;
+                a {
+                    color: #4d72d3;
+                }
+            }
+        }
+
+        &__text {
+            &_required {
+                &::before {
+                    color: #bf707a;
+                }
+            }
         }
     }
 }

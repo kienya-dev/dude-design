@@ -3424,6 +3424,10 @@
         const authorizationPopup = document.querySelector("[data-popup-authorization]");
         const showAuthorizationPopupButton = document.querySelector("[data-authorization-button]");
         const storiesPopup = document.querySelector("[data-popup-stories]");
+        const outPopup = document.querySelector("[data-popup-out]");
+        const showButtonsOutPopup = document.querySelectorAll("[data-button-out]");
+        const questionPopup = document.querySelector("[data-popup-question]");
+        const showButtonsQuestionPopup = document.querySelectorAll("[data-button-question]");
         const showPopup = popup => {
             const closeButton = popup.querySelector("[data-close]");
             popup.classList.add("popup_show");
@@ -3435,7 +3439,7 @@
         };
         const closePopup = popup => {
             const stories = document.querySelector("[data-popup-stories]");
-            if (stories.classList.contains("popup_show")) {
+            if (stories && stories.classList.contains("popup_show")) {
                 clearInterval(interval);
                 activeStore.enabled = false;
                 if (document.querySelector("[data-active-store]")) {
@@ -3449,7 +3453,9 @@
             popup.classList.remove("popup_show");
             document.body.classList.remove("lock");
         };
-        showAuthorizationPopupButton.addEventListener("click", (() => showPopup(authorizationPopup)));
+        if (showAuthorizationPopupButton) showAuthorizationPopupButton.addEventListener("click", (() => showPopup(authorizationPopup)));
+        if (showButtonsOutPopup.length) showButtonsOutPopup.forEach((button => button.addEventListener("click", (() => showPopup(outPopup)))));
+        if (showButtonsQuestionPopup.length) showButtonsQuestionPopup.forEach((button => button.addEventListener("click", (() => showPopup(questionPopup)))));
         const closeStoriesPopup = () => {
             clearInterval(interval);
             activeStore.enabled = false;
@@ -3792,39 +3798,34 @@
                 if (video.paused) video.play(); else video.pause();
             }));
         }
-        const iconsPassword = document.querySelectorAll(".authorization__icon-password");
-        const showHidePassword = icon => {
-            const input = icon.closest(".authorization__label_password").querySelector(".input");
-            input.getAttribute("type") === "password" ? input.setAttribute("type", "text") : input.setAttribute("type", "password");
-            icon.classList.toggle("authorization__icon-password_hide");
-        };
-        iconsPassword.forEach((icon => icon.addEventListener("click", (() => showHidePassword(icon)))));
         const authorization = document.querySelector("[data-popup-authorization]");
-        const authorizationForms = authorization.querySelectorAll(".authorization");
-        const registerFormButtons = authorization.querySelectorAll("[data-register-button]");
-        const authorizationButtons = authorization.querySelectorAll("[data-authorization-button]");
-        const recoveryButtons = authorization.querySelectorAll("[data-recovery-button]");
-        authorizationButtons.forEach((button => {
-            button.addEventListener("click", (() => {
-                authorizationForms.forEach((form => {
-                    if (!form.hasAttribute("data-authorization-form")) form.classList.remove("authorization_active"); else form.classList.add("authorization_active");
+        const showHidePassword = (icon, box) => {
+            const input = icon.closest(`.${box}__label_password`).querySelector(".input");
+            input.getAttribute("type") === "password" ? input.setAttribute("type", "text") : input.setAttribute("type", "password");
+            icon.classList.toggle(`${box}__icon-password_hide`);
+        };
+        if (authorization) {
+            const authorizationForms = authorization.querySelectorAll(".authorization");
+            const registerFormButtons = authorization.querySelectorAll("[data-register-button]");
+            const authorizationButtons = authorization.querySelectorAll("[data-authorization-button]");
+            const recoveryButtons = authorization.querySelectorAll("[data-recovery-button]");
+            const iconsPassword = document.querySelectorAll(".authorization__icon-password");
+            const toggleAuthorizationForm = (buttons, attr) => {
+                buttons.forEach((button => {
+                    button.addEventListener("click", (() => {
+                        authorizationForms.forEach((form => {
+                            if (!form.hasAttribute(attr)) form.classList.remove("authorization_active"); else form.classList.add("authorization_active");
+                        }));
+                    }));
                 }));
-            }));
-        }));
-        registerFormButtons.forEach((button => {
-            button.addEventListener("click", (() => {
-                authorizationForms.forEach((form => {
-                    if (!form.hasAttribute("data-register-form")) form.classList.remove("authorization_active"); else form.classList.add("authorization_active");
-                }));
-            }));
-        }));
-        recoveryButtons.forEach((button => {
-            button.addEventListener("click", (() => {
-                authorizationForms.forEach((form => {
-                    if (!form.hasAttribute("data-recovery-form")) form.classList.remove("authorization_active"); else form.classList.add("authorization_active");
-                }));
-            }));
-        }));
+            };
+            iconsPassword.forEach((icon => icon.addEventListener("click", (() => showHidePassword(icon, "authorization")))));
+            toggleAuthorizationForm(authorizationButtons, "data-authorization-form");
+            toggleAuthorizationForm(registerFormButtons, "data-register-form");
+            toggleAuthorizationForm(recoveryButtons, "data-recovery-form");
+        }
+        const settingsPassword = document.querySelector(".settings__icon-password");
+        if (settingsPassword) settingsPassword.addEventListener("click", (() => showHidePassword(settingsPassword, "settings")));
         body.classList.remove("preload");
         const postponeButtons = document.querySelectorAll("[data-postponed]");
         if (postponeButtons.length) {
@@ -3873,6 +3874,26 @@
             };
             window.addEventListener("scroll", (() => articles.forEach((elem => getVisibleArticle(elem)))));
             shareToggler.addEventListener("click", toggleShareList);
+        }
+        const inputSetttingsImage = document.querySelector("[data-settings-input]");
+        const previewSettingsImage = document.querySelector("[data-settings-preview]");
+        if (inputSetttingsImage && previewSettingsImage) {
+            const loadSettingsImage = img => {
+                const formatsImg = [ "image/jpeg", "image/png", "image/gif" ];
+                if (!formatsImg.includes(img.type)) {
+                    console.log("error");
+                    inputSetttingsImage.value = "";
+                    return;
+                }
+                showSettingsImage(img);
+            };
+            const showSettingsImage = img => {
+                const reader = new FileReader;
+                reader.onload = e => previewSettingsImage.innerHTML = `<img src="${e.target.result}" class="settings__img" alt=""> <span class="settings__state-avatar">Файл загружен</span>`;
+                reader.onerror = e => previewSettingsImage.innerHTML = '<span class="settings__state-avatar settings__state-avatar_error">Не удалось загрузить изображение</span>';
+                reader.readAsDataURL(img);
+            };
+            inputSetttingsImage.addEventListener("change", (() => loadSettingsImage(inputSetttingsImage.files[0])));
         }
     }), false);
     var a = document.querySelector(".article-contents"), b = null, P = 0;

@@ -1,0 +1,73 @@
+.error-page {
+    display: flex;
+
+    &__img {
+        fill: #252525;
+        &_404 {
+            @include adaptiveValue(margin-bottom, 24, 16, 991, 375, 1);
+            img {
+                @include adaptiveValue(width, 321, 230, 991, 375, 1);
+                @include adaptiveValue(height, 220, 152, 991, 375, 1);
+            }
+        }
+
+        &_close {
+            margin-bottom: rem(24);
+            @include adaptiveValue(width, 221, 155, 991, 375, 1);
+            @include adaptiveValue(height, 318, 223, 991, 375, 1);
+        }
+    }
+
+    &__title {
+        @include adaptiveValue(font-size, 36, 24, 991, 375, 1);
+
+        &_404 {
+            margin-bottom: 1em;
+        }
+
+        &_close {
+            margin-bottom: em(32, 36);
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__text {
+        width: 100%;
+        @include adaptiveValue(margin-bottom, 48, 32, 991, 375, 1);
+        padding: 0 rem(4);
+        @include adaptiveValue(font-size, 18, 14, 991, 375, 1);
+        color: #979797;
+        line-height: 1.4;
+
+        &_404 {
+            max-width: rem(617);
+        }
+
+        &_close {
+            @include adaptiveValue(max-width, 545, 250, 991, 375, 1);
+        }
+    }
+
+    &__search {
+        display: flex;
+        min-width: 100%;
+        margin-bottom: rem(48);
+        padding: 0 rem(8);
+        @media (min-width: $tablet) {
+            min-width: rem(848);
+        }
+    }
+
+    &__input {
+        border-right: 0 !important;
+    }
+
+    &__link {
+        border-bottom: 1px solid currentColor;
+        @include adaptiveValue(font-size, 18, 16, 991, 375, 1);
+    }
+}

@@ -1,6 +1,5 @@
 //====================================================================================================
 .header {
-	border-bottom: 1px solid transparent;
 	&_search_active {
 		position: relative;
 
@@ -71,13 +70,11 @@
 			grid-template-columns: auto auto 1fr;
 			justify-content: space-between;
 			column-gap: rem(10);
-			// height: rem(56);
 
 			@media (min-width: $tablet) {
 				grid-template-columns: auto 1fr auto;
 			}
 			@media (min-width: $mobile) {
-				// grid-template-columns: auto auto 1fr auto;
 				grid-auto-flow: column;
 				column-gap: rem(22);
 				height: rem(72);
@@ -131,6 +128,18 @@
 		justify-content: end;
 		align-items: center;
 		column-gap: rem(24);
+
+		&_logged {
+			@media (min-width: $pc) {
+				padding-right: rem(50);
+			}
+
+			& > button {
+				@media (min-width: $pc) {
+					margin-left: rem(50);
+				}
+			}
+		}
 	}
 
 	&__switcher {
@@ -168,6 +177,41 @@
 			@media (max-width: $mobile) {
 				display: none;
 			}
+		}
+	}
+
+	&__avatar {
+		display: inline-block;
+	}
+
+	&__avatar-img {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #d1aa7c;
+		border-radius: 50%;
+		padding: rem(1);
+		width: rem(18);
+		height: rem(18);
+
+		@media (min-width: $mobile) {
+			width: rem(32);
+			height: rem(32);
+			border: 2px solid #d1aa7c;
+			padding: rem(2);
+		}
+	}
+
+	img {
+		width: rem(14);
+		height: rem(14);
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: top;
+
+		@media (min-width: $mobile) {
+			width: rem(24);
+			height: rem(24);
 		}
 	}
 
@@ -445,7 +489,9 @@ body[data-theme="light"] {
 
 		&_active {
 			svg {
-				fill: #252525;
+				@media (min-width: $mobile) {
+					fill: #252525;
+				}
 			}
 		}
 	}
@@ -453,7 +499,7 @@ body[data-theme="light"] {
 
 body[data-theme="dark"] {
 	.header {
-		border-color: #413e3c;
+		border-bottom: 1px solid #413e3c;
 		background-color: #2b2929;
 	}
 
@@ -502,7 +548,9 @@ body[data-theme="dark"] {
 
 		&_active {
 			svg {
-				fill: #d1aa7c;
+				@media (min-width: $mobile) {
+					fill: #d1aa7c;
+				}
 			}
 		}
 	}

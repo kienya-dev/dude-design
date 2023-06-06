@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Профиль"
+})
+
+<body data-theme="light">
+    <div class="app profile">
+        @@include('html/_header_user.htm',{})
+        <div class="app__page">
+            <div class="app__container">
+                <aside class="aside app__aside app__aside_left app__aside_none" data-nav-menu>
+
+                    <!--Добавил блок с логотипом и бургер меню-->
+                    <div class="aside__head">
+                        <div class="icon-menu">
+                            <span></span>
+                        </div>
+                        <a href="/" class="header__logo logo">
+                            <svg class="icon">
+                                <use xlink:href="img/icons/sprite.svg#i-logo"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <!--Добавил блок с логотипом и бургер меню-->
+
+                    <div class="menu">
+                        <h2 class="title title_size_24 title_wight_bold title_color_252525 aside__title menu__title">
+                            <svg class="icon">
+                                <use xlink:href="img/icons/sprite.svg#i-rubric"></use>
+                            </svg>
+                            <span>Рубрики</span>
+                        </h2>
+                        <nav>
+                            <ul class="menu__list menu__list_main">
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main menu__link_popular">Популярное</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Подруги</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Отношения</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Образ жизни</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Лайфхак</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Инвентарь</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Герои</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Еда</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Фитнес</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Наука</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Культура</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Карьера</a>
+                                </li>
+                            </ul>
+                            <ul class="menu__list menu__list_small">
+                                <li>
+                                    <a href="#" class="menu__link menu__link_small">
+                                        Соглашения и правила
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_small">
+                                        Правообладателям
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_small">
+                                        Рекламодателям
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_small">
+                                        Контакты
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <ul class="social">
+                            <li>
+                                <a href="#" class="button social__link social__link_facebook">
+                                    <svg class="icon">
+                                        <use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="button social__link social__link_vk">
+                                    <svg class="icon">
+                                        <use xlink:href="img/icons/sprite.svg#i-vk"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="button social__link social__link_twitter">
+                                    <svg class="icon">
+                                        <use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="button social__link social__link_telegram">
+                                    <svg class="icon">
+                                        <use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <aside class="profile__aside">
+                    <div class="profile__user">
+                        <figure class="profile__avatar">
+                            <img src="img/avatar.jpg" alt="">
+                        </figure>
+
+                        <div class="profile__info">
+                            <h2 class="title title_size_22 title_wight_bold title_color_252525">
+                                Екатерина Иванова
+                            </h2>
+                            <div class="profile__date">
+                                <svg class="icon">
+                                    <use xlink:href="img/icons/sprite.svg#i-reg-date"></use>
+                                </svg>
+                                <div>
+                                    <span>на сайте с </span>
+                                    <time datetime="20021-04-12">12 апреля 2021</time>
+                                </div>
+                            </div>
+                            <span class="button profile__role">Автор</span>
+                        </div>
+                    </div>
+
+                    <nav class="menu profile__nav">
+                        <ul class="menu__list profile__list">
+                            <li>
+                                <a href="#" class="menu__link menu__link_main profile__link">Читать
+                                    позже (6)</a>
+                            </li>
+                            <li>
+                                <a href="#" class="menu__link menu__link_main profile__link">Комментарии (16)</a>
+                            </li>
+                            <li>
+                                <a href="#" class="menu__link menu__link_main profile__link">Мои публикации (26)</a>
+                            </li>
+                        </ul>
+
+                        <ul class="menu__list profile__list">
+                            <li>
+                                <a href="#"
+                                    class="menu__link menu__link_main profile__link menu__link_active profile__link_active">Настройки</a>
+                            </li>
+                            <li>
+                                <button class="menu__link menu__link_main profile__link profile__link_exit"
+                                    data-button-out>
+                                    Выйти
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <main class="main app__main">
+                    <section class="profile__settings settings">
+                        <h1 class="title title_wight_bold title_color_252525 profile__title settings__title">
+                            Настройки
+                        </h1>
+                        <form data-settings-form>
+                            <div class="settings__column">
+                                <label for="setting-firstname" class="settings__label">
+                                    <span class="settings__text">Имя</span>
+                                    <input type="text" id="setting-firstname" placeholder="Екатерина" class="input">
+                                </label>
+
+                                <label for="setting-lastname" class="settings__label">
+                                    <span class="settings__text">Фамилия</span>
+                                    <input type="text" id="setting-lastname" placeholder="Иванова" class="input">
+                                </label>
+
+                                <label for="setting-email" class="settings__label">
+                                    <span class="settings__text">E-mail</span>
+                                    <input type="text" id="setting-email" placeholder="kapanova@gmail.com"
+                                        class="input">
+                                </label>
+
+                                <label for="setting-password" class="settings__label settings__label_password">
+                                    <span class="settings__text">Пароль</span>
+                                    <span class="settings__icon-password settings__icon-password_hide">
+                                        <svg class="icon">
+                                            <use xlink:href="img/icons/sprite.svg#i-show-password"></use>
+                                        </svg>
+                                    </span>
+                                    <input type="password" id="setting-password" placeholder="••••••••••" class="input">
+                                </label>
+                            </div>
+
+                            <div class="settings__row">
+                                <label for="setting-avatar" class="settings__avatar">
+                                    <span type="button" class="button button_no_bg settings__button settings__load">
+                                        <svg class="icon">
+                                            <use xlink:href="img/icons/sprite.svg#i-settings-avatar"></use>
+                                        </svg>
+                                        <span>Загрузить фотографию</span>
+                                    </span>
+                                    <input type="file" id="setting-avatar" accept=".jpg, .png, .gif"
+                                        class="settings__input-img" data-settings-input>
+                                </label>
+                                <div class="settings__preview" data-settings-preview>
+                                    <span class="settings__state-avatar settings__state-avatar_hide">Файл не
+                                        выбран</span>
+                                </div>
+                            </div>
+
+                            <button class="button button_theme_blue settings__button settings__save">
+                                Сохранить изменения
+                            </button>
+                        </form>
+
+                    </section>
+                </main>
+
+                <aside class="aside app__aside app__aside_right">
+                    <div class="aside__articles top-articles">
+                        <h2 class="title title_size_18 title_wight_bold title_color_252525 profile__aside-title">
+                            Вам может понравиться
+                        </h2>
+                        <ul class="articles-list">
+                            <li>
+                                <a href="#" class="articles-list__link">
+                                    <figure class="articles-list__img">
+                                        <img src="img/article_img.jpg" alt="">
+                                    </figure>
+                                    <h3 class="title title_size_14 title_wight_bold title_color_252525">Сюжет фильма,
+                                        ставший сценарием жизни: истории трёх пар, нашедших друг друга на сайте
+                                        знакомств</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="articles-list__link">
+                                    <figure class="articles-list__img">
+                                        <img src="img/article_img.jpg" alt="">
+                                    </figure>
+                                    <h3 class="title title_size_14 title_wight_bold title_color_252525">Опасные
+                                        соперники и сложные миссии: 5 причин
+                                        скачать Gladiator Glory</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="articles-list__link">
+                                    <figure class="articles-list__img">
+                                        <img src="img/article_img.jpg" alt="">
+                                    </figure>
+                                    <h3 class="title title_size_14 title_wight_bold title_color_252525">Почему девушкам
+                                        дарят цветы и как выбрать
+                                        подходящий букет</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="articles-list__link">
+                                    <figure class="articles-list__img">
+                                        <img src="img/article_img.jpg" alt="">
+                                    </figure>
+                                    <h3 class="title title_size_14 title_wight_bold title_color_252525">9 атмосферных
+                                        фильмов ужасов, действие которых
+                                        происходит в Новый год и Рождество</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="articles-list__link">
+                                    <figure class="articles-list__img">
+                                        <img src="img/article_img.jpg" alt="">
+                                    </figure>
+                                    <h3 class="title title_size_14 title_wight_bold title_color_252525">Что делать, если
+                                        встречаешься с девушкой, у которой уже есть парень</h3>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="popup log-out" data-popup-out>
+        <div class="popup__wrapper">
+            <div class="popup__body log-out__body">
+                <div class="popup__content">
+                    <div class="log-out__content">
+                        <p class="log-out__text">
+                            Вы уверены, что хотите выйти из профиля?
+                        </p>
+
+                        <div class="log-out__buttons">
+                            <button class="button button_no_bg log-out__button log-out__button_cancel"
+                                data-close>Остаться</button>
+                            <button class="button button_theme_blue log-out__button">Хочу</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

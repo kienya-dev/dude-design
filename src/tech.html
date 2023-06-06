@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Технические работы"
+})
+
+
+<body class="preload" data-theme="light">
+
+    <div class="app">
+        @@include('html/_header.htm',{})
+        <div class="app__page error-page">
+            <div class="app__container">
+                <aside class="aside app__aside app__aside_left app__aside_none" data-nav-menu>
+                    <div class="aside__head">
+                        <div class="icon-menu">
+                            <span></span>
+                        </div>
+                        <a href="/" class="header__logo logo">
+                            <svg class="icon">
+                                <use xlink:href="img/icons/sprite.svg#i-logo"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="menu">
+                        <h2 class="title title_size_24 title_wight_bold title_color_252525 aside__title menu__title">
+                            <svg class="icon">
+                                <use xlink:href="img/icons/sprite.svg#i-rubric"></use>
+                            </svg>
+                            <span>Рубрики</span>
+                        </h2>
+                        <nav>
+                            <ul class="menu__list menu__list_main">
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main menu__link_popular">Популярное</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Подруги</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Отношения</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Образ жизни</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Лайфхак</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Инвентарь</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Герои</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Еда</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Фитнес</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Наука</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Культура</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_main">Карьера</a>
+                                </li>
+                            </ul>
+                            <ul class="menu__list menu__list_small">
+                                <li>
+                                    <a href="#" class="menu__link menu__link_small">
+                                        Соглашения и правила
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_small">
+                                        Правообладателям
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_small">
+                                        Рекламодателям
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu__link menu__link_small">
+                                        Контакты
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <ul class="social">
+                            <li>
+                                <a href="#" class="button social__link social__link_facebook">
+                                    <svg class="icon">
+                                        <use xlink:href="img/icons/sprite.svg#i-facebook"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="button social__link social__link_vk">
+                                    <svg class="icon">
+                                        <use xlink:href="img/icons/sprite.svg#i-vk"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="button social__link social__link_twitter">
+                                    <svg class="icon">
+                                        <use xlink:href="img/icons/sprite.svg#i-twitter"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="button social__link social__link_telegram">
+                                    <svg class="icon">
+                                        <use xlink:href="img/icons/sprite.svg#i-telegram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+
+                <main class="main app__main app__main_error app__main_close">
+
+                    <section>
+                        <svg class="icon error-page__img error-page__img_close">
+                            <use xlink:href="img/icons/sprite.svg#i-close-tech"></use>
+                        </svg>
+                        <h1 class="title title_wight_bold title_color_252525 error-page__title error-page__title_close">
+                            На сайте технические работы
+                        </h1>
+                        <div class="error-page__content">
+                            <div class="app__text error-page__text error-page__text_close">
+                                <p>
+                                    Приносим свои извинения. Зайдите чуть позже.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                </main>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

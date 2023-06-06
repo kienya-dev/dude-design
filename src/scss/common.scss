@@ -54,6 +54,16 @@
         background-color: #252525;
     }
 
+    &_theme_blue {
+        color: #ffffff;
+        transition: background-color 0.3s;
+    }
+
+    &_no_bg {
+        border: 1px solid currentColor;
+        transition: color 0.3s, border-color 0.3s;
+    }
+
     &_share {
         &_black {
             color: #252525;
@@ -627,7 +637,8 @@
     }
 }
 
-.authorization__label_person-data {
+.authorization__label_person-data,
+.ask-question__label_person-data {
     display: block;
     position: relative;
     padding-left: rem(24);
@@ -638,7 +649,8 @@
     user-select: none;
 }
 
-.authorization__label_person-data input {
+.authorization__label_person-data input,
+.ask-question__label_person-data input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -646,7 +658,8 @@
     width: 0;
 }
 
-.authorization__checkmark {
+.authorization__checkmark,
+.ask-question__checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -656,27 +669,27 @@
     border-radius: rem(4);
 }
 
-// .authorization__label_person-data:hover input ~ .checkmark {
-//     background-color: #ccc;
-// }
-
-.authorization__label_person-data input:checked ~ .authorization__checkmark {
+.authorization__label_person-data input:checked ~ .authorization__checkmark,
+.ask-question__label_person-data input:checked ~ .ask-question__checkmark {
     border: 1px solid #4d72d3;
     background: url("../img/icons/check.svg") center no-repeat;
-    background-size: rem(14) rem(7);
+    background-size: rem(17) rem(8);
 }
 
-.authorization__label_person-data:after {
+.authorization__label_person-data:after,
+.ask-question__label_person-data:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-.authorization__label_person-data input:checked ~ .authorization__checkmark:after {
+.authorization__label_person-data input:checked ~ .authorization__checkmark:after,
+.ask-question__label_person-data input:checked ~ .ask-question__checkmark:after {
     display: block;
 }
 
-.authorization__label_person-data .authorization__checkmark:after {
+.authorization__label_person-data .authorization__checkmark:after,
+.ask-question__label_person-data .ask-question__checkmark:after {
     left: 9px;
     top: 5px;
     width: 5px;
